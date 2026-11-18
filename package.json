@@ -1,0 +1,27 @@
+{
+  "name": "ewnet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ewnet - Digital Warranty Management Platform",
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "packages/shared",
+    "packages/ai",
+    "packages/validation"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=apps/api\" \"npm run dev --workspace=apps/web\"",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/web",
+    "start:web": "npm run start --workspace=apps/web",
+    "start:api": "npm run start --workspace=apps/api",
+    "test": "npm run test --workspace=apps/api",
+    "seed": "npm run seed --workspace=apps/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
+

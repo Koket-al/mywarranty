@@ -1,0 +1,14 @@
+{
+  "name": "@ewnet/ai",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "dependencies": {
+    "@ewnet/shared": "*",
+    "zod": "^3.23.8"
+  }
+}
+
