@@ -125,9 +125,9 @@ export default function CompanyWarrantyDetailPage() {
           </div>
 
           {/* Cryptographic Integrity Panel */}
-          <div className="card" style={{ marginBottom: '1.5rem', backgroundColor: integrity?.isValid ? 'var(--accent-light)' : '#fef2f2', border: `1px solid ${integrity?.isValid ? '#bce1d6' : '#fecaca'}` }}>
+          <div className="card" style={{ marginBottom: '1.5rem', backgroundColor: integrity?.isValid ? 'var(--accent-light)' : '#fef2f2', border: `1px solid ${integrity?.isValid ? 'var(--border)' : '#fecaca'}` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              {integrity?.isValid ? <ShieldCheck size={26} color="var(--accent)" /> : <ShieldAlert size={26} color="var(--danger)" />}
+              {integrity?.isValid ? <ShieldCheck size={26} color="var(--primary)" /> : <ShieldAlert size={26} color="var(--danger)" />}
               <div>
                 <strong style={{ fontSize: '1rem', color: integrity?.isValid ? 'var(--primary)' : '#991b1b' }}>
                   {integrity?.isValid ? 'Tamper-Evident Record Verified' : 'Cryptographic Mismatch Detected!'}

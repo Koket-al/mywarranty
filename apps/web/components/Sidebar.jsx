@@ -90,12 +90,12 @@ export default function Sidebar({ mode = 'company' }) {
               fontWeight: isActive ? 600 : 500,
               color: isActive ? 'var(--primary)' : 'var(--text-muted)',
               backgroundColor: isActive ? 'var(--accent-light)' : 'transparent',
-              borderLeft: isActive ? '3px solid var(--accent)' : '3px solid transparent',
+              borderLeft: isActive ? '3px solid var(--primary)' : '3px solid transparent',
               textDecoration: 'none',
               transition: 'all 0.15s ease'
             }}
           >
-            <Icon size={18} color={isActive ? 'var(--accent)' : 'var(--text-muted)'} />
+            <Icon size={18} color={isActive ? 'var(--primary)' : 'var(--text-muted)'} />
             <span>{link.label}</span>
           </Link>
         );

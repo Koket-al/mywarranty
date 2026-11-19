@@ -54,12 +54,12 @@ export default function CompanyRegisterPage() {
               height: '46px',
               borderRadius: '8px',
               backgroundColor: 'var(--accent-light)',
-              color: 'var(--accent)',
+              color: 'var(--primary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 0.75rem',
-              border: '1px solid #c2e2d8'
+              border: '1px solid var(--border)'
             }}>
               <Building2 size={24} />
             </div>
@@ -75,7 +75,7 @@ export default function CompanyRegisterPage() {
           <div style={{
             padding: '0.75rem',
             backgroundColor: 'var(--accent-light)',
-            border: '1px solid #bce1d6',
+            border: '1px solid var(--border)',
             borderRadius: '6px',
             fontSize: '0.8125rem',
             color: 'var(--primary)',

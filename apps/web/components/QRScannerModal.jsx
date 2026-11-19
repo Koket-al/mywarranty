@@ -120,7 +120,7 @@ export default function QRScannerModal({ isOpen, onClose, onScan }) {
                 transform: 'translate(-50%, -50%)',
                 width: '180px',
                 height: '180px',
-                border: '2px dashed #0d9488',
+                border: '2px dashed var(--accent)',
                 borderRadius: '12px'
               }} />
             </div>

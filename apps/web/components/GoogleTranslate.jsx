@@ -156,13 +156,13 @@ export default function GoogleTranslate() {
         display: 'inline-flex',
         alignItems: 'center',
         backgroundColor: 'var(--accent-light)',
-        border: '1px solid #c2e2d8',
+        border: '1px solid var(--border)',
         borderRadius: '20px',
         padding: '2px',
         fontSize: '0.78rem',
         fontWeight: 600
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '0 5px', color: 'var(--accent)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', padding: '0 5px', color: 'var(--primary)' }}>
           <Globe size={13} />
         </div>
 
@@ -178,7 +178,7 @@ export default function GoogleTranslate() {
             cursor: 'pointer',
             fontSize: '0.78rem',
             fontWeight: currentLang === 'en' ? 700 : 500,
-            boxShadow: currentLang === 'en' ? '0 1px 2px rgba(2, 41, 21, 0.12)' : 'none',
+            boxShadow: currentLang === 'en' ? '0 1px 2px rgba(32, 34, 35, 0.12)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="Switch to English"
@@ -198,7 +198,7 @@ export default function GoogleTranslate() {
             cursor: 'pointer',
             fontSize: '0.78rem',
             fontWeight: currentLang === 'am' ? 700 : 500,
-            boxShadow: currentLang === 'am' ? '0 1px 2px rgba(2, 41, 21, 0.12)' : 'none',
+            boxShadow: currentLang === 'am' ? '0 1px 2px rgba(32, 34, 35, 0.12)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="ወደ አማርኛ ቀይር (Switch to Amharic)"
@@ -218,7 +218,7 @@ export default function GoogleTranslate() {
             cursor: 'pointer',
             fontSize: '0.78rem',
             fontWeight: currentLang === 'om' ? 700 : 500,
-            boxShadow: currentLang === 'om' ? '0 1px 2px rgba(2, 41, 21, 0.12)' : 'none',
+            boxShadow: currentLang === 'om' ? '0 1px 2px rgba(32, 34, 35, 0.12)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="Gara Afaan Oromootti jijjiiri (Switch to Afaan Oromoo)"

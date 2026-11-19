@@ -1,44 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Emerald Luxury & Image Palette */
-  --primary: #022915;          /* Deep rich Emerald Forest Green from Image 2 */
-  --primary-dark: #01190d;     /* Deep shadow emerald */
-  --primary-light: #094726;    /* Medium emerald hover */
-  --accent: #0d8a55;           /* Vibrant emerald green */
-  --accent-light: #e1f3f3;     /* Soft frosty mint/cyan from Image 1 */
-  --accent-hover: #076d3e;     /* Deep accent green */
-  --charcoal: #1f2123;         /* Dark graphite charcoal from Image 1 */
-  --bronze-accent: #6f6b62;    /* Warm muted earth/bronze border accent */
+  /* Exact 4-Color Palette: Charcoal Black, Pure White, Frost Cyan, Warm Taupe */
+  --primary: #202223;          /* Dark Charcoal / Graphite from top band */
+  --primary-light: #333333;    /* Graphite Gray from upper band */
+  --accent: #706c61;           /* Warm Muted Taupe / Slate Bronze from bottom band */
+  --accent-hover: #58554c;     /* Darker Taupe */
+  --accent-light: #e1f3f3;     /* Frost Ice Cyan from lower band */
   
-  --bg: #f5f8f6;               /* Pristine subtle emerald-tinted off-white */
-  --surface: #ffffff;          /* Pure white from Image 1 */
-  --border: #d4e3dc;          /* Clean architectural hairline border */
-  --border-subtle: #e6efe9;    /* Fine grid line */
+  --bg: #f8fafb;               /* Crisp clean backdrop with subtle frost freshness */
+  --surface: #ffffff;          /* Pure White from middle band */
+  --border: #dbe2e3;          /* Architectural hairline border */
+  --border-subtle: #edf2f2;    /* Fine grid guideline */
   
-  --text: #141f18;             /* Rich charcoal text */
-  --text-muted: #4e6357;       /* Refined emerald slate */
-  --text-light: #83978c;       /* Soft caption text */
+  --text: #202223;             /* Dark charcoal typography */
+  --text-muted: #6b7274;       /* Balanced slate-grey */
+  --text-light: #939a9c;       /* Muted caption text */
 
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  --success: #0d8a55;
+  --success: #202223;
   --success-bg: #e1f3f3;
-  --warning: #d97706;
+  --warning: #b45309;
   --warning-bg: #fef3c7;
   --danger: #dc2626;
   --danger-bg: #fee2e2;
-  --info: #0284c7;
-  --info-bg: #e0f2fe;
+  --info: #4b5563;
+  --info-bg: #e1f3f3;
 
   --radius-sm: 4px;
   --radius: 8px;
   --radius-lg: 12px;
 
-  --shadow-sm: 0 1px 2px 0 rgba(2, 41, 21, 0.05);
-  --shadow: 0 1px 3px 0 rgba(2, 41, 21, 0.08), 0 1px 2px 0 rgba(2, 41, 21, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(2, 41, 21, 0.08), 0 2px 4px -1px rgba(2, 41, 21, 0.04);
+  --shadow-sm: 0 1px 2px 0 rgba(32, 34, 35, 0.05);
+  --shadow: 0 1px 3px 0 rgba(32, 34, 35, 0.08), 0 1px 2px 0 rgba(32, 34, 35, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(32, 34, 35, 0.08), 0 2px 4px -1px rgba(32, 34, 35, 0.04);
 }
 
 * {
@@ -55,9 +52,9 @@ body {
   -webkit-font-smoothing: antialiased;
   /* Architectural subtle horizontal & vertical grid lines decorating the UI */
   background-image: 
-    linear-gradient(to right, rgba(2, 41, 21, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(2, 41, 21, 0.035) 1px, transparent 1px);
-  background-size: 44px 44px;
+    linear-gradient(to right, rgba(32, 34, 35, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 34, 35, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 h1, h2, h3, h4, .font-serif, .brand-title {
@@ -79,7 +76,7 @@ h1, h2, h3, h4, .font-serif, .brand-title {
 .deco-line-h-accent {
   height: 2px;
   width: 100%;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 30%, var(--accent-light) 65%, var(--primary) 100%);
+  background: linear-gradient(90deg, #202223 0%, #706c61 35%, #e1f3f3 65%, #202223 100%);
 }
 
 .deco-line-v {
@@ -155,8 +152,8 @@ a:hover {
 .btn-primary {
   background-color: var(--primary);
   color: #ffffff;
-  border: 1px solid #011c0f;
-  box-shadow: 0 1px 2px rgba(2, 41, 21, 0.15);
+  border: 1px solid #141516;
+  box-shadow: 0 1px 2px rgba(32, 34, 35, 0.15);
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -167,6 +164,7 @@ a:hover {
 .btn-accent {
   background-color: var(--accent);
   color: #ffffff;
+  border: 1px solid #58554c;
 }
 
 .btn-accent:hover:not(:disabled) {
@@ -239,8 +237,8 @@ a:hover {
 
 .form-control:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(13, 138, 85, 0.18);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(32, 34, 35, 0.12);
 }
 
 .form-hint {
@@ -312,13 +310,13 @@ a:hover {
 }
 
 .table th {
-  background-color: #f1f8f5;
+  background-color: var(--accent-light);
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--border);
   font-size: 0.8125rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 .table td {
@@ -332,7 +330,7 @@ a:hover {
 }
 
 .table tr:hover td {
-  background-color: #f7faf8;
+  background-color: #f3f8f9;
 }
 
 /* ==========================================================================
@@ -392,7 +390,7 @@ a:hover {
 .alert-success {
   background-color: var(--success-bg);
   color: var(--success);
-  border: 1px solid #86efac;
+  border: 1px solid var(--border);
 }
 
 .alert-info {

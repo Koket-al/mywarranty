@@ -142,14 +142,14 @@ export default function VerifyPage() {
               padding: '0.75rem 1rem',
               backgroundColor: 'var(--accent-light)',
               borderRadius: '6px',
-              border: '1px solid #c2e2d8',
+              border: '1px solid var(--border)',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               fontSize: '0.8125rem'
             }}>
               <span style={{ color: 'var(--primary)', fontWeight: 500 }}>Trust Verification Level:</span>
-              <span className="badge badge-success" style={{ textTransform: 'none' }}>
+              <span className="badge badge-info" style={{ textTransform: 'none' }}>
                 {report.trustLabel}
               </span>
             </div>
@@ -157,7 +157,7 @@ export default function VerifyPage() {
             {/* Details List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <Building2 size={18} color="var(--accent)" />
+                <Building2 size={18} color="var(--primary)" />
                 <div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Issuing Retailer</div>
                   <div style={{ fontSize: '0.95rem', fontWeight: 600 }}>{report.company?.businessName}</div>

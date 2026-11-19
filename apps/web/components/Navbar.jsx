@@ -34,10 +34,10 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 2px 4px rgba(2, 41, 21, 0.25)',
-              border: '1px solid #011c0f'
+              boxShadow: '0 2px 4px rgba(32, 34, 35, 0.15)',
+              border: '1px solid #141516'
             }}>
-              <ShieldCheck size={20} color="var(--accent)" />
+              <ShieldCheck size={20} color="var(--accent-light)" />
             </div>
             <div>
               <span style={{ 
@@ -65,11 +65,11 @@ export default function Navbar() {
               borderRadius: '6px',
               fontSize: '0.8125rem',
               color: 'var(--primary)',
-              border: '1px solid #c2e2d8'
+              border: '1px solid var(--border)'
             }}>
-              <Building2 size={14} color="var(--accent)" />
+              <Building2 size={14} color="var(--primary)" />
               <strong>{activeCompany.businessName}</strong>
-              <span className="badge badge-success" style={{ fontSize: '0.7rem' }}>{activeCompany.role}</span>
+              <span className="badge badge-info" style={{ fontSize: '0.7rem' }}>{activeCompany.role}</span>
             </div>
           )}
         </div>

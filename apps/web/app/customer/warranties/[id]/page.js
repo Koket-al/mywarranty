@@ -145,8 +145,8 @@ export default function CustomerWarrantyDetailPage() {
                 <div key={idx} style={{
                   padding: '1rem',
                   borderRadius: '6px',
-                  backgroundColor: c.type === 'coverage' ? '#f0fdf4' : c.type === 'exclusion' ? '#fef2f2' : '#f8fafc',
-                  border: `1px solid ${c.type === 'coverage' ? '#bbf7d0' : c.type === 'exclusion' ? '#fecaca' : 'var(--border)'}`
+                  backgroundColor: c.type === 'coverage' ? 'var(--accent-light)' : c.type === 'exclusion' ? '#fef2f2' : 'var(--bg)',
+                  border: `1px solid ${c.type === 'coverage' ? 'var(--border)' : c.type === 'exclusion' ? '#fecaca' : 'var(--border)'}`
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
                     <strong style={{ fontSize: '0.95rem', color: 'var(--primary)' }}>{c.title}</strong>

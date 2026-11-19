@@ -51,9 +51,9 @@ export default function HomePage() {
           fontSize: '0.85rem',
           fontWeight: 600,
           marginBottom: '1.5rem',
-          border: '1px solid #c8e6dc'
+          border: '1px solid var(--border)'
         }}>
-          <ShieldCheck size={16} color="var(--accent)" /> Ethiopia-First Digital Warranty Platform
+          <ShieldCheck size={16} color="var(--primary)" /> Ethiopia-First Digital Warranty Platform
         </div>
 
         <h1 style={{
@@ -120,7 +120,7 @@ export default function HomePage() {
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '1rem',
-              border: '1px solid #cce8e0'
+              border: '1px solid var(--border)'
             }}>
               <QrCode size={22} />
             </div>
@@ -143,7 +143,7 @@ export default function HomePage() {
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '1rem',
-              border: '1px solid #cce8e0'
+              border: '1px solid var(--border)'
             }}>
               <Lock size={22} />
             </div>
@@ -166,7 +166,7 @@ export default function HomePage() {
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '1rem',
-              border: '1px solid #cce8e0'
+              border: '1px solid var(--border)'
             }}>
               <Cpu size={22} />
             </div>
@@ -222,12 +222,12 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer style={{
-        backgroundColor: 'var(--charcoal)',
-        color: '#a0b0a8',
+        backgroundColor: 'var(--primary)',
+        color: '#9ba2a4',
         padding: '2.5rem 1.5rem',
         textAlign: 'center',
         fontSize: '0.85rem',
-        borderTop: '1px solid #2d3134'
+        borderTop: '1px solid var(--border)'
       }}>
         <div className="deco-line-h-accent" style={{ maxWidth: '200px', margin: '0 auto 1.5rem', opacity: 0.6 }} />
         <p>© 2026 Ewnet (እውነት). All rights reserved. Designed for independent electronics retailers.</p>

@@ -15,7 +15,7 @@ export default function StatCard({ title, value, subtext, icon: Icon, color = 'v
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            border: '1px solid #cce8e0'
+            border: '1px solid var(--border)'
           }}>
             <Icon size={18} color={color} />
           </div>

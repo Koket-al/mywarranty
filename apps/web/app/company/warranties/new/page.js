@@ -410,12 +410,12 @@ export default function IssueWarrantyPage() {
                   </div>
 
                   <div style={{
-                    backgroundColor: '#f0fdf4',
-                    border: '1px solid #bbf7d0',
+                    backgroundColor: 'var(--accent-light)',
+                    border: '1px solid var(--border)',
                     borderRadius: '6px',
                     padding: '0.75rem',
                     fontSize: '0.8125rem',
-                    color: '#166534',
+                    color: 'var(--primary)',
                     marginBottom: '1.5rem',
                     display: 'flex',
                     gap: '0.5rem'
