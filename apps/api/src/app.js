@@ -55,7 +55,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/api/support/evidence-file', express.static(path.resolve(process.cwd(), 'uploads')));
 
 // Health Check
-app.get('/health', (req, res) => {
+app.get(['/health', '/api/health'], (req, res) => {
   res.status(200).json({
     status: 'ok',
     service: 'ewnet-api',

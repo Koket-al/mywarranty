@@ -17,8 +17,8 @@ import {
 import { ROLES, WARRANTY_STATUS, TICKET_STATUS, generateWarrantyNumber, computeRecordHash } from '@ewnet/shared';
 import { signWarrantyRecord } from './services/signatureService.js';
 
-async function seed() {
-  console.log('--> Seeding Ewnet database with realistic demo records...');
+export async function seedDatabase(isQuiet = false) {
+  if (!isQuiet) console.log('--> Seeding Ewnet database with realistic demo records...');
   await connectDB();
 
   // Clean existing records
@@ -269,18 +269,26 @@ async function seed() {
     visibility: 'customer_visible'
   });
 
-  console.log('--> Seed completed successfully!');
-  console.log('---------------------------------------------------------');
-  console.log('Demo Accounts Created:');
-  console.log('1. Platform Admin: admin@ewnet.et / Password123!');
-  console.log('2. Company Owner:  owner@bole-electronics.et / Password123!');
-  console.log('3. Staff Officer:  sara@bole-electronics.et / Password123!');
-  console.log('4. Customer User:  abebe@example.com / Password123!');
-  console.log(`Demo QR Verify Link: /verify/${demoQrToken}`);
-  console.log('---------------------------------------------------------');
-
-  await disconnectDB();
+  if (!isQuiet) {
+    console.log('--> Seed completed successfully!');
+    console.log('---------------------------------------------------------');
+    console.log('Demo Accounts Created:');
+    console.log('1. Platform Admin: admin@ewnet.et / Password123!');
+    console.log('2. Company Owner:  owner@bole-electronics.et / Password123!');
+    console.log('3. Staff Officer:  sara@bole-electronics.et / Password123!');
+    console.log('4. Customer User:  abebe@example.com / Password123!');
+    console.log(`Demo QR Verify Link: /verify/${demoQrToken}`);
+    console.log('---------------------------------------------------------');
+  }
 }
 
-seed().catch(console.error);
+// If executed directly from CLI
+if (process.argv[1] && process.argv[1].endsWith('seed.js')) {
+  seedDatabase(false)
+    .then(() => disconnectDB())
+    .catch(err => {
+      console.error(err);
+      process.exit(1);
+    });
+}
 
