@@ -122,6 +122,12 @@ export default function VerifyPage() {
                 <StatusBadge status={report.verificationStatus} />
               </div>
 
+              {report.product?.imageUrl && (
+                <div style={{ width: '90px', height: '90px', margin: '0.75rem auto', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--border)', background: '#fff' }}>
+                  <img src={report.product.imageUrl} alt={report.product.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                </div>
+              )}
+
               <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.25rem' }}>
                 {report.product?.brand} {report.product?.name}
               </h2>

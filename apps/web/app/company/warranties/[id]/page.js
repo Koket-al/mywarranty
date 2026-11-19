@@ -143,7 +143,13 @@ export default function CompanyWarrantyDetailPage() {
           <div className="card" style={{ marginBottom: '1.5rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
               <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <Smartphone size={20} color="var(--accent)" />
+                {warranty.product?.imageUrl ? (
+                  <div style={{ width: '48px', height: '48px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--border)', background: '#fff', flexShrink: 0 }}>
+                    <img src={warranty.product.imageUrl} alt={warranty.product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                ) : (
+                  <Smartphone size={20} color="var(--accent)" />
+                )}
                 <div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Product & Serial</div>
                   <div style={{ fontSize: '0.95rem', fontWeight: 600 }}>{warranty.product?.brand} {warranty.product?.name}</div>

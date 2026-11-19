@@ -42,6 +42,9 @@ export const productSchema = z.object({
   model: z.string().min(1, 'Model is required'),
   category: z.string().min(1, 'Category is required'),
   description: z.string().optional().default(''),
+  imageUrl: z.string().optional().default(''),
+  imageKey: z.string().optional().default(''),
+  imageBase64: z.string().optional(),
   serialNumberRequired: z.boolean().default(true)
 });
 

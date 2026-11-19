@@ -51,7 +51,9 @@ app.use(cookieParser());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Static uploads serving for local evidence viewing
+// Static uploads serving for local evidence viewing & product images
+app.use('/api/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
+app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
 app.use('/api/support/evidence-file', express.static(path.resolve(process.cwd(), 'uploads')));
 
 // Health Check

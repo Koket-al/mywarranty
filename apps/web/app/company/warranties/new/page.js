@@ -186,6 +186,28 @@ export default function IssueWarrantyPage() {
                         No products in catalog. <Link href="/company/products">Add a product first</Link>.
                       </span>
                     )}
+
+                    {selectedProduct && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', padding: '0.75rem', background: '#f8fafc', borderRadius: '6px', border: '1px solid var(--border)', marginTop: '0.75rem' }}>
+                        {selectedProduct.imageUrl ? (
+                          <div style={{ width: '48px', height: '48px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--border)', background: '#fff', flexShrink: 0 }}>
+                            <img src={selectedProduct.imageUrl} alt={selectedProduct.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          </div>
+                        ) : (
+                          <div style={{ width: '48px', height: '48px', borderRadius: '6px', background: 'var(--bg-card)', border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <Package size={24} color="var(--text-muted)" />
+                          </div>
+                        )}
+                        <div>
+                          <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--primary)' }}>
+                            {selectedProduct.brand} {selectedProduct.name}
+                          </div>
+                          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                            Model: {selectedProduct.model} · Category: {selectedProduct.category}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   <div className="form-group">

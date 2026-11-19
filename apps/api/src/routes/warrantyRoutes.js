@@ -146,7 +146,8 @@ router.post('/', authenticate, requirePermission(PERMISSIONS.ISSUE_WARRANTY), as
         name: product.name,
         brand: product.brand,
         model: product.model,
-        serialNumber: data.serialNumber || ''
+        serialNumber: data.serialNumber || '',
+        imageUrl: product.imageUrl || ''
       },
       purchase: {
         purchaseDate: new Date(data.purchaseDate),

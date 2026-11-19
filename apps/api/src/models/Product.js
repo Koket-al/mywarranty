@@ -7,6 +7,7 @@ const productSchema = new mongoose.Schema({
   model: { type: String, required: true, trim: true },
   category: { type: String, required: true, trim: true },
   description: { type: String, default: '' },
+  imageUrl: { type: String, default: '' },
   imageKey: { type: String, default: '' },
   serialNumberRequired: { type: Boolean, default: true },
   status: { type: String, enum: ['active', 'archived'], default: 'active' }

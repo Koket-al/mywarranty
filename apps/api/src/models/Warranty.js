@@ -27,7 +27,8 @@ const warrantySchema = new mongoose.Schema({
     name: { type: String, required: true },
     brand: { type: String, required: true },
     model: { type: String, required: true },
-    serialNumber: { type: String, default: '' }
+    serialNumber: { type: String, default: '' },
+    imageUrl: { type: String, default: '' }
   },
 
   purchase: {
