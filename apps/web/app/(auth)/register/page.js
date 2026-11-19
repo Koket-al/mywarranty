@@ -49,12 +49,13 @@ export default function CustomerRegisterPage() {
       <main style={{ maxWidth: '440px', margin: '3rem auto', padding: '0 1rem' }}>
         <div className="card">
           <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-            <h1 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.25rem' }}>
+            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.25rem' }}>
               Create Customer Account
             </h1>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
               Manage your digital warranties, downloads, and service claims
             </p>
+            <div className="deco-line-h" style={{ maxWidth: '120px', margin: '0.85rem auto 0' }} />
           </div>
 
           {error && <div className="alert alert-error">{error}</div>}

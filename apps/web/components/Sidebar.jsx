@@ -54,18 +54,23 @@ export default function Sidebar({ mode = 'company' }) {
       padding: '1.25rem 0.75rem',
       display: 'flex',
       flexDirection: 'column',
-      gap: '0.25rem'
+      gap: '0.25rem',
+      boxShadow: 'var(--shadow-sm)'
     }}>
       <div style={{
         padding: '0.5rem 0.75rem',
         fontSize: '0.75rem',
         fontWeight: 700,
         textTransform: 'uppercase',
-        color: 'var(--text-muted)',
-        letterSpacing: '0.05em'
+        color: 'var(--primary)',
+        letterSpacing: '0.08em',
+        fontFamily: 'var(--font-serif)'
       }}>
         {mode === 'company' ? 'Retailer Portal' : 'Customer Account'}
       </div>
+
+      {/* Decorative horizontal separator */}
+      <div style={{ height: '1px', backgroundColor: 'var(--border)', margin: '0.2rem 0.5rem 0.65rem' }} />
 
       {links.map((link) => {
         const Icon = link.icon;
@@ -84,7 +89,8 @@ export default function Sidebar({ mode = 'company' }) {
               fontSize: '0.875rem',
               fontWeight: isActive ? 600 : 500,
               color: isActive ? 'var(--primary)' : 'var(--text-muted)',
-              backgroundColor: isActive ? '#f1f5f9' : 'transparent',
+              backgroundColor: isActive ? 'var(--accent-light)' : 'transparent',
+              borderLeft: isActive ? '3px solid var(--accent)' : '3px solid transparent',
               textDecoration: 'none',
               transition: 'all 0.15s ease'
             }}

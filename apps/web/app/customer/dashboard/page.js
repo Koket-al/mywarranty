@@ -46,12 +46,12 @@ export default function CustomerDashboardPage() {
         <Sidebar mode="customer" />
 
         <main style={{ flex: 1, padding: '2rem', maxWidth: '1200px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary)' }}>
+              <h1 className="title-with-line" style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
                 Welcome, {user?.fullName || 'Customer'}
               </h1>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>
                 Manage your claimed electronics warranties, document downloads, and service requests
               </p>
             </div>
@@ -59,6 +59,8 @@ export default function CustomerDashboardPage() {
               <QrCode size={18} /> Claim New Warranty
             </Link>
           </div>
+
+          <div className="deco-line-h" style={{ margin: '0 0 2rem 0' }} />
 
           {/* Stats Row */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem', marginBottom: '2rem' }}>

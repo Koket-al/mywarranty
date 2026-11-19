@@ -47,12 +47,12 @@ export default function CompanyDashboardPage() {
         <Sidebar mode="company" />
 
         <main style={{ flex: 1, padding: '2rem', maxWidth: '1200px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary)' }}>
+              <h1 className="title-with-line" style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
                 {activeCompany?.businessName || 'Retailer Workspace'}
               </h1>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>
                 Operational overview of your issued warranties, claims, and product catalog
               </p>
             </div>
@@ -61,6 +61,8 @@ export default function CompanyDashboardPage() {
               <PlusCircle size={18} /> Issue New Warranty
             </Link>
           </div>
+
+          <div className="deco-line-h" style={{ margin: '0 0 2rem 0' }} />
 
           {loading ? (
             <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading metrics...</div>

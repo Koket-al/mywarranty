@@ -1,20 +1,30 @@
-:root {
-  --primary: #0f2744;
-  --primary-light: #1e3a5f;
-  --accent: #0d9488;
-  --accent-light: #ccfbf1;
-  --accent-hover: #0f766e;
-  
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --border: #e2e8f0;
-  
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-  --success: #16a34a;
-  --success-bg: #dcfce7;
+:root {
+  /* Emerald Luxury & Image Palette */
+  --primary: #022915;          /* Deep rich Emerald Forest Green from Image 2 */
+  --primary-dark: #01190d;     /* Deep shadow emerald */
+  --primary-light: #094726;    /* Medium emerald hover */
+  --accent: #0d8a55;           /* Vibrant emerald green */
+  --accent-light: #e1f3f3;     /* Soft frosty mint/cyan from Image 1 */
+  --accent-hover: #076d3e;     /* Deep accent green */
+  --charcoal: #1f2123;         /* Dark graphite charcoal from Image 1 */
+  --bronze-accent: #6f6b62;    /* Warm muted earth/bronze border accent */
+  
+  --bg: #f5f8f6;               /* Pristine subtle emerald-tinted off-white */
+  --surface: #ffffff;          /* Pure white from Image 1 */
+  --border: #d4e3dc;          /* Clean architectural hairline border */
+  --border-subtle: #e6efe9;    /* Fine grid line */
+  
+  --text: #141f18;             /* Rich charcoal text */
+  --text-muted: #4e6357;       /* Refined emerald slate */
+  --text-light: #83978c;       /* Soft caption text */
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --success: #0d8a55;
+  --success-bg: #e1f3f3;
   --warning: #d97706;
   --warning-bg: #fef3c7;
   --danger: #dc2626;
@@ -26,9 +36,9 @@
   --radius: 8px;
   --radius-lg: 12px;
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 2px 0 rgba(2, 41, 21, 0.05);
+  --shadow: 0 1px 3px 0 rgba(2, 41, 21, 0.08), 0 1px 2px 0 rgba(2, 41, 21, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(2, 41, 21, 0.08), 0 2px 4px -1px rgba(2, 41, 21, 0.04);
 }
 
 * {
@@ -38,11 +48,76 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  /* Architectural subtle horizontal & vertical grid lines decorating the UI */
+  background-image: 
+    linear-gradient(to right, rgba(2, 41, 21, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 41, 21, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+h1, h2, h3, h4, .font-serif, .brand-title {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   Decorative Lines (Horizontal & Vertical)
+   ========================================================================== */
+.deco-line-h {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent 0%, var(--border) 15%, var(--accent) 50%, var(--border) 85%, transparent 100%);
+  margin: 1.5rem 0;
+}
+
+.deco-line-h-accent {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 30%, var(--accent-light) 65%, var(--primary) 100%);
+}
+
+.deco-line-v {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, var(--border) 15%, var(--accent) 50%, var(--border) 85%, transparent 100%);
+}
+
+.title-with-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.title-with-line::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.15em;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--primary) 100%);
+  border-radius: 2px;
+}
+
+.section-decorated-header {
+  position: relative;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-decorated-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
 }
 
 a {
@@ -80,6 +155,8 @@ a:hover {
 .btn-primary {
   background-color: var(--primary);
   color: #ffffff;
+  border: 1px solid #011c0f;
+  box-shadow: 0 1px 2px rgba(2, 41, 21, 0.15);
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -163,7 +240,7 @@ a:hover {
 .form-control:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+  box-shadow: 0 0 0 3px rgba(13, 138, 85, 0.18);
 }
 
 .form-hint {
@@ -173,7 +250,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Cards & Layout
+   Cards & Layout with Architectural Line Accents
    ========================================================================== */
 .card {
   background-color: var(--surface);
@@ -181,6 +258,20 @@ a:hover {
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   padding: 1.5rem;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 60%, transparent 100%);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 
 .card-header {
@@ -190,12 +281,15 @@ a:hover {
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
+  position: relative;
 }
 
 .card-title {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--primary);
+  letter-spacing: -0.01em;
 }
 
 /* ==========================================================================
@@ -207,6 +301,7 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
 }
 
 .table {
@@ -217,11 +312,13 @@ a:hover {
 }
 
 .table th {
-  background-color: #f1f5f9;
-  color: var(--text-muted);
+  background-color: #f1f8f5;
+  color: var(--primary);
   font-weight: 600;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--border);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
 }
 
 .table td {
@@ -235,7 +332,7 @@ a:hover {
 }
 
 .table tr:hover td {
-  background-color: #f8fafc;
+  background-color: #f7faf8;
 }
 
 /* ==========================================================================

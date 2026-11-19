@@ -125,14 +125,14 @@ export default function CompanyWarrantyDetailPage() {
           </div>
 
           {/* Cryptographic Integrity Panel */}
-          <div className="card" style={{ marginBottom: '1.5rem', backgroundColor: integrity?.isValid ? '#f0fdf4' : '#fef2f2', border: `1px solid ${integrity?.isValid ? '#bbf7d0' : '#fecaca'}` }}>
+          <div className="card" style={{ marginBottom: '1.5rem', backgroundColor: integrity?.isValid ? 'var(--accent-light)' : '#fef2f2', border: `1px solid ${integrity?.isValid ? '#bce1d6' : '#fecaca'}` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              {integrity?.isValid ? <ShieldCheck size={26} color="var(--success)" /> : <ShieldAlert size={26} color="var(--danger)" />}
+              {integrity?.isValid ? <ShieldCheck size={26} color="var(--accent)" /> : <ShieldAlert size={26} color="var(--danger)" />}
               <div>
-                <strong style={{ fontSize: '1rem', color: integrity?.isValid ? '#166534' : '#991b1b' }}>
+                <strong style={{ fontSize: '1rem', color: integrity?.isValid ? 'var(--primary)' : '#991b1b' }}>
                   {integrity?.isValid ? 'Tamper-Evident Record Verified' : 'Cryptographic Mismatch Detected!'}
                 </strong>
-                <div style={{ fontSize: '0.8125rem', color: integrity?.isValid ? '#15803d' : '#b91c1c' }}>
+                <div style={{ fontSize: '0.8125rem', color: integrity?.isValid ? 'var(--primary-light)' : '#b91c1c' }}>
                   SHA-256 Hash: <code style={{ fontSize: '0.75rem' }}>{integrity?.recomputedHash}</code> • Key ID: {warranty.recordIntegrity?.keyId}
                 </div>
               </div>

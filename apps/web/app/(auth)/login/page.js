@@ -48,12 +48,13 @@ export default function LoginPage() {
       <main style={{ maxWidth: '420px', margin: '3.5rem auto', padding: '0 1rem' }}>
         <div className="card">
           <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-            <h1 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.25rem' }}>
+            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.25rem' }}>
               Welcome back
             </h1>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
               Sign in to your customer or retailer account
             </p>
+            <div className="deco-line-h" style={{ maxWidth: '120px', margin: '0.85rem auto 0' }} />
           </div>
 
           {error && <div className="alert alert-error">{error}</div>}

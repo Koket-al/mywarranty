@@ -14,35 +14,63 @@ export default function HomePage() {
       <section style={{
         maxWidth: '1100px',
         margin: '0 auto',
-        padding: '5rem 1.5rem 3.5rem',
-        textAlign: 'center'
+        padding: '5.5rem 1.5rem 3.5rem',
+        textAlign: 'center',
+        position: 'relative'
       }}>
+        {/* Decorative corner guidelines */}
+        <div style={{
+          position: 'absolute',
+          top: '2rem',
+          left: '1.5rem',
+          width: '40px',
+          height: '40px',
+          borderTop: '2px solid var(--accent)',
+          borderLeft: '2px solid var(--accent)',
+          opacity: 0.4
+        }} />
+        <div style={{
+          position: 'absolute',
+          top: '2rem',
+          right: '1.5rem',
+          width: '40px',
+          height: '40px',
+          borderTop: '2px solid var(--accent)',
+          borderRight: '2px solid var(--accent)',
+          opacity: 0.4
+        }} />
+
         <div style={{
           display: 'inline-flex',
           alignItems: 'center',
           gap: '0.5rem',
-          padding: '0.35rem 0.85rem',
-          backgroundColor: '#ccfbf1',
-          color: '#0f766e',
+          padding: '0.4rem 1rem',
+          backgroundColor: 'var(--accent-light)',
+          color: 'var(--primary)',
           borderRadius: '50px',
           fontSize: '0.85rem',
           fontWeight: 600,
-          marginBottom: '1.5rem'
+          marginBottom: '1.5rem',
+          border: '1px solid #c8e6dc'
         }}>
-          <ShieldCheck size={16} /> Ethiopia-First Digital Warranty Platform
+          <ShieldCheck size={16} color="var(--accent)" /> Ethiopia-First Digital Warranty Platform
         </div>
 
         <h1 style={{
-          fontSize: '3.25rem',
+          fontSize: '3.6rem',
           fontWeight: 800,
           color: 'var(--primary)',
           lineHeight: 1.15,
-          letterSpacing: '-1px',
+          fontFamily: 'var(--font-serif)',
+          letterSpacing: '-0.02em',
           marginBottom: '1.25rem'
         }}>
           Every product has a story.<br />
           <span style={{ color: 'var(--accent)' }}>Make that story verifiable.</span>
         </h1>
+
+        {/* Decorative horizontal accent line */}
+        <div className="deco-line-h" style={{ maxWidth: '400px', margin: '1.5rem auto' }} />
 
         <p style={{
           fontSize: '1.2rem',
@@ -67,10 +95,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Decorative full-width horizontal rule */}
+      <div className="deco-line-h" style={{ maxWidth: '1100px', margin: '0 auto 2rem' }} />
+
       {/* Features Grid */}
       <section style={{
         maxWidth: '1100px',
-        margin: '2rem auto 5rem',
+        margin: '0 auto 5rem',
         padding: '0 1.5rem'
       }}>
         <div style={{
@@ -80,19 +111,20 @@ export default function HomePage() {
         }}>
           <div className="card">
             <div style={{
-              width: '42px',
-              height: '42px',
+              width: '44px',
+              height: '44px',
               borderRadius: '8px',
-              backgroundColor: '#e0f2fe',
-              color: '#0284c7',
+              backgroundColor: 'var(--accent-light)',
+              color: 'var(--accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '1rem'
+              marginBottom: '1rem',
+              border: '1px solid #cce8e0'
             }}>
               <QrCode size={22} />
             </div>
-            <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--primary)', marginBottom: '0.5rem' }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)' }}>
               Instant QR Verification
             </h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
@@ -102,19 +134,20 @@ export default function HomePage() {
 
           <div className="card">
             <div style={{
-              width: '42px',
-              height: '42px',
+              width: '44px',
+              height: '44px',
               borderRadius: '8px',
-              backgroundColor: '#dcfce7',
-              color: '#16a34a',
+              backgroundColor: 'var(--accent-light)',
+              color: 'var(--accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '1rem'
+              marginBottom: '1rem',
+              border: '1px solid #cce8e0'
             }}>
               <Lock size={22} />
             </div>
-            <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--primary)', marginBottom: '0.5rem' }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)' }}>
               Cryptographic Integrity
             </h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
@@ -124,19 +157,20 @@ export default function HomePage() {
 
           <div className="card">
             <div style={{
-              width: '42px',
-              height: '42px',
+              width: '44px',
+              height: '44px',
               borderRadius: '8px',
-              backgroundColor: '#f3e8ff',
-              color: '#9333ea',
+              backgroundColor: 'var(--accent-light)',
+              color: 'var(--accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '1rem'
+              marginBottom: '1rem',
+              border: '1px solid #cce8e0'
             }}>
               <Cpu size={22} />
             </div>
-            <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--primary)', marginBottom: '0.5rem' }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)' }}>
               AI Triage, Human Decision
             </h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
@@ -150,25 +184,37 @@ export default function HomePage() {
       <section style={{
         backgroundColor: 'var(--surface)',
         borderTop: '1px solid var(--border)',
-        padding: '3rem 1.5rem',
-        textAlign: 'center'
+        padding: '3.5rem 1.5rem',
+        textAlign: 'center',
+        position: 'relative'
       }}>
+        {/* Top decorative accent */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '120px',
+          height: '2px',
+          background: 'var(--accent)'
+        }} />
+
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '1rem' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '1rem', fontFamily: 'var(--font-serif)' }}>
             Built on Core Principles
           </h2>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', textAlign: 'left', marginTop: '1.5rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', textAlign: 'left', marginTop: '1.75rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <CheckCircle2 size={18} color="var(--accent)" />
-              <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>No universal policy imposed</span>
+              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--primary)' }}>No universal policy imposed</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <CheckCircle2 size={18} color="var(--accent)" />
-              <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>No silent policy rewrites</span>
+              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--primary)' }}>No silent policy rewrites</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <CheckCircle2 size={18} color="var(--accent)" />
-              <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>Single honest trust label: Seller registered</span>
+              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--primary)' }}>Single honest trust label: Seller registered</span>
             </div>
           </div>
         </div>
@@ -176,12 +222,14 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer style={{
-        backgroundColor: '#0f172a',
-        color: '#94a3b8',
+        backgroundColor: 'var(--charcoal)',
+        color: '#a0b0a8',
         padding: '2.5rem 1.5rem',
         textAlign: 'center',
-        fontSize: '0.85rem'
+        fontSize: '0.85rem',
+        borderTop: '1px solid #2d3134'
       }}>
+        <div className="deco-line-h-accent" style={{ maxWidth: '200px', margin: '0 auto 1.5rem', opacity: 0.6 }} />
         <p>© 2026 Ewnet (እውነት). All rights reserved. Designed for independent electronics retailers.</p>
       </footer>
     </div>

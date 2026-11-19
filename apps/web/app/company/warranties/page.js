@@ -43,12 +43,12 @@ export default function CompanyWarrantiesListPage() {
         <Sidebar mode="company" />
 
         <main style={{ flex: 1, padding: '2rem', maxWidth: '1200px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary)' }}>
+              <h1 className="title-with-line" style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
                 Issued Digital Warranties
               </h1>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>
                 Manage all registered customer warranties, cryptographic proofs, and downloads
               </p>
             </div>
@@ -57,6 +57,8 @@ export default function CompanyWarrantiesListPage() {
               <PlusCircle size={18} /> Issue Warranty
             </Link>
           </div>
+
+          <div className="deco-line-h" style={{ margin: '0 0 1.5rem 0' }} />
 
           <div className="card" style={{ marginBottom: '1.5rem', padding: '1rem' }}>
             <form onSubmit={handleSearch} style={{ display: 'flex', gap: '0.75rem' }}>

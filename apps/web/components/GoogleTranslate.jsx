@@ -155,14 +155,14 @@ export default function GoogleTranslate() {
       <div style={{
         display: 'inline-flex',
         alignItems: 'center',
-        backgroundColor: '#f1f5f9',
-        border: '1px solid var(--border)',
+        backgroundColor: 'var(--accent-light)',
+        border: '1px solid #c2e2d8',
         borderRadius: '20px',
         padding: '2px',
         fontSize: '0.78rem',
         fontWeight: 600
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '0 5px', color: 'var(--text-muted)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', padding: '0 5px', color: 'var(--accent)' }}>
           <Globe size={13} />
         </div>
 
@@ -178,7 +178,7 @@ export default function GoogleTranslate() {
             cursor: 'pointer',
             fontSize: '0.78rem',
             fontWeight: currentLang === 'en' ? 700 : 500,
-            boxShadow: currentLang === 'en' ? '0 1px 2px rgba(0,0,0,0.08)' : 'none',
+            boxShadow: currentLang === 'en' ? '0 1px 2px rgba(2, 41, 21, 0.12)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="Switch to English"
@@ -198,7 +198,7 @@ export default function GoogleTranslate() {
             cursor: 'pointer',
             fontSize: '0.78rem',
             fontWeight: currentLang === 'am' ? 700 : 500,
-            boxShadow: currentLang === 'am' ? '0 1px 2px rgba(0,0,0,0.08)' : 'none',
+            boxShadow: currentLang === 'am' ? '0 1px 2px rgba(2, 41, 21, 0.12)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="ወደ አማርኛ ቀይር (Switch to Amharic)"
@@ -218,7 +218,7 @@ export default function GoogleTranslate() {
             cursor: 'pointer',
             fontSize: '0.78rem',
             fontWeight: currentLang === 'om' ? 700 : 500,
-            boxShadow: currentLang === 'om' ? '0 1px 2px rgba(0,0,0,0.08)' : 'none',
+            boxShadow: currentLang === 'om' ? '0 1px 2px rgba(2, 41, 21, 0.12)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="Gara Afaan Oromootti jijjiiri (Switch to Afaan Oromoo)"

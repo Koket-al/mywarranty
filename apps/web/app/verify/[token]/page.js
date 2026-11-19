@@ -140,15 +140,16 @@ export default function VerifyPage() {
             <div style={{
               margin: '1.25rem 0',
               padding: '0.75rem 1rem',
-              backgroundColor: '#f1f5f9',
+              backgroundColor: 'var(--accent-light)',
               borderRadius: '6px',
+              border: '1px solid #c2e2d8',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               fontSize: '0.8125rem'
             }}>
-              <span style={{ color: 'var(--text-muted)' }}>Trust Verification Level:</span>
-              <span className="badge badge-info" style={{ textTransform: 'none' }}>
+              <span style={{ color: 'var(--primary)', fontWeight: 500 }}>Trust Verification Level:</span>
+              <span className="badge badge-success" style={{ textTransform: 'none' }}>
                 {report.trustLabel}
               </span>
             </div>

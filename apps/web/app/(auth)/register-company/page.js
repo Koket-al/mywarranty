@@ -50,33 +50,35 @@ export default function CompanyRegisterPage() {
         <div className="card">
           <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
             <div style={{
-              width: '44px',
-              height: '44px',
+              width: '46px',
+              height: '46px',
               borderRadius: '8px',
-              backgroundColor: '#f1f5f9',
-              color: 'var(--primary)',
+              backgroundColor: 'var(--accent-light)',
+              color: 'var(--accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              margin: '0 auto 0.75rem'
+              margin: '0 auto 0.75rem',
+              border: '1px solid #c2e2d8'
             }}>
               <Building2 size={24} />
             </div>
-            <h1 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.25rem' }}>
+            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.25rem' }}>
               Register Your Retail Shop
             </h1>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
               Start issuing tamper-evident digital warranties in minutes
             </p>
+            <div className="deco-line-h" style={{ maxWidth: '120px', margin: '0.85rem auto 0' }} />
           </div>
 
           <div style={{
             padding: '0.75rem',
-            backgroundColor: '#f0fdf4',
-            border: '1px solid #bbf7d0',
+            backgroundColor: 'var(--accent-light)',
+            border: '1px solid #bce1d6',
             borderRadius: '6px',
             fontSize: '0.8125rem',
-            color: '#166534',
+            color: 'var(--primary)',
             display: 'flex',
             gap: '0.5rem',
             marginBottom: '1.25rem'
