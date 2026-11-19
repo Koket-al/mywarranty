@@ -17,7 +17,9 @@ export default function GoogleTranslate() {
     };
 
     const cookieLang = getCookie('googtrans');
-    if (cookieLang.includes('/am')) {
+    if (cookieLang.includes('/om')) {
+      setCurrentLang('om');
+    } else if (cookieLang.includes('/am')) {
       setCurrentLang('am');
     } else {
       setCurrentLang('en');
@@ -28,7 +30,7 @@ export default function GoogleTranslate() {
       if (window.google?.translate?.TranslateElement) {
         new window.google.translate.TranslateElement({
           pageLanguage: 'en',
-          includedLanguages: 'en,am',
+          includedLanguages: 'en,am,om',
           autoDisplay: false
         }, 'google_translate_element');
         setIsScriptLoaded(true);
@@ -51,7 +53,7 @@ export default function GoogleTranslate() {
     if (targetLang === currentLang) return;
 
     const domain = window.location.hostname;
-    const cookieValue = targetLang === 'am' ? '/auto/am' : '/auto/en';
+    const cookieValue = `/auto/${targetLang}`;
 
     // Set translation cookies across paths and hostnames
     document.cookie = `googtrans=${cookieValue}; path=/;`;
@@ -86,7 +88,7 @@ export default function GoogleTranslate() {
         fontSize: '0.78rem',
         fontWeight: 600
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '0 6px', color: 'var(--text-muted)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', padding: '0 5px', color: 'var(--text-muted)' }}>
           <Globe size={13} />
         </div>
 
@@ -98,7 +100,7 @@ export default function GoogleTranslate() {
             background: currentLang === 'en' ? '#ffffff' : 'transparent',
             color: currentLang === 'en' ? 'var(--primary)' : 'var(--text-muted)',
             borderRadius: '16px',
-            padding: '3px 8px',
+            padding: '3px 7px',
             cursor: 'pointer',
             fontSize: '0.78rem',
             fontWeight: currentLang === 'en' ? 700 : 500,
@@ -118,7 +120,7 @@ export default function GoogleTranslate() {
             background: currentLang === 'am' ? '#ffffff' : 'transparent',
             color: currentLang === 'am' ? 'var(--primary)' : 'var(--text-muted)',
             borderRadius: '16px',
-            padding: '3px 9px',
+            padding: '3px 8px',
             cursor: 'pointer',
             fontSize: '0.78rem',
             fontWeight: currentLang === 'am' ? 700 : 500,
@@ -129,7 +131,28 @@ export default function GoogleTranslate() {
         >
           አማርኛ
         </button>
+
+        <button
+          type="button"
+          onClick={() => changeLanguage('om')}
+          style={{
+            border: 'none',
+            background: currentLang === 'om' ? '#ffffff' : 'transparent',
+            color: currentLang === 'om' ? 'var(--primary)' : 'var(--text-muted)',
+            borderRadius: '16px',
+            padding: '3px 8px',
+            cursor: 'pointer',
+            fontSize: '0.78rem',
+            fontWeight: currentLang === 'om' ? 700 : 500,
+            boxShadow: currentLang === 'om' ? '0 1px 2px rgba(0,0,0,0.08)' : 'none',
+            transition: 'all 0.15s ease'
+          }}
+          title="Gara Afaan Oromootti jijjiiri (Switch to Afaan Oromoo)"
+        >
+          Oromoo
+        </button>
       </div>
     </div>
   );
 }
+
