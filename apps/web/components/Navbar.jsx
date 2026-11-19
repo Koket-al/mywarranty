@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useAuth } from '../context/AuthContext';
 import { ShieldCheck, LogOut, User, Building2, Bell } from 'lucide-react';
+import GoogleTranslate from './GoogleTranslate';
 
 export default function Navbar() {
   const { user, activeCompany, logout, isCompanyStaff, isPlatformAdmin } = useAuth();
@@ -63,6 +64,8 @@ export default function Navbar() {
       </div>
 
       <nav style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <GoogleTranslate />
+
         {user ? (
           <>
             {isPlatformAdmin && (
