@@ -49,6 +49,80 @@ export default function GoogleTranslate() {
     }
   }, []);
 
+  // Proactively suppress Google Translate top toolbar banner & eliminate page shift
+  useEffect(() => {
+    const suppressGoogleBanner = () => {
+      if (typeof document === 'undefined') return;
+
+      // Force body top to 0px
+      if (document.body.style.top && document.body.style.top !== '0px') {
+        document.body.style.setProperty('top', '0px', 'important');
+      }
+      if (document.body.style.position === 'relative') {
+        document.body.style.setProperty('position', 'static', 'important');
+      }
+
+      // Hide all Google banner selectors
+      const bannerSelectors = [
+        '.goog-te-banner-frame',
+        'iframe.skiptranslate',
+        'iframe.goog-te-banner-frame',
+        'iframe[id*=".container"]',
+        '.VIpgJd-ZVi9od-ORHb-OEVmcd',
+        '.VIpgJd-ZVi9od-ORHb-OEVmcd-ti6hGc',
+        '.VIpgJd-ZVi9od-aZ2wEe-wOHMyf',
+        '.VIpgJd-y6EKec',
+        '#goog-gt-tt',
+        '.goog-te-balloon-frame'
+      ];
+
+      bannerSelectors.forEach((sel) => {
+        const elements = document.querySelectorAll(sel);
+        elements.forEach((el) => {
+          el.style.setProperty('display', 'none', 'important');
+          el.style.setProperty('visibility', 'hidden', 'important');
+          el.style.setProperty('height', '0px', 'important');
+          el.style.setProperty('width', '0px', 'important');
+          el.style.setProperty('opacity', '0', 'important');
+        });
+      });
+
+      // Clean up any extra skiptranslate banner wrappers directly attached to body
+      const bodyChildren = document.body.children;
+      for (let i = 0; i < bodyChildren.length; i++) {
+        const child = bodyChildren[i];
+        if (
+          child.id !== 'google_translate_element' &&
+          (child.classList?.contains('skiptranslate') || (child.tagName === 'IFRAME' && child.className?.includes('skiptranslate')))
+        ) {
+          child.style.setProperty('display', 'none', 'important');
+          child.style.setProperty('visibility', 'hidden', 'important');
+          child.style.setProperty('height', '0px', 'important');
+          child.style.setProperty('opacity', '0', 'important');
+        }
+      }
+    };
+
+    suppressGoogleBanner();
+    const interval = setInterval(suppressGoogleBanner, 150);
+
+    const observer = new MutationObserver(() => {
+      suppressGoogleBanner();
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['style', 'class'],
+      childList: true,
+      subtree: false
+    });
+
+    return () => {
+      clearInterval(interval);
+      observer.disconnect();
+    };
+  }, []);
+
   const changeLanguage = (targetLang) => {
     if (targetLang === currentLang) return;
 
