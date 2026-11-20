@@ -316,105 +316,20 @@ export default function HomePage() {
         </section>
 
         {/* ==========================================================================
-            FOOTER: Complete Sitemap & Platform Directory
+            FOOTER: Clean Minimalist Line
             ========================================================================== */}
         <footer style={{
-          padding: '3.5rem 2rem 2.5rem',
-          backgroundColor: 'var(--bg)'
+          padding: '2.5rem 2rem 3rem',
+          backgroundColor: 'var(--bg)',
+          textAlign: 'center'
         }}>
-          <div style={{
-            maxWidth: '1000px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '2.5rem',
-            marginBottom: '2.5rem',
-            textAlign: 'left'
+          <p style={{
+            fontSize: '0.825rem',
+            color: 'var(--primary)',
+            fontWeight: 500
           }}>
-            {/* Brand Column */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <img src="/logo-black.png" alt="MW Logo" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
-                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', fontWeight: 800, color: 'var(--primary)' }}>
-                  MW
-                </span>
-                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--feature-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                  MY WARRANTY
-                </span>
-              </div>
-              <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '260px' }}>
-                Ethiopia's cryptographic digital warranty platform for electronics and technology retailers.
-              </p>
-            </div>
-
-            {/* Verification Tools */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--feature-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                Verification Tools
-              </div>
-              <Link href="/verify/manual" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Verify QR Code
-              </Link>
-              <Link href="/#features" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                3-Step Verification Flow
-              </Link>
-              <Link href="/customer/claim-warranty" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Submit Warranty Claim
-              </Link>
-            </div>
-
-            {/* Platform Architecture */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--feature-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                Architecture
-              </div>
-              <Link href="/#features" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Cryptographic Capabilities
-              </Link>
-              <Link href="/#features" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Digital Signatures & Integrity
-              </Link>
-            </div>
-
-            {/* Portals & Accounts */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--feature-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                Portals & Accounts
-              </div>
-              <Link href="/login" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Retailer Portal Sign In
-              </Link>
-              <Link href="/register-company" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Register Your Retail Shop
-              </Link>
-              <Link href="/register" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Create Customer Account
-              </Link>
-              <Link href="/company/dashboard" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Company Dashboard
-              </Link>
-            </div>
-          </div>
-
-          <div style={{
-            maxWidth: '1000px',
-            margin: '0 auto',
-            paddingTop: '1.5rem',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            fontSize: '0.78rem',
-            color: 'var(--text-muted)',
-            flexWrap: 'wrap',
-            gap: '0.75rem'
-          }}>
-            <div>
-              © 2026 MW (My Warranty). All rights reserved.
-            </div>
-            <div>
-              Designed for independent electronics and technology retailers.
-            </div>
-          </div>
+            © 2026 MW (My Warranty). All rights reserved. Designed for independent electronics and technology retailers.
+          </p>
         </footer>
       </main>
     </div>
