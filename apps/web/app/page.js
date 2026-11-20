@@ -213,29 +213,22 @@ export default function HomePage() {
         </section>
 
         {/* ==========================================================================
-            SECOND FRAMED SECTION: Dark 3-Step Process (Matching User Reference Image 2)
+            SECOND FRAMED SECTION: 3-Step Process (Matching User Reference Design on White)
             ========================================================================== */}
-        <section id="features" className="framed-canvas framed-canvas-dark" style={{ padding: '4.5rem 2.5rem 4rem' }}>
-          {/* Ornate Architectural Corner Line Flourishes (delicate white on dark card) */}
-          <CornerFlourish position="top-left" size={88} color="#ffffff" opacity={0.16} />
-          <CornerFlourish position="top-right" size={88} color="#ffffff" opacity={0.16} />
-          <CornerFlourish position="bottom-left" size={88} color="#ffffff" opacity={0.16} />
-          <CornerFlourish position="bottom-right" size={88} color="#ffffff" opacity={0.16} />
+        <section id="features" className="framed-canvas" style={{ padding: '4.5rem 2.5rem 4rem' }}>
+          {/* Ornate Architectural Corner Line Flourishes */}
+          <CornerFlourish position="top-left" size={88} color="#202223" opacity={0.28} />
+          <CornerFlourish position="top-right" size={88} color="#202223" opacity={0.28} />
+          <CornerFlourish position="bottom-left" size={88} color="#202223" opacity={0.28} />
+          <CornerFlourish position="bottom-right" size={88} color="#202223" opacity={0.28} />
 
-          {/* Category Chip (Dark Pill with White Text) */}
-          <div 
-            className="hero-pill-badge" 
-            style={{ 
-              backgroundColor: '#202223', 
-              color: '#ffffff', 
-              borderColor: 'rgba(255, 255, 255, 0.22)' 
-            }}
-          >
+          {/* Category Chip */}
+          <div className="hero-pill-badge">
             <span style={{ 
               width: '6px', 
               height: '6px', 
               borderRadius: '50%', 
-              backgroundColor: '#ffffff', 
+              backgroundColor: 'var(--primary)', 
               display: 'inline-block' 
             }} />
             FAQ & Architecture
@@ -245,7 +238,7 @@ export default function HomePage() {
           <h2 style={{
             fontSize: 'clamp(1.95rem, 4vw, 2.9rem)',
             fontWeight: 800,
-            color: '#ffffff',
+            color: 'var(--primary)',
             lineHeight: 1.2,
             fontFamily: 'var(--font-serif)',
             letterSpacing: '-0.02em',
@@ -256,7 +249,7 @@ export default function HomePage() {
 
           <p style={{
             fontSize: '1.05rem',
-            color: '#a1a1aa',
+            color: 'var(--text-muted)',
             maxWidth: '640px',
             margin: '0 auto 3.75rem',
             lineHeight: 1.6
@@ -264,11 +257,11 @@ export default function HomePage() {
             Four honest answers about cryptographic trust, instant verification, and customer warranty protection.
           </p>
 
-          {/* The 3-Step Process Flow (Exact Composition from User Reference Image 2) */}
+          {/* The 3-Step Process Flow (Exact Composition from User Reference Image) */}
           <div className="process-flow-container">
             {/* Step 1 */}
             <div className="process-step-col">
-              <ProcessStepBadge number={1} size={115} />
+              <ProcessStepBadge number={1} size={115} theme="light" />
               <h3 className="process-step-title">
                 Instant QR Verification
               </h3>
@@ -279,12 +272,12 @@ export default function HomePage() {
 
             {/* Connecting Arrow 1 (Swooping curve) */}
             <div style={{ paddingTop: '2.5rem' }}>
-              <ProcessArrow variant="swoop" width={115} height={48} />
+              <ProcessArrow variant="swoop" width={115} height={48} color="#202223" />
             </div>
 
             {/* Step 2 */}
             <div className="process-step-col">
-              <ProcessStepBadge number={2} size={115} />
+              <ProcessStepBadge number={2} size={115} theme="light" />
               <h3 className="process-step-title">
                 Cryptographic Integrity
               </h3>
@@ -295,12 +288,12 @@ export default function HomePage() {
 
             {/* Connecting Arrow 2 (Arching curve) */}
             <div style={{ paddingTop: '2.5rem' }}>
-              <ProcessArrow variant="arch" width={115} height={48} />
+              <ProcessArrow variant="arch" width={115} height={48} color="#202223" />
             </div>
 
             {/* Step 3 */}
             <div className="process-step-col">
-              <ProcessStepBadge number={3} size={115} />
+              <ProcessStepBadge number={3} size={115} theme="light" />
               <h3 className="process-step-title">
                 AI Triage & Human Decision
               </h3>
@@ -314,7 +307,7 @@ export default function HomePage() {
           <div style={{
             width: '180px',
             height: '1px',
-            backgroundColor: 'rgba(255, 255, 255, 0.15)',
+            backgroundColor: 'var(--border)',
             margin: '3.5rem auto 1.5rem'
           }} />
 
@@ -329,14 +322,14 @@ export default function HomePage() {
               alignItems: 'center', 
               gap: '0.4rem', 
               fontSize: '0.78rem', 
-              fontWeight: 500, 
-              color: '#e2e8f0',
-              backgroundColor: 'rgba(255, 255, 255, 0.06)',
+              fontWeight: 600, 
+              color: 'var(--primary)',
+              backgroundColor: 'var(--accent-light)',
               padding: '0.3rem 0.95rem',
               borderRadius: '9999px',
-              border: '1px solid rgba(255, 255, 255, 0.12)'
+              border: '1px solid var(--border)'
             }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff' }} />
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
               Immutable Policy Snapshots
             </span>
 
@@ -345,14 +338,14 @@ export default function HomePage() {
               alignItems: 'center', 
               gap: '0.4rem', 
               fontSize: '0.78rem', 
-              fontWeight: 500, 
-              color: '#e2e8f0',
-              backgroundColor: 'rgba(255, 255, 255, 0.06)',
+              fontWeight: 600, 
+              color: 'var(--primary)',
+              backgroundColor: 'var(--accent-light)',
               padding: '0.3rem 0.95rem',
               borderRadius: '9999px',
-              border: '1px solid rgba(255, 255, 255, 0.12)'
+              border: '1px solid var(--border)'
             }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff' }} />
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
               Zero Silent Retroactive Edits
             </span>
 
@@ -361,14 +354,14 @@ export default function HomePage() {
               alignItems: 'center', 
               gap: '0.4rem', 
               fontSize: '0.78rem', 
-              fontWeight: 500, 
-              color: '#e2e8f0',
-              backgroundColor: 'rgba(255, 255, 255, 0.06)',
+              fontWeight: 600, 
+              color: 'var(--primary)',
+              backgroundColor: 'var(--accent-light)',
               padding: '0.3rem 0.95rem',
               borderRadius: '9999px',
-              border: '1px solid rgba(255, 255, 255, 0.12)'
+              border: '1px solid var(--border)'
             }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff' }} />
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
               Verified Retailer Authority
             </span>
           </div>
