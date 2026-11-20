@@ -113,7 +113,7 @@ export default function HomePage() {
             margin: '0 auto 2.5rem',
             lineHeight: 1.65
           }}>
-            MW (My Warranty) helps electronics shops create digital warranties. Customers scan a QR code to check their warranty. AI helps shop staff review claims. Less paperwork and fewer problems.
+            MW helps electronics shops create digital warranties. Customers scan a QR code to check their warranty. AI helps shop staff review claims. Less paperwork and fewer problems.
           </p>
 
           {/* Primary Action Capsule Buttons */}

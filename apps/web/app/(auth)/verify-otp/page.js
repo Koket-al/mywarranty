@@ -66,12 +66,12 @@ function VerifyOtpContent() {
   return (
     <main style={{ maxWidth: '420px', margin: '4rem auto', padding: '0 1rem' }}>
       <div className="card">
-        <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.25rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
+          <h1 style={{ fontSize: '1.65rem', fontWeight: 800, color: 'var(--bg)', marginBottom: '0.35rem' }}>
             Enter Verification Code
           </h1>
-          <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
-            We sent a 6-digit code to <strong>{email || 'your email'}</strong>
+          <p style={{ fontSize: '0.875rem', color: 'rgba(241, 165, 1, 0.75)' }}>
+            We sent a 6-digit code to <strong style={{ color: 'var(--bg)' }}>{email || 'your email'}</strong>
           </p>
         </div>
 
@@ -81,7 +81,7 @@ function VerifyOtpContent() {
         <form onSubmit={handleSubmit}>
           {!emailParam && (
             <div className="form-group">
-              <label className="form-label">Email Address</label>
+              <label className="form-label" style={{ color: 'var(--bg)', fontWeight: 600 }}>Email Address</label>
               <input
                 type="email"
                 className="form-control"
@@ -93,15 +93,19 @@ function VerifyOtpContent() {
           )}
 
           <div className="form-group">
-            <label className="form-label">6-Digit OTP Code</label>
+            <label className="form-label" style={{ color: 'var(--bg)', fontWeight: 600, textAlign: 'center', display: 'block' }}>6-Digit OTP Code</label>
             <input
               type="text"
               className="form-control"
               style={{
                 textAlign: 'center',
-                fontSize: '1.5rem',
-                letterSpacing: '0.35rem',
-                fontWeight: 700
+                fontSize: '1.6rem',
+                letterSpacing: '0.4rem',
+                fontWeight: 700,
+                padding: '0.75rem',
+                backgroundColor: 'var(--surface-alt)',
+                color: 'var(--bg)',
+                border: '1.5px solid rgba(241, 165, 1, 0.35)'
               }}
               maxLength={8}
               placeholder="123456"
@@ -110,33 +114,39 @@ function VerifyOtpContent() {
               required
               autoFocus
             />
-            <span className="form-hint" style={{ textAlign: 'center', display: 'block' }}>
+            <span className="form-hint" style={{ textAlign: 'center', display: 'block', color: 'rgba(241, 165, 1, 0.75)', marginTop: '0.5rem' }}>
               Valid for 10 minutes
             </span>
           </div>
 
-          <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }} disabled={loading}>
+          <button
+            type="submit"
+            className="btn btn-gold"
+            style={{ width: '100%', marginTop: '0.75rem', padding: '0.7rem 1.25rem', fontSize: '0.95rem' }}
+            disabled={loading}
+          >
             {loading ? 'Verifying...' : 'Verify Email'}
           </button>
         </form>
 
-        <div style={{ textAlign: 'center', marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border)' }}>
+        <div style={{ textAlign: 'center', marginTop: '1.75rem' }}>
           <button
             onClick={handleResend}
             disabled={resending}
             style={{
               background: 'none',
               border: 'none',
-              color: 'var(--accent)',
+              color: 'var(--bg)',
               cursor: 'pointer',
               fontSize: '0.875rem',
-              fontWeight: 600,
+              fontWeight: 700,
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.4rem'
+              gap: '0.4rem',
+              textDecoration: 'underline'
             }}
           >
-            <RotateCw size={14} /> {resending ? 'Sending...' : 'Resend Verification Code'}
+            <RotateCw size={14} color="var(--bg)" /> {resending ? 'Sending...' : 'Resend Verification Code'}
           </button>
         </div>
       </div>

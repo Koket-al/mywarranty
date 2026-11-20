@@ -48,41 +48,42 @@ export default function CompanyRegisterPage() {
 
       <main style={{ maxWidth: '460px', margin: '3rem auto', padding: '0 1rem' }}>
         <div className="card">
-          <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
             <div style={{
-              width: '46px',
-              height: '46px',
-              borderRadius: '8px',
-              backgroundColor: 'var(--accent-light)',
-              color: 'var(--primary)',
+              width: '48px',
+              height: '48px',
+              borderRadius: '10px',
+              backgroundColor: 'var(--surface-alt)',
+              color: 'var(--bg)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 0.75rem',
-              border: '1px solid var(--border)'
+              border: 'none'
             }}>
-              <Building2 size={24} />
+              <Building2 size={24} color="var(--bg)" />
             </div>
-            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.25rem' }}>
+            <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--bg)', marginBottom: '0.35rem' }}>
               Register Your Retail Shop
             </h1>
-            <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+            <p style={{ fontSize: '0.875rem', color: 'rgba(241, 165, 1, 0.75)' }}>
               Start issuing tamper-evident digital warranties in minutes
             </p>
           </div>
 
           <div style={{
-            padding: '0.75rem',
-            backgroundColor: 'var(--accent-light)',
-            border: '1px solid var(--border)',
-            borderRadius: '6px',
+            padding: '0.85rem 1rem',
+            backgroundColor: 'var(--surface-alt)',
+            border: 'none',
+            borderRadius: '8px',
             fontSize: '0.8125rem',
-            color: 'var(--primary)',
+            color: 'var(--bg)',
             display: 'flex',
-            gap: '0.5rem',
+            alignItems: 'center',
+            gap: '0.6rem',
             marginBottom: '1.25rem'
           }}>
-            <ShieldCheck size={18} style={{ flexShrink: 0 }} />
+            <ShieldCheck size={20} color="var(--bg)" style={{ flexShrink: 0 }} />
             <span><strong>Instant Setup:</strong> Email verification is sufficient to begin issuing digital warranties immediately. No document uploads required.</span>
           </div>
 
@@ -90,78 +91,88 @@ export default function CompanyRegisterPage() {
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label className="form-label">Business / Shop Name <span className="required">*</span></label>
+              <label className="form-label" style={{ color: 'var(--bg)', fontWeight: 600 }}>Business / Shop Name <span className="required" style={{ color: 'var(--bg)', opacity: 0.85 }}>*</span></label>
               <div style={{ position: 'relative' }}>
                 <input
                   type="text"
                   className="form-control"
-                  style={{ paddingLeft: '2.25rem' }}
+                  style={{ paddingLeft: '2.4rem' }}
                   placeholder="e.g. Bole Electronics Hub"
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
                   required
                 />
-                <Building2 size={16} color="var(--text-muted)" style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)' }} />
+                <Building2 size={16} color="var(--bg)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', opacity: 0.85 }} />
               </div>
             </div>
 
             <div className="form-group">
-              <label className="form-label">Business Email Address <span className="required">*</span></label>
+              <label className="form-label" style={{ color: 'var(--bg)', fontWeight: 600 }}>Business Email Address <span className="required" style={{ color: 'var(--bg)', opacity: 0.85 }}>*</span></label>
               <div style={{ position: 'relative' }}>
                 <input
                   type="email"
                   className="form-control"
-                  style={{ paddingLeft: '2.25rem' }}
+                  style={{ paddingLeft: '2.4rem' }}
                   placeholder="contact@yourbusiness.et"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <Mail size={16} color="var(--text-muted)" style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)' }} />
+                <Mail size={16} color="var(--bg)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', opacity: 0.85 }} />
               </div>
-              <span className="form-hint">A one-time OTP verification code will be sent to this email.</span>
+              <span className="form-hint" style={{ color: 'rgba(241, 165, 1, 0.75)', marginTop: '0.35rem', display: 'block' }}>
+                A one-time OTP verification code will be sent to this email.
+              </span>
             </div>
 
             <div className="form-group">
-              <label className="form-label">Password <span className="required">*</span></label>
+              <label className="form-label" style={{ color: 'var(--bg)', fontWeight: 600 }}>Password <span className="required" style={{ color: 'var(--bg)', opacity: 0.85 }}>*</span></label>
               <div style={{ position: 'relative' }}>
                 <input
                   type="password"
                   className="form-control"
-                  style={{ paddingLeft: '2.25rem' }}
+                  style={{ paddingLeft: '2.4rem' }}
                   placeholder="Minimum 8 characters"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   minLength={8}
                   required
                 />
-                <Lock size={16} color="var(--text-muted)" style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)' }} />
+                <Lock size={16} color="var(--bg)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', opacity: 0.85 }} />
               </div>
             </div>
 
             <div className="form-group">
-              <label className="form-label">Confirm Password <span className="required">*</span></label>
+              <label className="form-label" style={{ color: 'var(--bg)', fontWeight: 600 }}>Confirm Password <span className="required" style={{ color: 'var(--bg)', opacity: 0.85 }}>*</span></label>
               <div style={{ position: 'relative' }}>
                 <input
                   type="password"
                   className="form-control"
-                  style={{ paddingLeft: '2.25rem' }}
+                  style={{ paddingLeft: '2.4rem' }}
                   placeholder="Repeat password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                 />
-                <Lock size={16} color="var(--text-muted)" style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)' }} />
+                <Lock size={16} color="var(--bg)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', opacity: 0.85 }} />
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }} disabled={loading}>
+            <button
+              type="submit"
+              className="btn btn-gold"
+              style={{ width: '100%', marginTop: '0.75rem', padding: '0.7rem 1.25rem', fontSize: '0.95rem' }}
+              disabled={loading}
+            >
               {loading ? 'Registering Shop...' : 'Create Retailer Account'}
             </button>
           </form>
 
-          <div style={{ textAlign: 'center', marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border)', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-            Already registered? <Link href="/login" style={{ fontWeight: 600 }}>Sign in</Link>
+          <div style={{ textAlign: 'center', marginTop: '1.75rem', fontSize: '0.875rem', color: 'rgba(241, 165, 1, 0.75)' }}>
+            Already registered?{' '}
+            <Link href="/login" style={{ color: 'var(--bg)', fontWeight: 700, textDecoration: 'underline' }}>
+              Sign in
+            </Link>
           </div>
         </div>
       </main>

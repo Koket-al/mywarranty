@@ -132,8 +132,8 @@ function ClaimWarrantyContent() {
                 </button>
                 <button
                   type="submit"
-                  className="btn btn-primary"
-                  style={{ flex: 1 }}
+                  className="btn btn-gold"
+                  style={{ flex: 1, padding: '0.7rem 1.25rem' }}
                   disabled={loading || !identifier.trim()}
                 >
                   {loading ? 'Verifying...' : 'Look Up & Claim'}
@@ -144,22 +144,22 @@ function ClaimWarrantyContent() {
         ) : (
           <div className="card">
             <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-              <CheckCircle2 size={36} color="var(--accent)" style={{ margin: '0 auto 0.5rem' }} />
-              <h2 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--primary)' }}>
+              <CheckCircle2 size={36} color="var(--bg)" style={{ margin: '0 auto 0.5rem' }} />
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--bg)' }}>
                 Verify Customer Ownership
               </h2>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                A 6-digit confirmation code was sent to the email on record (<strong>{maskedEmail}</strong>).
+              <p style={{ fontSize: '0.85rem', color: 'rgba(241, 165, 1, 0.75)' }}>
+                A 6-digit confirmation code was sent to the email on record (<strong style={{ color: 'var(--bg)' }}>{maskedEmail}</strong>).
               </p>
             </div>
 
             <form onSubmit={handleVerifyOtp}>
               <div className="form-group">
-                <label className="form-label">Confirmation Code</label>
+                <label className="form-label" style={{ color: 'var(--bg)', fontWeight: 600 }}>Confirmation Code</label>
                 <input
                   type="text"
                   className="form-control"
-                  style={{ textAlign: 'center', fontSize: '1.4rem', letterSpacing: '0.25rem', fontWeight: 700 }}
+                  style={{ textAlign: 'center', fontSize: '1.4rem', letterSpacing: '0.25rem', fontWeight: 700, backgroundColor: 'var(--surface-alt)', color: 'var(--bg)', border: '1.5px solid rgba(241, 165, 1, 0.35)' }}
                   placeholder="123456"
                   maxLength={8}
                   value={otpCode}
@@ -169,7 +169,7 @@ function ClaimWarrantyContent() {
                 />
               </div>
 
-              <button type="submit" className="btn btn-accent" style={{ width: '100%', marginTop: '0.5rem' }} disabled={loading}>
+              <button type="submit" className="btn btn-gold" style={{ width: '100%', marginTop: '0.75rem', padding: '0.7rem 1.25rem' }} disabled={loading}>
                 {loading ? 'Confirming...' : 'Verify Code & Claim'}
               </button>
             </form>
