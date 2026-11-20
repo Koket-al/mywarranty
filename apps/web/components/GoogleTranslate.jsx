@@ -186,24 +186,24 @@ export default function GoogleTranslate() {
           gap: '0.45rem',
           padding: '0.42rem 0.95rem',
           backgroundColor: '#ffffff',
-          border: '1px solid #e2e8f0',
+          border: '1.5px solid var(--border)',
           borderRadius: '9999px',
           fontSize: '0.8125rem',
-          fontWeight: 600,
+          fontWeight: 700,
           fontFamily: 'var(--font-sans)',
-          color: '#202223',
+          color: 'var(--feature-primary)',
           cursor: 'pointer',
-          boxShadow: '0 2px 6px rgba(32, 34, 35, 0.05)',
+          boxShadow: '0 2px 6px rgba(9, 32, 50, 0.12)',
           transition: 'all 0.15s ease',
           whiteSpace: 'nowrap'
         }}
         title="Translate / Change Language"
       >
-        <Globe size={15} color="#202223" />
+        <Globe size={15} color="var(--feature-primary)" />
         <span>{activeLangObj.native}</span>
         <ChevronDown 
           size={13} 
-          color="#64748b" 
+          color="var(--feature-primary)" 
           style={{ 
             transform: isOpen ? 'rotate(180deg)' : 'none', 
             transition: 'transform 0.2s ease' 
@@ -219,9 +219,9 @@ export default function GoogleTranslate() {
           right: 0,
           minWidth: '195px',
           backgroundColor: '#ffffff',
-          border: '1px solid #e2e8f0',
+          border: '1.5px solid var(--border)',
           borderRadius: '14px',
-          boxShadow: '0 12px 32px -4px rgba(32, 34, 35, 0.12), 0 2px 6px -1px rgba(32, 34, 35, 0.04)',
+          boxShadow: '0 12px 32px -4px rgba(9, 32, 50, 0.22), 0 2px 6px -1px rgba(9, 32, 50, 0.08)',
           padding: '0.35rem',
           zIndex: 1000,
           display: 'flex',
@@ -232,7 +232,7 @@ export default function GoogleTranslate() {
             padding: '0.45rem 0.75rem 0.25rem',
             fontSize: '0.68rem',
             fontWeight: 700,
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
             fontFamily: 'var(--font-sans)'
@@ -257,9 +257,9 @@ export default function GoogleTranslate() {
                   padding: '0.55rem 0.75rem',
                   border: 'none',
                   borderRadius: '8px',
-                  backgroundColor: isSelected ? '#f1f5f9' : 'transparent',
-                  color: isSelected ? '#202223' : '#475569',
-                  fontWeight: isSelected ? 700 : 500,
+                  backgroundColor: isSelected ? 'var(--bg)' : 'transparent',
+                  color: isSelected ? '#000000' : 'var(--primary)',
+                  fontWeight: isSelected ? 800 : 500,
                   fontSize: '0.8125rem',
                   fontFamily: 'var(--font-sans)',
                   cursor: 'pointer',
@@ -267,7 +267,7 @@ export default function GoogleTranslate() {
                   transition: 'all 0.12s ease'
                 }}
                 onMouseEnter={(e) => {
-                  if (!isSelected) e.currentTarget.style.backgroundColor = '#f8fafc';
+                  if (!isSelected) e.currentTarget.style.backgroundColor = '#fcedcb';
                 }}
                 onMouseLeave={(e) => {
                   if (!isSelected) e.currentTarget.style.backgroundColor = 'transparent';
@@ -276,11 +276,11 @@ export default function GoogleTranslate() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
                   <span style={{ fontSize: '0.95rem' }}>{lang.flag}</span>
                   <div>
-                    <div style={{ lineHeight: 1.2, fontWeight: 600 }}>{lang.native}</div>
-                    <div style={{ fontSize: '0.68rem', color: '#94a3b8', lineHeight: 1.2 }}>{lang.label}</div>
+                    <div style={{ lineHeight: 1.2, fontWeight: 700 }}>{lang.native}</div>
+                    <div style={{ fontSize: '0.68rem', color: isSelected ? '#092032' : 'var(--text-muted)', lineHeight: 1.2 }}>{lang.label}</div>
                   </div>
                 </div>
-                {isSelected && <Check size={14} color="#202223" />}
+                {isSelected && <Check size={14} color="#000000" />}
               </button>
             );
           })}

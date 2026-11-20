@@ -11,9 +11,9 @@ import React from 'react';
  */
 export function ProcessStepBadge({ number = 1, size = 110, theme = 'light' }) {
   const isLight = theme === 'light';
-  const strokeColor = isLight ? '#202223' : '#ffffff';
-  const circleBg = isLight ? '#202223' : '#ffffff';
-  const numberColor = isLight ? '#ffffff' : '#131313';
+  const strokeColor = isLight ? '#092032' : '#ffffff';
+  const circleBg = isLight ? '#092032' : '#ffffff';
+  const numberColor = isLight ? '#ffffff' : '#092032';
 
   // Variations in loop path geometry for each step to give an authentic hand-sketched feel
   const getLoops = (num) => {
@@ -151,7 +151,7 @@ export function ProcessArrow({
   variant = 'swoop', 
   width = 120, 
   height = 48, 
-  color = '#202223',
+  color = '#092032',
   className = '' 
 }) {
   return (

@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
-import CornerFlourish from '../components/CornerFlourish';
 import { ProcessStepBadge, ProcessArrow } from '../components/ProcessStepBadge';
 import { useAuth } from '../context/AuthContext';
 import { 
@@ -20,22 +19,16 @@ export default function HomePage() {
   const { user, isCompanyStaff, logout } = useAuth();
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#ffffff' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg)' }}>
       {/* Floating Island Navigation (Holds Only the Translation Mark) */}
       <Navbar />
 
       {/* Main Architectural Column with Continuous Left & Right Vertical Lines */}
       <main className="architectural-column" style={{ flex: 1, width: '100%' }}>
         {/* ==========================================================================
-            HERO SECTION: Framed by Vertical Lines & Ornate Corner Flourishes
+            HERO SECTION: Framed by Architectural Vertical Lines
             ========================================================================== */}
         <section className="architectural-section" style={{ padding: '4.75rem 2.5rem 4.5rem' }}>
-          {/* Ornate Architectural Corner Line Flourishes at Grid Intersections */}
-          <CornerFlourish position="top-left" size={88} color="#202223" opacity={0.28} />
-          <CornerFlourish position="top-right" size={88} color="#202223" opacity={0.28} />
-          <CornerFlourish position="bottom-left" size={88} color="#202223" opacity={0.28} />
-          <CornerFlourish position="bottom-right" size={88} color="#202223" opacity={0.28} />
-
           {/* Centered Brand Mark & Official MW Identity */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.85rem', marginBottom: '1.85rem' }}>
             <div style={{
@@ -57,25 +50,26 @@ export default function HomePage() {
               alignItems: 'center', 
               gap: '0.55rem', 
               padding: '0.35rem 0.95rem',
-              backgroundColor: '#f8fafc',
-              border: '1px solid #e2e8f0',
-              borderRadius: '9999px'
+              backgroundColor: '#ffffff',
+              border: '1.5px solid var(--border)',
+              borderRadius: '9999px',
+              boxShadow: '0 2px 6px rgba(9, 32, 50, 0.08)'
             }}>
               <span style={{ 
                 fontFamily: 'var(--font-serif)', 
                 fontSize: '1.2rem', 
                 fontWeight: 800, 
-                color: '#202223',
+                color: 'var(--primary)',
                 letterSpacing: '-0.02em',
                 lineHeight: 1
               }}>
                 MW
               </span>
-              <span style={{ width: '1px', height: '13px', backgroundColor: '#cbd5e1' }} />
+              <span style={{ width: '1px', height: '13px', backgroundColor: 'var(--border)' }} />
               <span style={{ 
                 fontSize: '0.72rem', 
-                fontWeight: 600, 
-                color: '#64748b', 
+                fontWeight: 700, 
+                color: 'var(--feature-primary)', 
                 letterSpacing: '0.08em', 
                 textTransform: 'uppercase',
                 fontFamily: 'var(--font-sans)',
@@ -244,15 +238,9 @@ export default function HomePage() {
         <div className="section-divider-h" />
 
         {/* ==========================================================================
-            SECOND SECTION: 3-Step Process (Matching User Reference Design on White)
+            SECOND SECTION: 3-Step Process
             ========================================================================== */}
         <section id="features" className="architectural-section" style={{ padding: '4.75rem 2.5rem 4rem' }}>
-          {/* Ornate Architectural Corner Line Flourishes */}
-          <CornerFlourish position="top-left" size={88} color="#202223" opacity={0.28} />
-          <CornerFlourish position="top-right" size={88} color="#202223" opacity={0.28} />
-          <CornerFlourish position="bottom-left" size={88} color="#202223" opacity={0.28} />
-          <CornerFlourish position="bottom-right" size={88} color="#202223" opacity={0.28} />
-
           {/* Category Chip */}
           <div className="hero-pill-badge">
             <span style={{ 
@@ -353,14 +341,15 @@ export default function HomePage() {
               alignItems: 'center', 
               gap: '0.4rem', 
               fontSize: '0.78rem', 
-              fontWeight: 600, 
-              color: 'var(--primary)',
-              backgroundColor: 'var(--accent-light)',
-              padding: '0.3rem 0.95rem',
+              fontWeight: 700, 
+              color: 'var(--feature-primary)',
+              backgroundColor: '#ffffff',
+              padding: '0.35rem 1rem',
               borderRadius: '9999px',
-              border: '1px solid var(--border)'
+              border: '1.5px solid var(--border)',
+              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.08)'
             }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--feature-primary)' }} />
               Immutable Policy Snapshots
             </span>
 
@@ -369,14 +358,15 @@ export default function HomePage() {
               alignItems: 'center', 
               gap: '0.4rem', 
               fontSize: '0.78rem', 
-              fontWeight: 600, 
-              color: 'var(--primary)',
-              backgroundColor: 'var(--accent-light)',
-              padding: '0.3rem 0.95rem',
+              fontWeight: 700, 
+              color: 'var(--feature-primary)',
+              backgroundColor: '#ffffff',
+              padding: '0.35rem 1rem',
               borderRadius: '9999px',
-              border: '1px solid var(--border)'
+              border: '1.5px solid var(--border)',
+              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.08)'
             }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--feature-primary)' }} />
               Zero Silent Retroactive Edits
             </span>
 
@@ -385,14 +375,15 @@ export default function HomePage() {
               alignItems: 'center', 
               gap: '0.4rem', 
               fontSize: '0.78rem', 
-              fontWeight: 600, 
-              color: 'var(--primary)',
-              backgroundColor: 'var(--accent-light)',
-              padding: '0.3rem 0.95rem',
+              fontWeight: 700, 
+              color: 'var(--feature-primary)',
+              backgroundColor: '#ffffff',
+              padding: '0.35rem 1rem',
               borderRadius: '9999px',
-              border: '1px solid var(--border)'
+              border: '1.5px solid var(--border)',
+              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.08)'
             }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--feature-primary)' }} />
               Verified Retailer Authority
             </span>
           </div>
@@ -407,11 +398,6 @@ export default function HomePage() {
             THIRD SECTION: Core Principles Banner
             ========================================================================== */}
         <section id="principles" className="architectural-section" style={{ padding: '3.75rem 2.5rem 3.5rem' }}>
-          <CornerFlourish position="top-left" size={72} opacity={0.25} />
-          <CornerFlourish position="top-right" size={72} opacity={0.25} />
-          <CornerFlourish position="bottom-left" size={72} opacity={0.25} />
-          <CornerFlourish position="bottom-right" size={72} opacity={0.25} />
-
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h2 style={{
               fontSize: '1.85rem',
@@ -469,7 +455,7 @@ export default function HomePage() {
             ========================================================================== */}
         <footer style={{
           padding: '3.5rem 2rem 2.5rem',
-          backgroundColor: '#ffffff',
+          backgroundColor: 'var(--bg)',
           borderTop: '1px solid var(--border)'
         }}>
           <div style={{
@@ -485,62 +471,62 @@ export default function HomePage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <img src="/logo-black.png" alt="MW Logo" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
-                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', fontWeight: 800, color: '#202223' }}>
+                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', fontWeight: 800, color: 'var(--primary)' }}>
                   MW
                 </span>
-                <span style={{ fontSize: '0.72rem', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--feature-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   MY WARRANTY
                 </span>
               </div>
-              <p style={{ fontSize: '0.8125rem', color: '#64748b', lineHeight: 1.6, maxWidth: '260px' }}>
+              <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '260px' }}>
                 Ethiopia's cryptographic digital warranty platform for electronics and technology retailers.
               </p>
             </div>
 
             {/* Verification Tools */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#202223', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--feature-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 Verification Tools
               </div>
-              <Link href="/verify/manual" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/verify/manual" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Verify QR Code
               </Link>
-              <Link href="/#features" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/#features" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 3-Step Verification Flow
               </Link>
-              <Link href="/customer/claim-warranty" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/customer/claim-warranty" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Submit Warranty Claim
               </Link>
             </div>
 
             {/* Platform Architecture */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#202223', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--feature-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 Architecture
               </div>
-              <Link href="/#features" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/#features" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Cryptographic Capabilities
               </Link>
-              <Link href="/#principles" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/#principles" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Core Principles
               </Link>
             </div>
 
             {/* Portals & Accounts */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#202223', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--feature-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 Portals & Accounts
               </div>
-              <Link href="/login" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/login" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Retailer Portal Sign In
               </Link>
-              <Link href="/register-company" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/register-company" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Register Your Retail Shop
               </Link>
-              <Link href="/register" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/register" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Create Customer Account
               </Link>
-              <Link href="/company/dashboard" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+              <Link href="/company/dashboard" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Company Dashboard
               </Link>
             </div>
@@ -550,12 +536,12 @@ export default function HomePage() {
             maxWidth: '1000px',
             margin: '0 auto',
             paddingTop: '1.5rem',
-            borderTop: '1px solid #e2e8f0',
+            borderTop: '1px solid var(--border-subtle)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             fontSize: '0.78rem',
-            color: '#94a3b8',
+            color: 'var(--text-muted)',
             flexWrap: 'wrap',
             gap: '0.75rem'
           }}>
