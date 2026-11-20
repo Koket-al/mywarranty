@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useAuth } from '../context/AuthContext';
 import { 
   LayoutDashboard, 
   PlusCircle, 
@@ -15,11 +16,14 @@ import {
   Users, 
   Settings,
   QrCode,
-  Bell
+  Bell,
+  Building2,
+  LogOut
 } from 'lucide-react';
 
 export default function Sidebar({ mode = 'company' }) {
   const pathname = usePathname();
+  const { user, activeCompany, logout } = useAuth();
 
   const companyLinks = [
     { href: '/company/dashboard', label: 'Overview', icon: LayoutDashboard },
@@ -69,6 +73,59 @@ export default function Sidebar({ mode = 'company' }) {
         {mode === 'company' ? 'Retailer Portal' : 'Customer Account'}
       </div>
 
+      {/* Retailer Active Company & Role Badge */}
+      {mode === 'company' && activeCompany && (
+        <div style={{
+          padding: '0.55rem 0.75rem',
+          backgroundColor: '#f8fafc',
+          borderRadius: '8px',
+          border: '1px solid #e2e8f0',
+          margin: '0 0.25rem 0.65rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.55rem'
+        }}>
+          <div style={{
+            width: '26px',
+            height: '26px',
+            borderRadius: '6px',
+            backgroundColor: '#202223',
+            color: '#ffffff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <Building2 size={14} />
+          </div>
+          <div style={{ overflow: 'hidden', minWidth: 0, flex: 1 }}>
+            <div style={{ 
+              fontSize: '0.8rem', 
+              fontWeight: 700, 
+              color: '#202223', 
+              whiteSpace: 'nowrap', 
+              overflow: 'hidden', 
+              textOverflow: 'ellipsis' 
+            }}>
+              {activeCompany.businessName}
+            </div>
+            <span style={{ 
+              fontSize: '0.625rem', 
+              fontWeight: 700, 
+              color: '#475569', 
+              backgroundColor: '#e2e8f0',
+              padding: '0.08rem 0.35rem',
+              borderRadius: '4px',
+              textTransform: 'uppercase', 
+              letterSpacing: '0.04em',
+              display: 'inline-block'
+            }}>
+              {activeCompany.role}
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Decorative horizontal separator */}
       <div style={{ height: '1px', backgroundColor: 'var(--border)', margin: '0.2rem 0.5rem 0.65rem' }} />
 
@@ -100,6 +157,46 @@ export default function Sidebar({ mode = 'company' }) {
           </Link>
         );
       })}
+
+      {/* Bottom User Persona & Logout in Sidebar */}
+      {user && (
+        <div style={{
+          marginTop: 'auto',
+          paddingTop: '0.75rem',
+          borderTop: '1px solid #e2e8f0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '0.5rem',
+          paddingLeft: '0.5rem',
+          paddingRight: '0.25rem'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', overflow: 'hidden', minWidth: 0 }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', flexShrink: 0 }} />
+            <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#202223', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {user.fullName || user.email}
+            </span>
+          </div>
+          <button
+            onClick={logout}
+            style={{
+              border: 'none',
+              background: 'transparent',
+              color: '#64748b',
+              cursor: 'pointer',
+              padding: '0.35rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '4px',
+              transition: 'all 0.15s ease'
+            }}
+            title="Log Out"
+          >
+            <LogOut size={15} />
+          </button>
+        </div>
+      )}
     </aside>
   );
 }

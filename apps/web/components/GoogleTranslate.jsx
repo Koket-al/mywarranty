@@ -1,11 +1,21 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { Globe } from 'lucide-react';
+import React, { useEffect, useState, useRef } from 'react';
+import { Globe, ChevronDown, Check } from 'lucide-react';
 
 export default function GoogleTranslate() {
   const [currentLang, setCurrentLang] = useState('en');
+  const [isOpen, setIsOpen] = useState(false);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const languages = [
+    { code: 'en', label: 'English', native: 'English', flag: '🇬🇧' },
+    { code: 'am', label: 'Amharic', native: 'አማርኛ', flag: '🇪🇹' },
+    { code: 'om', label: 'Oromo', native: 'Afaan Oromoo', flag: '🇪🇹' }
+  ];
+
+  const activeLangObj = languages.find(l => l.code === currentLang) || languages[0];
 
   useEffect(() => {
     // Check initial language from cookie
@@ -48,6 +58,21 @@ export default function GoogleTranslate() {
       setIsScriptLoaded(true);
     }
   }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   // Proactively suppress Google Translate top toolbar banner & eliminate page shift
   useEffect(() => {
@@ -147,90 +172,120 @@ export default function GoogleTranslate() {
   };
 
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center' }}>
+    <div ref={dropdownRef} style={{ position: 'relative', display: 'inline-block' }}>
       {/* Hidden container for Google Translate element */}
       <div id="google_translate_element" style={{ display: 'none' }} />
 
-      {/* Styled Language Toggle Pill */}
-      <div style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        backgroundColor: '#f8fafc',
-        border: '1px solid #e2e8f0',
-        borderRadius: '9999px',
-        padding: '2px 3px',
-        fontSize: '0.78rem',
-        fontWeight: 600,
-        fontFamily: 'var(--font-sans)',
-        whiteSpace: 'nowrap'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '0 5px', color: '#64748b' }}>
-          <Globe size={13} />
+      {/* Styled Translation Trigger Mark */}
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.45rem',
+          padding: '0.42rem 0.95rem',
+          backgroundColor: '#ffffff',
+          border: '1px solid #e2e8f0',
+          borderRadius: '9999px',
+          fontSize: '0.8125rem',
+          fontWeight: 600,
+          fontFamily: 'var(--font-sans)',
+          color: '#202223',
+          cursor: 'pointer',
+          boxShadow: '0 2px 6px rgba(32, 34, 35, 0.05)',
+          transition: 'all 0.15s ease',
+          whiteSpace: 'nowrap'
+        }}
+        title="Translate / Change Language"
+      >
+        <Globe size={15} color="#202223" />
+        <span>{activeLangObj.native}</span>
+        <ChevronDown 
+          size={13} 
+          color="#64748b" 
+          style={{ 
+            transform: isOpen ? 'rotate(180deg)' : 'none', 
+            transition: 'transform 0.2s ease' 
+          }} 
+        />
+      </button>
+
+      {/* Language Selection Dropdown Menu */}
+      {isOpen && (
+        <div style={{
+          position: 'absolute',
+          top: 'calc(100% + 8px)',
+          right: 0,
+          minWidth: '195px',
+          backgroundColor: '#ffffff',
+          border: '1px solid #e2e8f0',
+          borderRadius: '14px',
+          boxShadow: '0 12px 32px -4px rgba(32, 34, 35, 0.12), 0 2px 6px -1px rgba(32, 34, 35, 0.04)',
+          padding: '0.35rem',
+          zIndex: 1000,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2px'
+        }}>
+          <div style={{
+            padding: '0.45rem 0.75rem 0.25rem',
+            fontSize: '0.68rem',
+            fontWeight: 700,
+            color: '#94a3b8',
+            letterSpacing: '0.06em',
+            textTransform: 'uppercase',
+            fontFamily: 'var(--font-sans)'
+          }}>
+            Select Language
+          </div>
+
+          {languages.map((lang) => {
+            const isSelected = currentLang === lang.code;
+            return (
+              <button
+                key={lang.code}
+                type="button"
+                onClick={() => {
+                  changeLanguage(lang.code);
+                  setIsOpen(false);
+                }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '0.55rem 0.75rem',
+                  border: 'none',
+                  borderRadius: '8px',
+                  backgroundColor: isSelected ? '#f1f5f9' : 'transparent',
+                  color: isSelected ? '#202223' : '#475569',
+                  fontWeight: isSelected ? 700 : 500,
+                  fontSize: '0.8125rem',
+                  fontFamily: 'var(--font-sans)',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  transition: 'all 0.12s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isSelected) e.currentTarget.style.backgroundColor = '#f8fafc';
+                }}
+                onMouseLeave={(e) => {
+                  if (!isSelected) e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+                  <span style={{ fontSize: '0.95rem' }}>{lang.flag}</span>
+                  <div>
+                    <div style={{ lineHeight: 1.2, fontWeight: 600 }}>{lang.native}</div>
+                    <div style={{ fontSize: '0.68rem', color: '#94a3b8', lineHeight: 1.2 }}>{lang.label}</div>
+                  </div>
+                </div>
+                {isSelected && <Check size={14} color="#202223" />}
+              </button>
+            );
+          })}
         </div>
-
-        <button
-          type="button"
-          onClick={() => changeLanguage('en')}
-          style={{
-            border: currentLang === 'en' ? '1px solid #e2e8f0' : '1px solid transparent',
-            background: currentLang === 'en' ? '#ffffff' : 'transparent',
-            color: currentLang === 'en' ? '#202223' : '#64748b',
-            borderRadius: '9999px',
-            padding: '3px 8px',
-            cursor: 'pointer',
-            fontSize: '0.78rem',
-            fontFamily: 'var(--font-sans)',
-            fontWeight: currentLang === 'en' ? 700 : 500,
-            boxShadow: currentLang === 'en' ? '0 1px 2px rgba(32, 34, 35, 0.08)' : 'none',
-            transition: 'all 0.15s ease'
-          }}
-          title="Switch to English"
-        >
-          EN
-        </button>
-
-        <button
-          type="button"
-          onClick={() => changeLanguage('am')}
-          style={{
-            border: currentLang === 'am' ? '1px solid #e2e8f0' : '1px solid transparent',
-            background: currentLang === 'am' ? '#ffffff' : 'transparent',
-            color: currentLang === 'am' ? '#202223' : '#64748b',
-            borderRadius: '9999px',
-            padding: '3px 8px',
-            cursor: 'pointer',
-            fontSize: '0.78rem',
-            fontFamily: 'var(--font-sans)',
-            fontWeight: currentLang === 'am' ? 700 : 500,
-            boxShadow: currentLang === 'am' ? '0 1px 2px rgba(32, 34, 35, 0.08)' : 'none',
-            transition: 'all 0.15s ease'
-          }}
-          title="ወደ አማርኛ ቀይር (Switch to Amharic)"
-        >
-          አማርኛ
-        </button>
-
-        <button
-          type="button"
-          onClick={() => changeLanguage('om')}
-          style={{
-            border: currentLang === 'om' ? '1px solid #e2e8f0' : '1px solid transparent',
-            background: currentLang === 'om' ? '#ffffff' : 'transparent',
-            color: currentLang === 'om' ? '#202223' : '#64748b',
-            borderRadius: '9999px',
-            padding: '3px 8px',
-            cursor: 'pointer',
-            fontSize: '0.78rem',
-            fontFamily: 'var(--font-sans)',
-            fontWeight: currentLang === 'om' ? 700 : 500,
-            boxShadow: currentLang === 'om' ? '0 1px 2px rgba(32, 34, 35, 0.08)' : 'none',
-            transition: 'all 0.15s ease'
-          }}
-          title="Gara Afaan Oromootti jijjiiri (Switch to Afaan Oromoo)"
-        >
-          Oromoo
-        </button>
-      </div>
+      )}
     </div>
   );
 }

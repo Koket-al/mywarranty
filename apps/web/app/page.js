@@ -5,16 +5,23 @@ import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import CornerFlourish from '../components/CornerFlourish';
 import { ProcessStepBadge, ProcessArrow } from '../components/ProcessStepBadge';
+import { useAuth } from '../context/AuthContext';
 import { 
   Store, 
   ArrowRight, 
-  CheckCircle2 
+  CheckCircle2,
+  QrCode,
+  Building2,
+  LogOut,
+  ShieldCheck
 } from 'lucide-react';
 
 export default function HomePage() {
+  const { user, isCompanyStaff, logout } = useAuth();
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#ffffff' }}>
-      {/* Floating Island Navigation */}
+      {/* Floating Island Navigation (Holds Only the Translation Mark) */}
       <Navbar />
 
       {/* Main Architectural Column with Continuous Left & Right Vertical Lines */}
@@ -29,11 +36,11 @@ export default function HomePage() {
           <CornerFlourish position="bottom-left" size={88} color="#202223" opacity={0.28} />
           <CornerFlourish position="bottom-right" size={88} color="#202223" opacity={0.28} />
 
-          {/* Centered Black Brand Mark */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.75rem' }}>
+          {/* Centered Brand Mark & Official MW Identity */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.85rem', marginBottom: '1.85rem' }}>
             <div style={{
-              width: '56px',
-              height: '56px',
+              width: '64px',
+              height: '64px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
@@ -43,6 +50,39 @@ export default function HomePage() {
                 alt="MW Logo" 
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
               />
+            </div>
+
+            <div style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '0.55rem', 
+              padding: '0.35rem 0.95rem',
+              backgroundColor: '#f8fafc',
+              border: '1px solid #e2e8f0',
+              borderRadius: '9999px'
+            }}>
+              <span style={{ 
+                fontFamily: 'var(--font-serif)', 
+                fontSize: '1.2rem', 
+                fontWeight: 800, 
+                color: '#202223',
+                letterSpacing: '-0.02em',
+                lineHeight: 1
+              }}>
+                MW
+              </span>
+              <span style={{ width: '1px', height: '13px', backgroundColor: '#cbd5e1' }} />
+              <span style={{ 
+                fontSize: '0.72rem', 
+                fontWeight: 600, 
+                color: '#64748b', 
+                letterSpacing: '0.08em', 
+                textTransform: 'uppercase',
+                fontFamily: 'var(--font-sans)',
+                lineHeight: 1
+              }}>
+                My Warranty
+              </span>
             </div>
           </div>
 
@@ -84,31 +124,117 @@ export default function HomePage() {
             MW (My Warranty) provides electronics and technology retailers with a trusted digital foundation to issue cryptographically signed warranties, instant QR lookup, and AI-assisted claims—without paperwork or dispute.
           </p>
 
-          {/* Primary Action Capsule Buttons (Circled in Blue) */}
+          {/* Primary Action Capsule Buttons */}
           <div style={{ 
             display: 'flex', 
-            gap: '1.15rem', 
-            justifyContent: 'center', 
+            flexDirection: 'column',
             alignItems: 'center',
-            flexWrap: 'wrap'
+            gap: '1rem',
+            justifyContent: 'center'
           }}>
-            <Link 
-              href="/register-company" 
-              className="btn btn-primary btn-pill btn-lg" 
-              style={{ padding: '0.8rem 2rem' }}
-            >
-              <Store size={18} />
-              <span>Register Your Retail Shop</span>
-              <ArrowRight size={16} />
-            </Link>
+            <div style={{
+              display: 'flex', 
+              gap: '1rem', 
+              justifyContent: 'center', 
+              alignItems: 'center',
+              flexWrap: 'wrap'
+            }}>
+              {user ? (
+                <>
+                  {isCompanyStaff ? (
+                    <Link 
+                      href="/company/dashboard" 
+                      className="btn btn-primary btn-pill btn-lg" 
+                      style={{ padding: '0.8rem 2rem' }}
+                    >
+                      <Building2 size={18} />
+                      <span>Go to Company Portal</span>
+                      <ArrowRight size={16} />
+                    </Link>
+                  ) : (
+                    <Link 
+                      href="/customer/dashboard" 
+                      className="btn btn-primary btn-pill btn-lg" 
+                      style={{ padding: '0.8rem 2rem' }}
+                    >
+                      <ShieldCheck size={18} />
+                      <span>Go to Customer Dashboard</span>
+                      <ArrowRight size={16} />
+                    </Link>
+                  )}
 
-            <Link 
-              href="/register" 
-              className="btn btn-secondary btn-pill btn-lg" 
-              style={{ padding: '0.8rem 2rem' }}
-            >
-              <span>+ Create Customer Account</span>
-            </Link>
+                  <button 
+                    onClick={logout} 
+                    className="btn btn-secondary btn-pill btn-lg" 
+                    style={{ padding: '0.8rem 1.75rem' }}
+                  >
+                    <LogOut size={16} />
+                    <span>Sign Out</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link 
+                    href="/register-company" 
+                    className="btn btn-primary btn-pill btn-lg" 
+                    style={{ padding: '0.8rem 2rem' }}
+                  >
+                    <Store size={18} />
+                    <span>Register Your Retail Shop</span>
+                    <ArrowRight size={16} />
+                  </Link>
+
+                  <Link 
+                    href="/register" 
+                    className="btn btn-secondary btn-pill btn-lg" 
+                    style={{ padding: '0.8rem 2rem' }}
+                  >
+                    <span>+ Create Customer Account</span>
+                  </Link>
+                </>
+              )}
+            </div>
+
+            {/* Dedicated Warranty QR Verification Action */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.25rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <Link 
+                href="/verify/manual" 
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#202223',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e2e8f0',
+                  padding: '0.45rem 1.15rem',
+                  borderRadius: '9999px',
+                  textDecoration: 'none',
+                  boxShadow: '0 1px 3px rgba(32, 34, 35, 0.04)',
+                  transition: 'all 0.15s ease'
+                }}
+              >
+                <QrCode size={16} color="#64748b" />
+                <span>Verify Product Warranty by QR Code</span>
+                <ArrowRight size={14} color="#64748b" />
+              </Link>
+
+              {!user && (
+                <Link 
+                  href="/login" 
+                  style={{
+                    fontSize: '0.825rem',
+                    color: '#64748b',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    padding: '0.45rem 0.75rem'
+                  }}
+                >
+                  Retailer Portal Sign In →
+                </Link>
+              )}
+            </div>
           </div>
         </section>
 
@@ -339,30 +465,107 @@ export default function HomePage() {
         <div className="section-divider-h" />
 
         {/* ==========================================================================
-            FOOTER: Clean Floating Bar with Hairline Lines
+            FOOTER: Complete Sitemap & Platform Directory
             ========================================================================== */}
         <footer style={{
-          padding: '2rem 1.5rem',
-          textAlign: 'center',
-          fontSize: '0.84rem',
-          color: 'var(--text-muted)',
-          backgroundColor: '#ffffff'
+          padding: '3.5rem 2rem 2.5rem',
+          backgroundColor: '#ffffff',
+          borderTop: '1px solid var(--border)'
         }}>
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center', 
-            gap: '1.5rem', 
-            flexWrap: 'wrap',
-            marginBottom: '1rem' 
+          <div style={{
+            maxWidth: '1000px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2.5rem',
+            marginBottom: '2.5rem',
+            textAlign: 'left'
           }}>
-            <Link href="/" style={{ color: 'var(--primary)', fontWeight: 600 }}>Home</Link>
-            <Link href="/verify/manual" style={{ color: 'var(--text-muted)' }}>Verify QR</Link>
-            <Link href="/login" style={{ color: 'var(--text-muted)' }}>Sign In</Link>
-            <Link href="/register" style={{ color: 'var(--text-muted)' }}>Customer Sign Up</Link>
-            <Link href="/register-company" style={{ color: 'var(--text-muted)' }}>Retailer Register</Link>
+            {/* Brand Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <img src="/logo-black.png" alt="MW Logo" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', fontWeight: 800, color: '#202223' }}>
+                  MW
+                </span>
+                <span style={{ fontSize: '0.72rem', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  MY WARRANTY
+                </span>
+              </div>
+              <p style={{ fontSize: '0.8125rem', color: '#64748b', lineHeight: 1.6, maxWidth: '260px' }}>
+                Ethiopia's cryptographic digital warranty platform for electronics and technology retailers.
+              </p>
+            </div>
+
+            {/* Verification Tools */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#202223', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                Verification Tools
+              </div>
+              <Link href="/verify/manual" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                Verify QR Code
+              </Link>
+              <Link href="/#features" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                3-Step Verification Flow
+              </Link>
+              <Link href="/customer/claim-warranty" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                Submit Warranty Claim
+              </Link>
+            </div>
+
+            {/* Platform Architecture */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#202223', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                Architecture
+              </div>
+              <Link href="/#features" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                Cryptographic Capabilities
+              </Link>
+              <Link href="/#principles" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                Core Principles
+              </Link>
+            </div>
+
+            {/* Portals & Accounts */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#202223', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                Portals & Accounts
+              </div>
+              <Link href="/login" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                Retailer Portal Sign In
+              </Link>
+              <Link href="/register-company" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                Register Your Retail Shop
+              </Link>
+              <Link href="/register" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                Create Customer Account
+              </Link>
+              <Link href="/company/dashboard" style={{ fontSize: '0.825rem', color: '#64748b', textDecoration: 'none' }}>
+                Company Dashboard
+              </Link>
+            </div>
           </div>
-          <p>© 2026 MW | My Warranty. All rights reserved. Designed for independent electronics and technology retailers.</p>
+
+          <div style={{
+            maxWidth: '1000px',
+            margin: '0 auto',
+            paddingTop: '1.5rem',
+            borderTop: '1px solid #e2e8f0',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: '0.78rem',
+            color: '#94a3b8',
+            flexWrap: 'wrap',
+            gap: '0.75rem'
+          }}>
+            <div>
+              © 2026 MW (My Warranty). All rights reserved.
+            </div>
+            <div>
+              Designed for independent electronics and technology retailers.
+            </div>
+          </div>
         </footer>
       </main>
     </div>
