@@ -3,220 +3,506 @@
 import React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
-import { QrCode, Cpu, CheckCircle2, Lock, Store } from 'lucide-react';
+import CornerFlourish from '../components/CornerFlourish';
+import { 
+  QrCode, 
+  Cpu, 
+  CheckCircle2, 
+  Lock, 
+  Store, 
+  ArrowRight, 
+  ShieldCheck, 
+  FileCheck2, 
+  HelpCircle,
+  Smartphone,
+  KeyRound
+} from 'lucide-react';
 
 export default function HomePage() {
   return (
-    <div>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      {/* Floating Island Navigation */}
       <Navbar />
 
-      {/* Hero Section */}
-      <section style={{
-        maxWidth: '1100px',
-        margin: '0 auto',
-        padding: '5.5rem 1.5rem 3.5rem',
-        textAlign: 'center',
-        position: 'relative'
-      }}>
-        {/* Decorative corner guidelines */}
-        <div style={{
-          position: 'absolute',
-          top: '2rem',
-          left: '1.5rem',
-          width: '40px',
-          height: '40px',
-          borderTop: '2px solid var(--accent)',
-          borderLeft: '2px solid var(--accent)',
-          opacity: 0.4
-        }} />
-        <div style={{
-          position: 'absolute',
-          top: '2rem',
-          right: '1.5rem',
-          width: '40px',
-          height: '40px',
-          borderTop: '2px solid var(--accent)',
-          borderRight: '2px solid var(--accent)',
-          opacity: 0.4
-        }} />
+      <main style={{ flex: 1, padding: '0 1.25rem' }}>
+        {/* ==========================================================================
+            HERO SECTION: Framed Canvas Card with Ornate Corner Flourishes
+            ========================================================================== */}
+        <section className="framed-canvas">
+          {/* Ornate Architectural Corner Line Flourishes */}
+          <CornerFlourish position="top-left" size={88} opacity={0.28} />
+          <CornerFlourish position="top-right" size={88} opacity={0.28} />
+          <CornerFlourish position="bottom-left" size={88} opacity={0.28} />
+          <CornerFlourish position="bottom-right" size={88} opacity={0.28} />
 
-        <h1 style={{
-          fontSize: '3.6rem',
-          fontWeight: 800,
-          color: 'var(--primary)',
-          lineHeight: 1.15,
-          fontFamily: 'var(--font-serif)',
-          letterSpacing: '-0.02em',
-          marginBottom: '1.25rem'
-        }}>
-          Every product has a story.<br />
-          <span style={{ color: 'var(--accent)' }}>Make that story verifiable.</span>
-        </h1>
-
-        {/* Decorative horizontal accent line */}
-        <div className="deco-line-h" style={{ maxWidth: '400px', margin: '1.5rem auto' }} />
-
-        <p style={{
-          fontSize: '1.2rem',
-          color: 'var(--text-muted)',
-          maxWidth: '680px',
-          margin: '0 auto 2.5rem',
-          lineHeight: 1.6
-        }}>
-          MW (My Warranty) empowers independent electronics and technology retailers to issue tamper-evident digital warranties with instant QR verification, immutable terms, and AI-assisted claims support.
-        </p>
-
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/register-company" className="btn btn-primary btn-lg">
-            <Store size={18} /> Register Your Retail Shop
-          </Link>
-          <Link href="/register" className="btn btn-accent btn-lg">
-            Create Customer Account
-          </Link>
-          <Link href="/verify/manual" className="btn btn-secondary btn-lg">
-            <QrCode size={18} /> Verify a Warranty
-          </Link>
-        </div>
-      </section>
-
-      {/* Decorative full-width horizontal rule */}
-      <div className="deco-line-h" style={{ maxWidth: '1100px', margin: '0 auto 2rem' }} />
-
-      {/* Features Grid */}
-      <section style={{
-        maxWidth: '1100px',
-        margin: '0 auto 5rem',
-        padding: '0 1.5rem'
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.75rem'
-        }}>
-          <div className="card">
+          {/* Centered Black Brand Mark */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
             <div style={{
-              width: '44px',
-              height: '44px',
-              borderRadius: '8px',
-              backgroundColor: 'var(--accent-light)',
-              color: 'var(--accent)',
+              width: '52px',
+              height: '52px',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: '1rem',
-              border: '1px solid var(--border)'
+              justifyContent: 'center'
             }}>
-              <QrCode size={22} />
+              <img 
+                src="/logo-black.png" 
+                alt="MW Logo" 
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+              />
             </div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)' }}>
-              Instant QR Verification
-            </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              Customers scan a unique QR code directly with any smartphone camera. No app download or account creation required for basic authenticity and expiry lookups.
-            </p>
           </div>
 
-          <div className="card">
-            <div style={{
-              width: '44px',
-              height: '44px',
-              borderRadius: '8px',
+          {/* Centered Capsule Category Pill */}
+          <div className="hero-pill-badge">
+            <span style={{ 
+              width: '6px', 
+              height: '6px', 
+              borderRadius: '50%', 
+              backgroundColor: 'var(--primary)', 
+              display: 'inline-block' 
+            }} />
+            Digital Warranty & Claim Verification
+          </div>
+
+          {/* Serif Main Headline */}
+          <h1 style={{
+            fontSize: 'clamp(2.35rem, 5vw, 3.85rem)',
+            fontWeight: 800,
+            color: 'var(--primary)',
+            lineHeight: 1.15,
+            fontFamily: 'var(--font-serif)',
+            letterSpacing: '-0.025em',
+            maxWidth: '820px',
+            margin: '0 auto 1.25rem'
+          }}>
+            Every product has a story.<br />
+            Make that story verifiable.
+          </h1>
+
+          {/* Italic Serif Subtitle in Quotes (from reference aesthetic) */}
+          <p style={{
+            fontSize: '1.25rem',
+            fontStyle: 'italic',
+            color: 'var(--accent)',
+            fontFamily: 'var(--font-serif)',
+            letterSpacing: '-0.01em',
+            marginBottom: '1.25rem'
+          }}>
+            “Tamper-evident, verifiable, and protected forever.”
+          </p>
+
+          {/* Balanced Centered Summary */}
+          <p style={{
+            fontSize: '1.05rem',
+            color: 'var(--text-muted)',
+            maxWidth: '660px',
+            margin: '0 auto 2.25rem',
+            lineHeight: 1.65
+          }}>
+            MW (My Warranty) provides electronics and technology retailers with a trusted digital foundation to issue cryptographically signed warranties, instant QR lookup, and AI-assisted claims—without paperwork or dispute.
+          </p>
+
+          {/* Primary Action Capsule Buttons (ANON Reference Composition) */}
+          <div style={{ 
+            display: 'flex', 
+            gap: '1rem', 
+            justifyContent: 'center', 
+            alignItems: 'center',
+            flexWrap: 'wrap', 
+            marginBottom: '1.25rem' 
+          }}>
+            <Link 
+              href="/register-company" 
+              className="btn btn-primary btn-lg" 
+              style={{ padding: '0.75rem 1.85rem' }}
+            >
+              <Store size={18} />
+              <span>Register Your Retail Shop</span>
+              <ArrowRight size={16} />
+            </Link>
+
+            <Link 
+              href="/register" 
+              className="btn btn-secondary btn-lg" 
+              style={{ padding: '0.75rem 1.85rem' }}
+            >
+              <span>+ Create Customer Account</span>
+            </Link>
+          </div>
+
+          {/* Auxiliary Pill Button (matching (i) How It Works & FAQs) */}
+          <div style={{ marginBottom: '1.75rem' }}>
+            <Link 
+              href="/verify/manual" 
+              className="btn btn-secondary btn-sm"
+              style={{ 
+                color: 'var(--text-muted)',
+                fontSize: '0.825rem',
+                padding: '0.35rem 1.15rem'
+              }}
+            >
+              <QrCode size={14} />
+              <span>Instant QR Code Lookup</span>
+            </Link>
+          </div>
+
+          {/* Decorative Hairline Separator */}
+          <div style={{
+            width: '180px',
+            height: '1px',
+            backgroundColor: 'var(--border)',
+            margin: '0 auto 1.5rem'
+          }} />
+
+          {/* Trust Guarantees Chips (matching bottom capsule indicators in reference) */}
+          <div style={{ 
+            display: 'flex', 
+            gap: '0.65rem', 
+            justifyContent: 'center', 
+            flexWrap: 'wrap' 
+          }}>
+            <span style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '0.4rem', 
+              fontSize: '0.78rem', 
+              fontWeight: 600, 
+              color: 'var(--primary)',
               backgroundColor: 'var(--accent-light)',
-              color: 'var(--accent)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: '1rem',
+              padding: '0.25rem 0.85rem',
+              borderRadius: '9999px',
               border: '1px solid var(--border)'
             }}>
-              <Lock size={22} />
-            </div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)' }}>
-              Cryptographic Integrity
-            </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              Each issued record captures an immutable snapshot of terms and is sealed with an asymmetric digital signature (RSA-SHA256). Any silent modification is immediately detected.
-            </p>
-          </div>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
+              RSA-SHA256 Signed
+            </span>
 
-          <div className="card">
-            <div style={{
-              width: '44px',
-              height: '44px',
-              borderRadius: '8px',
+            <span style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '0.4rem', 
+              fontSize: '0.78rem', 
+              fontWeight: 600, 
+              color: 'var(--primary)',
               backgroundColor: 'var(--accent-light)',
-              color: 'var(--accent)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: '1rem',
+              padding: '0.25rem 0.85rem',
+              borderRadius: '9999px',
               border: '1px solid var(--border)'
             }}>
-              <Cpu size={22} />
-            </div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)' }}>
-              AI Triage, Human Decision
-            </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              Our AI Support Assistant analyzes customer complaints and diagnostic photos against the exact policy snapshot issued. A human retailer employee always makes the final decision.
-            </p>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
+              Instant Camera Scan
+            </span>
+
+            <span style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '0.4rem', 
+              fontSize: '0.78rem', 
+              fontWeight: 600, 
+              color: 'var(--primary)',
+              backgroundColor: 'var(--accent-light)',
+              padding: '0.25rem 0.85rem',
+              borderRadius: '9999px',
+              border: '1px solid var(--border)'
+            }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
+              Zero Paperwork
+            </span>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Trust Guarantees */}
-      <section style={{
-        backgroundColor: 'var(--surface)',
-        borderTop: '1px solid var(--border)',
-        padding: '3.5rem 1.5rem',
-        textAlign: 'center',
-        position: 'relative'
-      }}>
-        {/* Top decorative accent */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '120px',
-          height: '2px',
-          background: 'var(--accent)'
-        }} />
+        {/* ==========================================================================
+            SECOND FRAMED SECTION: "How MW Protects Your Peace of Mind" (ANON Reference)
+            ========================================================================== */}
+        <section id="features" className="framed-canvas" style={{ padding: '4.5rem 2.5rem 4rem' }}>
+          {/* Ornate Architectural Corner Line Flourishes */}
+          <CornerFlourish position="top-left" size={88} opacity={0.28} />
+          <CornerFlourish position="top-right" size={88} opacity={0.28} />
+          <CornerFlourish position="bottom-left" size={88} opacity={0.28} />
+          <CornerFlourish position="bottom-right" size={88} opacity={0.28} />
 
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '1rem', fontFamily: 'var(--font-serif)' }}>
-            Built on Core Principles
+          {/* Category Chip */}
+          <div className="hero-pill-badge">
+            <span style={{ 
+              width: '6px', 
+              height: '6px', 
+              borderRadius: '50%', 
+              backgroundColor: 'var(--primary)', 
+              display: 'inline-block' 
+            }} />
+            FAQ & Architecture
+          </div>
+
+          {/* Section Headline */}
+          <h2 style={{
+            fontSize: 'clamp(1.85rem, 3.8vw, 2.75rem)',
+            fontWeight: 800,
+            color: 'var(--primary)',
+            lineHeight: 1.2,
+            fontFamily: 'var(--font-serif)',
+            letterSpacing: '-0.02em',
+            marginBottom: '0.85rem'
+          }}>
+            How MW Protects Your Peace of Mind
           </h2>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', textAlign: 'left', marginTop: '1.75rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <CheckCircle2 size={18} color="var(--accent)" />
-              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--primary)' }}>No universal policy imposed</span>
+
+          <p style={{
+            fontSize: '1.05rem',
+            color: 'var(--text-muted)',
+            maxWidth: '620px',
+            margin: '0 auto 3rem',
+            lineHeight: 1.6
+          }}>
+            Four honest answers about cryptographic trust, instant verification, and customer warranty protection.
+          </p>
+
+          {/* Grid of 4 Architectural Feature Cards */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1.5rem',
+            textAlign: 'left'
+          }}>
+            {/* Card 1 */}
+            <div style={{
+              backgroundColor: '#ffffff',
+              border: '1px solid var(--border)',
+              borderRadius: '18px',
+              padding: '1.75rem 1.5rem',
+              position: 'relative',
+              boxShadow: 'var(--shadow-sm)',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+            }}>
+              <div style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '9999px',
+                backgroundColor: 'var(--accent-light)',
+                color: 'var(--primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.25rem',
+                border: '1px solid var(--border)'
+              }}>
+                <Smartphone size={20} />
+              </div>
+              <h3 style={{
+                fontSize: '1.15rem',
+                fontWeight: 700,
+                color: 'var(--primary)',
+                fontFamily: 'var(--font-serif)',
+                marginBottom: '0.65rem'
+              }}>
+                Instant QR Verification
+              </h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6 }}>
+                Customers scan a unique QR code directly with any smartphone camera. No app download or account creation required for instant authenticity and expiry checks.
+              </p>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <CheckCircle2 size={18} color="var(--accent)" />
-              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--primary)' }}>No silent policy rewrites</span>
+
+            {/* Card 2 */}
+            <div style={{
+              backgroundColor: '#ffffff',
+              border: '1px solid var(--border)',
+              borderRadius: '18px',
+              padding: '1.75rem 1.5rem',
+              position: 'relative',
+              boxShadow: 'var(--shadow-sm)',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+            }}>
+              <div style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '9999px',
+                backgroundColor: 'var(--accent-light)',
+                color: 'var(--primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.25rem',
+                border: '1px solid var(--border)'
+              }}>
+                <KeyRound size={20} />
+              </div>
+              <h3 style={{
+                fontSize: '1.15rem',
+                fontWeight: 700,
+                color: 'var(--primary)',
+                fontFamily: 'var(--font-serif)',
+                marginBottom: '0.65rem'
+              }}>
+                Cryptographic Integrity
+              </h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6 }}>
+                Each issued warranty snapshot is sealed with an asymmetric digital signature (RSA-SHA256). Any silent modification to policy terms or dates is instantly detected.
+              </p>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <CheckCircle2 size={18} color="var(--accent)" />
-              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--primary)' }}>Single honest trust label: Seller registered</span>
+
+            {/* Card 3 */}
+            <div style={{
+              backgroundColor: '#ffffff',
+              border: '1px solid var(--border)',
+              borderRadius: '18px',
+              padding: '1.75rem 1.5rem',
+              position: 'relative',
+              boxShadow: 'var(--shadow-sm)',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+            }}>
+              <div style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '9999px',
+                backgroundColor: 'var(--accent-light)',
+                color: 'var(--primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.25rem',
+                border: '1px solid var(--border)'
+              }}>
+                <Cpu size={20} />
+              </div>
+              <h3 style={{
+                fontSize: '1.15rem',
+                fontWeight: 700,
+                color: 'var(--primary)',
+                fontFamily: 'var(--font-serif)',
+                marginBottom: '0.65rem'
+              }}>
+                AI Triage, Human Decision
+              </h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6 }}>
+                Our Gemini AI Assistant reviews customer claims and diagnostic photos against the exact frozen policy snapshot. A verified retailer staff member always makes the final claim decision.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div style={{
+              backgroundColor: '#ffffff',
+              border: '1px solid var(--border)',
+              borderRadius: '18px',
+              padding: '1.75rem 1.5rem',
+              position: 'relative',
+              boxShadow: 'var(--shadow-sm)',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+            }}>
+              <div style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '9999px',
+                backgroundColor: 'var(--accent-light)',
+                color: 'var(--primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.25rem',
+                border: '1px solid var(--border)'
+              }}>
+                <FileCheck2 size={20} />
+              </div>
+              <h3 style={{
+                fontSize: '1.15rem',
+                fontWeight: 700,
+                color: 'var(--primary)',
+                fontFamily: 'var(--font-serif)',
+                marginBottom: '0.65rem'
+              }}>
+                Immutable Policy Snapshots
+              </h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6 }}>
+                The terms in effect at the exact moment of sale remain locked forever. Neither party can unilaterally alter coverage terms after purchase.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
+        {/* ==========================================================================
+            THIRD SECTION: Core Principles Banner
+            ========================================================================== */}
+        <section id="principles" className="framed-canvas" style={{ padding: '3.5rem 2.5rem 3rem' }}>
+          <CornerFlourish position="top-left" size={72} opacity={0.25} />
+          <CornerFlourish position="top-right" size={72} opacity={0.25} />
+          <CornerFlourish position="bottom-left" size={72} opacity={0.25} />
+          <CornerFlourish position="bottom-right" size={72} opacity={0.25} />
+
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: '1.85rem',
+              fontWeight: 800,
+              color: 'var(--primary)',
+              fontFamily: 'var(--font-serif)',
+              marginBottom: '1rem',
+              letterSpacing: '-0.02em'
+            }}>
+              Built on Core Principles
+            </h2>
+
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
+              We believe trust cannot be fabricated through marketing claims—it must be verifiable by design.
+            </p>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '2rem',
+              flexWrap: 'wrap',
+              textAlign: 'left'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <CheckCircle2 size={19} color="var(--primary)" />
+                <span style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--primary)' }}>
+                  No universal policy imposed
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <CheckCircle2 size={19} color="var(--primary)" />
+                <span style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--primary)' }}>
+                  No silent retroactive edits
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <CheckCircle2 size={19} color="var(--primary)" />
+                <span style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--primary)' }}>
+                  Seller-registered authentic records
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* ==========================================================================
+          FOOTER: Clean Floating Bar with Hairline Lines
+          ========================================================================== */}
       <footer style={{
-        backgroundColor: 'var(--primary)',
-        color: '#9ba2a4',
-        padding: '2.5rem 1.5rem',
+        maxWidth: '1140px',
+        margin: '0 auto 2rem',
+        padding: '1.75rem 1.5rem',
         textAlign: 'center',
-        fontSize: '0.85rem',
-        borderTop: '1px solid var(--border)'
+        fontSize: '0.84rem',
+        color: 'var(--text-muted)',
+        borderTop: '1px solid var(--border)',
+        width: '100%'
       }}>
-        <div className="deco-line-h-accent" style={{ maxWidth: '200px', margin: '0 auto 1.5rem', opacity: 0.6 }} />
-        <p>© 2026 MW (My Warranty). All rights reserved. Designed for independent electronics retailers.</p>
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          gap: '1.5rem', 
+          flexWrap: 'wrap',
+          marginBottom: '1rem' 
+        }}>
+          <Link href="/" style={{ color: 'var(--primary)', fontWeight: 600 }}>Home</Link>
+          <Link href="/verify/manual" style={{ color: 'var(--text-muted)' }}>Verify QR</Link>
+          <Link href="/login" style={{ color: 'var(--text-muted)' }}>Sign In</Link>
+          <Link href="/register" style={{ color: 'var(--text-muted)' }}>Customer Sign Up</Link>
+          <Link href="/register-company" style={{ color: 'var(--text-muted)' }}>Retailer Register</Link>
+        </div>
+        <p>© 2026 MW | My Warranty. All rights reserved. Designed for independent electronics and technology retailers.</p>
       </footer>
     </div>
   );
 }
-
