@@ -54,7 +54,6 @@ export default function LoginPage() {
             <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
               Sign in to your customer or retailer account
             </p>
-            <div className="deco-line-h" style={{ maxWidth: '120px', margin: '0.85rem auto 0' }} />
           </div>
 
           {error && <div className="alert alert-error">{error}</div>}

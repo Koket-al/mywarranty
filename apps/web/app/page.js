@@ -94,7 +94,7 @@ export default function HomePage() {
           }}>
             <Link 
               href="/register-company" 
-              className="btn btn-primary btn-lg" 
+              className="btn btn-primary btn-pill btn-lg" 
               style={{ padding: '0.8rem 2rem' }}
             >
               <Store size={18} />
@@ -104,7 +104,7 @@ export default function HomePage() {
 
             <Link 
               href="/register" 
-              className="btn btn-secondary btn-lg" 
+              className="btn btn-secondary btn-pill btn-lg" 
               style={{ padding: '0.8rem 2rem' }}
             >
               <span>+ Create Customer Account</span>

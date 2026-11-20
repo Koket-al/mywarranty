@@ -29,11 +29,14 @@
   --info: #4b5563;
   --info-bg: #e1f3f3;
 
-  --radius-sm: 9999px;
-  --radius: 9999px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-card: 12px;
   --radius-input: 8px;
-  --radius-card: 28px;
-  --radius-lg: 20px;
+  --radius-pill: 9999px;
 
   --shadow-sm: 0 1px 3px 0 rgba(32, 34, 35, 0.05);
   --shadow: 0 2px 6px 0 rgba(32, 34, 35, 0.06), 0 1px 3px 0 rgba(32, 34, 35, 0.04);
@@ -62,25 +65,28 @@ h1, h2, h3, h4, .font-serif, .brand-title {
 }
 
 /* ==========================================================================
-   Decorative Lines (Horizontal & Vertical)
+   Dividers
    ========================================================================== */
 .deco-line-h {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent 0%, var(--border) 15%, var(--accent) 50%, var(--border) 85%, transparent 100%);
-  margin: 1.5rem 0;
+  background-color: var(--border);
+  margin: 1.25rem 0;
+  border: none;
 }
 
 .deco-line-h-accent {
-  height: 2px;
+  height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, #202223 0%, #706c61 35%, #e1f3f3 65%, #202223 100%);
+  background-color: var(--border);
+  border: none;
 }
 
 .deco-line-v {
   width: 1px;
   height: 100%;
-  background: linear-gradient(180deg, transparent 0%, var(--border) 15%, var(--accent) 50%, var(--border) 85%, transparent 100%);
+  background-color: var(--border);
+  border: none;
 }
 
 .title-with-line {
@@ -89,30 +95,11 @@ h1, h2, h3, h4, .font-serif, .brand-title {
   gap: 0.75rem;
 }
 
-.title-with-line::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 1.15em;
-  background: linear-gradient(180deg, var(--accent) 0%, var(--primary) 100%);
-  border-radius: 2px;
-}
-
 .section-decorated-header {
   position: relative;
   padding-bottom: 0.75rem;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid var(--border);
-}
-
-.section-decorated-header::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: var(--accent);
 }
 
 a {
@@ -125,22 +112,26 @@ a:hover {
 }
 
 /* ==========================================================================
-   Buttons (Capsule / Pill Shape from Reference)
+   Buttons
    ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.55rem 1.25rem;
+  padding: 0.55rem 1.15rem;
   font-size: 0.875rem;
   font-weight: 500;
-  border-radius: 9999px;
+  border-radius: var(--radius);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.15s ease;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.btn-pill {
+  border-radius: var(--radius-pill) !important;
 }
 
 .btn:disabled {
@@ -152,12 +143,12 @@ a:hover {
   background-color: var(--primary);
   color: #ffffff;
   border: 1px solid #141516;
-  box-shadow: 0 2px 6px rgba(32, 34, 35, 0.16);
+  box-shadow: 0 1px 3px rgba(32, 34, 35, 0.12);
 }
 
 .btn-primary:hover:not(:disabled) {
   background-color: var(--primary-light);
-  box-shadow: 0 4px 12px rgba(32, 34, 35, 0.22);
+  box-shadow: 0 2px 6px rgba(32, 34, 35, 0.18);
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -166,12 +157,12 @@ a:hover {
   background-color: var(--accent);
   color: #ffffff;
   border: 1px solid #58554c;
-  box-shadow: 0 2px 6px rgba(112, 108, 97, 0.16);
+  box-shadow: 0 1px 3px rgba(112, 108, 97, 0.12);
 }
 
 .btn-accent:hover:not(:disabled) {
   background-color: var(--accent-hover);
-  box-shadow: 0 4px 12px rgba(112, 108, 97, 0.22);
+  box-shadow: 0 2px 6px rgba(112, 108, 97, 0.18);
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -201,16 +192,16 @@ a:hover {
 }
 
 .btn-sm {
-  padding: 0.35rem 0.85rem;
+  padding: 0.35rem 0.75rem;
   font-size: 0.8125rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-sm);
 }
 
 .btn-lg {
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.65rem;
   font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 9999px;
+  border-radius: var(--radius);
 }
 
 /* ==========================================================================
@@ -457,28 +448,20 @@ a:hover {
 }
 
 /* ==========================================================================
-   Cards & Layout with Architectural Line Accents
+   Cards & Layout
    ========================================================================== */
 .card {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 3px rgba(32, 34, 35, 0.04), 0 1px 2px rgba(32, 34, 35, 0.02);
   padding: 1.5rem;
   position: relative;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 60%, transparent 100%);
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
+.card:hover {
+  border-color: #cbd5e1;
 }
 
 .card-header {
@@ -488,7 +471,6 @@ a:hover {
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
-  position: relative;
 }
 
 .card-title {

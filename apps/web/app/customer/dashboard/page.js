@@ -60,8 +60,6 @@ export default function CustomerDashboardPage() {
             </Link>
           </div>
 
-          <div className="deco-line-h" style={{ margin: '0 0 2rem 0' }} />
-
           {/* Stats Row */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
             <StatCard title="Total Warranties" value={warranties.length} icon={FileCheck2} />

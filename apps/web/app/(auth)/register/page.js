@@ -55,7 +55,6 @@ export default function CustomerRegisterPage() {
             <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
               Manage your digital warranties, downloads, and service claims
             </p>
-            <div className="deco-line-h" style={{ maxWidth: '120px', margin: '0.85rem auto 0' }} />
           </div>
 
           {error && <div className="alert alert-error">{error}</div>}

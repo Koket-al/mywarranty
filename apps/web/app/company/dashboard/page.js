@@ -62,8 +62,6 @@ export default function CompanyDashboardPage() {
             </Link>
           </div>
 
-          <div className="deco-line-h" style={{ margin: '0 0 2rem 0' }} />
-
           {loading ? (
             <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading metrics...</div>
           ) : (

@@ -58,8 +58,6 @@ export default function CompanyWarrantiesListPage() {
             </Link>
           </div>
 
-          <div className="deco-line-h" style={{ margin: '0 0 1.5rem 0' }} />
-
           <div className="card" style={{ marginBottom: '1.5rem', padding: '1rem' }}>
             <form onSubmit={handleSearch} style={{ display: 'flex', gap: '0.75rem' }}>
               <div style={{ position: 'relative', flex: 1 }}>
