@@ -123,7 +123,7 @@ export default function VerifyPage() {
               </div>
 
               {report.product?.imageUrl && (
-                <div style={{ width: '90px', height: '90px', margin: '0.75rem auto', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--border)', background: '#fff' }}>
+                <div style={{ width: '90px', height: '90px', margin: '0.75rem auto', borderRadius: '8px', overflow: 'hidden', border: 'none', background: 'var(--feature-secondary)' }}>
                   <img src={report.product.imageUrl} alt={report.product.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
               )}

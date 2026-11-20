@@ -45,7 +45,7 @@ export default function CompanyWarrantiesListPage() {
         <main style={{ flex: 1, padding: '2rem', maxWidth: '1200px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h1 className="title-with-line" style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
+              <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
                 Issued Digital Warranties
               </h1>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>

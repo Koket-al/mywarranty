@@ -84,15 +84,15 @@ export default function CustomerAiAssistantPage() {
                   maxWidth: '85%'
                 }}>
                   {m.sender === 'ai' && (
-                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#f3e8ff', color: '#9333ea', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'var(--feature-primary)', color: 'var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Bot size={18} />
                     </div>
                   )}
 
                   <div style={{
-                    backgroundColor: m.sender === 'user' ? 'var(--primary)' : '#f8fafc',
-                    color: m.sender === 'user' ? '#ffffff' : 'var(--text)',
-                    border: m.sender === 'user' ? 'none' : '1px solid var(--border)',
+                    backgroundColor: m.sender === 'user' ? 'var(--feature-primary)' : 'var(--feature-secondary)',
+                    color: 'var(--bg)',
+                    border: 'none',
                     padding: '0.75rem 1rem',
                     borderRadius: '10px',
                     fontSize: '0.875rem',
@@ -103,7 +103,7 @@ export default function CustomerAiAssistantPage() {
                   </div>
 
                   {m.sender === 'user' && (
-                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'var(--border)', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'var(--feature-secondary)', color: 'var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <User size={18} />
                     </div>
                   )}

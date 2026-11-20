@@ -53,12 +53,12 @@ export default function Sidebar({ mode = 'company' }) {
     <aside style={{
       width: '240px',
       backgroundColor: 'var(--surface)',
-      borderRight: '1px solid var(--border)',
+      borderRight: 'none',
       minHeight: 'calc(100vh - 61px)',
       padding: '1.25rem 0.75rem',
       display: 'flex',
       flexDirection: 'column',
-      gap: '0.25rem',
+      gap: '0.35rem',
       boxShadow: 'var(--shadow-sm)'
     }}>
       <div style={{
@@ -66,7 +66,7 @@ export default function Sidebar({ mode = 'company' }) {
         fontSize: '0.75rem',
         fontWeight: 700,
         textTransform: 'uppercase',
-        color: 'var(--primary)',
+        color: 'var(--bg)',
         letterSpacing: '0.08em',
         fontFamily: 'var(--font-serif)'
       }}>
@@ -77,9 +77,9 @@ export default function Sidebar({ mode = 'company' }) {
       {mode === 'company' && activeCompany && (
         <div style={{
           padding: '0.55rem 0.75rem',
-          backgroundColor: '#f8fafc',
+          backgroundColor: 'var(--feature-secondary)',
           borderRadius: '8px',
-          border: '1px solid #e2e8f0',
+          border: 'none',
           margin: '0 0.25rem 0.65rem',
           display: 'flex',
           alignItems: 'center',
@@ -89,8 +89,8 @@ export default function Sidebar({ mode = 'company' }) {
             width: '26px',
             height: '26px',
             borderRadius: '6px',
-            backgroundColor: '#202223',
-            color: '#ffffff',
+            backgroundColor: 'var(--feature-primary)',
+            color: 'var(--bg)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -102,7 +102,7 @@ export default function Sidebar({ mode = 'company' }) {
             <div style={{ 
               fontSize: '0.8rem', 
               fontWeight: 700, 
-              color: '#202223', 
+              color: 'var(--bg)', 
               whiteSpace: 'nowrap', 
               overflow: 'hidden', 
               textOverflow: 'ellipsis' 
@@ -112,8 +112,8 @@ export default function Sidebar({ mode = 'company' }) {
             <span style={{ 
               fontSize: '0.625rem', 
               fontWeight: 700, 
-              color: '#475569', 
-              backgroundColor: '#e2e8f0',
+              color: '#000000', 
+              backgroundColor: 'var(--bg)',
               padding: '0.08rem 0.35rem',
               borderRadius: '4px',
               textTransform: 'uppercase', 
@@ -125,9 +125,6 @@ export default function Sidebar({ mode = 'company' }) {
           </div>
         </div>
       )}
-
-      {/* Decorative horizontal separator */}
-      <div style={{ height: '1px', backgroundColor: 'var(--border)', margin: '0.2rem 0.5rem 0.65rem' }} />
 
       {links.map((link) => {
         const Icon = link.icon;
@@ -144,15 +141,14 @@ export default function Sidebar({ mode = 'company' }) {
               padding: '0.6rem 0.75rem',
               borderRadius: 'var(--radius)',
               fontSize: '0.875rem',
-              fontWeight: isActive ? 600 : 500,
-              color: isActive ? 'var(--primary)' : 'var(--text-muted)',
-              backgroundColor: isActive ? 'var(--accent-light)' : 'transparent',
-              borderLeft: isActive ? '3px solid var(--primary)' : '3px solid transparent',
+              fontWeight: isActive ? 700 : 500,
+              color: isActive ? 'var(--bg)' : 'rgba(241, 165, 1, 0.7)',
+              backgroundColor: isActive ? 'var(--feature-secondary)' : 'transparent',
               textDecoration: 'none',
               transition: 'all 0.15s ease'
             }}
           >
-            <Icon size={18} color={isActive ? 'var(--primary)' : 'var(--text-muted)'} />
+            <Icon size={18} color={isActive ? 'var(--bg)' : 'rgba(241, 165, 1, 0.7)'} />
             <span>{link.label}</span>
           </Link>
         );
@@ -163,7 +159,7 @@ export default function Sidebar({ mode = 'company' }) {
         <div style={{
           marginTop: 'auto',
           paddingTop: '0.75rem',
-          borderTop: '1px solid #e2e8f0',
+          borderTop: 'none',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -172,8 +168,8 @@ export default function Sidebar({ mode = 'company' }) {
           paddingRight: '0.25rem'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', overflow: 'hidden', minWidth: 0 }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', flexShrink: 0 }} />
-            <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#202223', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--bg)', flexShrink: 0 }} />
+            <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--bg)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
               {user.fullName || user.email}
             </span>
           </div>
@@ -182,7 +178,7 @@ export default function Sidebar({ mode = 'company' }) {
             style={{
               border: 'none',
               background: 'transparent',
-              color: '#64748b',
+              color: 'var(--bg)',
               cursor: 'pointer',
               padding: '0.35rem',
               display: 'flex',

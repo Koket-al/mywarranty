@@ -195,8 +195,8 @@ export default function CompanyCaseReviewPage() {
 
                 {/* Policy References */}
                 {aiReport.policyReferences?.length > 0 && (
-                  <div style={{ backgroundColor: '#ffffff', padding: '0.75rem', borderRadius: '6px', border: '1px solid #e9d5ff' }}>
-                    <div style={{ fontWeight: 600, marginBottom: '0.35rem', color: '#581c87' }}>Policy Clauses Cited:</div>
+                  <div style={{ backgroundColor: 'var(--feature-secondary)', padding: '0.75rem', borderRadius: '6px', border: 'none', color: 'var(--bg)' }}>
+                    <div style={{ fontWeight: 600, marginBottom: '0.35rem', color: 'var(--bg)' }}>Policy Clauses Cited:</div>
                     {aiReport.policyReferences.map((ref, idx) => (
                       <div key={idx} style={{ fontSize: '0.8125rem', marginBottom: '0.25rem' }}>
                         • <strong>{ref.clauseId}</strong>: "{ref.quotedOrReferencedText}" — <em>{ref.explanation}</em>
@@ -253,8 +253,9 @@ export default function CompanyCaseReviewPage() {
                       <div key={idx} style={{
                         padding: '0.75rem',
                         borderRadius: '8px',
-                        backgroundColor: isInternal ? '#fefce8' : isStaff ? '#f1f5f9' : '#ffffff',
-                        border: `1px solid ${isInternal ? '#fef08a' : 'var(--border)'}`,
+                        backgroundColor: isInternal ? 'var(--feature-secondary)' : isStaff ? 'var(--feature-primary)' : 'var(--surface-alt)',
+                        border: 'none',
+                        color: 'var(--bg)',
                         fontSize: '0.85rem'
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem', fontSize: '0.75rem' }}>
@@ -362,9 +363,10 @@ export default function CompanyCaseReviewPage() {
                         gap: '0.5rem',
                         padding: '0.65rem 0.85rem',
                         borderRadius: '6px',
-                        border: '1px solid var(--border)',
+                        border: 'none',
                         cursor: 'pointer',
-                        backgroundColor: decision === 'approved' ? 'var(--success-bg)' : '#ffffff'
+                        color: 'var(--bg)',
+                        backgroundColor: decision === 'approved' ? 'var(--feature-secondary)' : 'var(--feature-primary)'
                       }}>
                         <input
                           type="radio"
@@ -373,7 +375,7 @@ export default function CompanyCaseReviewPage() {
                           checked={decision === 'approved'}
                           onChange={() => setDecision('approved')}
                         />
-                        <CheckCircle2 size={16} color="var(--success)" />
+                        <CheckCircle2 size={16} color="var(--bg)" />
                         <strong>Approve Claim for Assessment / Replacement</strong>
                       </label>
 
@@ -383,9 +385,10 @@ export default function CompanyCaseReviewPage() {
                         gap: '0.5rem',
                         padding: '0.65rem 0.85rem',
                         borderRadius: '6px',
-                        border: '1px solid var(--border)',
+                        border: 'none',
                         cursor: 'pointer',
-                        backgroundColor: decision === 'more_information_required' ? 'var(--warning-bg)' : '#ffffff'
+                        color: 'var(--bg)',
+                        backgroundColor: decision === 'more_information_required' ? 'var(--feature-secondary)' : 'var(--feature-primary)'
                       }}>
                         <input
                           type="radio"
@@ -394,7 +397,7 @@ export default function CompanyCaseReviewPage() {
                           checked={decision === 'more_information_required'}
                           onChange={() => setDecision('more_information_required')}
                         />
-                        <HelpCircle size={16} color="var(--warning)" />
+                        <HelpCircle size={16} color="var(--bg)" />
                         <strong>Request More Information / Diagnostics</strong>
                       </label>
 
@@ -404,9 +407,10 @@ export default function CompanyCaseReviewPage() {
                         gap: '0.5rem',
                         padding: '0.65rem 0.85rem',
                         borderRadius: '6px',
-                        border: '1px solid var(--border)',
+                        border: 'none',
                         cursor: 'pointer',
-                        backgroundColor: decision === 'rejected' ? 'var(--danger-bg)' : '#ffffff'
+                        color: 'var(--bg)',
+                        backgroundColor: decision === 'rejected' ? 'var(--feature-secondary)' : 'var(--feature-primary)'
                       }}>
                         <input
                           type="radio"
@@ -415,7 +419,7 @@ export default function CompanyCaseReviewPage() {
                           checked={decision === 'rejected'}
                           onChange={() => setDecision('rejected')}
                         />
-                        <XCircle size={16} color="var(--danger)" />
+                        <XCircle size={16} color="var(--bg)" />
                         <strong>Reject Claim (Policy Exclusions / Expired)</strong>
                       </label>
                     </div>

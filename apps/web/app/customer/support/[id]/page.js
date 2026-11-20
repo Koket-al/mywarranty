@@ -146,8 +146,8 @@ export default function CustomerTicketDetailPage() {
                   <div key={idx} style={{
                     alignSelf: isCustomer ? 'flex-end' : 'flex-start',
                     maxWidth: '80%',
-                    backgroundColor: isCustomer ? 'var(--primary)' : '#f1f5f9',
-                    color: isCustomer ? '#ffffff' : 'var(--text)',
+                    backgroundColor: isCustomer ? 'var(--feature-primary)' : 'var(--feature-secondary)',
+                    color: 'var(--bg)',
                     padding: '0.75rem 1rem',
                     borderRadius: '10px',
                     fontSize: '0.875rem'

@@ -114,7 +114,7 @@ export default function CompanyProductsPage() {
         <main style={{ flex: 1, padding: '2rem', maxWidth: '1100px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h1 className="title-with-line" style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
+              <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
                 Product Catalog
               </h1>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>
@@ -159,7 +159,7 @@ export default function CompanyProductsPage() {
                     <tr key={p._id}>
                       <td>
                         {p.imageUrl ? (
-                          <div style={{ width: '42px', height: '42px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--border)', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <div style={{ width: '42px', height: '42px', borderRadius: '6px', overflow: 'hidden', border: 'none', background: 'var(--feature-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <img src={p.imageUrl} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                           </div>
                         ) : (

@@ -48,7 +48,7 @@ export default function CustomerDashboardPage() {
         <main style={{ flex: 1, padding: '2rem', maxWidth: '1200px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h1 className="title-with-line" style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
+              <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
                 Welcome, {user?.fullName || 'Customer'}
               </h1>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>
@@ -80,9 +80,9 @@ export default function CustomerDashboardPage() {
               <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>Loading records...</div>
             ) : warranties.length === 0 ? (
               <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-                <QrCode size={40} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
-                <h3 style={{ fontSize: '1.1rem', color: 'var(--primary)', marginBottom: '0.5rem' }}>No claimed warranties yet</h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
+                <QrCode size={40} color="var(--bg)" style={{ margin: '0 auto 1rem' }} />
+                <h3 style={{ fontSize: '1.1rem', color: 'var(--bg)', marginBottom: '0.5rem' }}>No claimed warranties yet</h3>
+                <p style={{ color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
                   Have a receipt with a QR code or warranty ID? Add it to your account in seconds.
                 </p>
                 <Link href="/customer/claim-warranty" className="btn btn-accent btn-sm">

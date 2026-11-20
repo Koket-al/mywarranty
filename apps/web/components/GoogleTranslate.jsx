@@ -184,26 +184,26 @@ export default function GoogleTranslate() {
           display: 'inline-flex',
           alignItems: 'center',
           gap: '0.45rem',
-          padding: '0.42rem 0.95rem',
-          backgroundColor: '#ffffff',
-          border: '1.5px solid var(--border)',
+          padding: '0.45rem 1rem',
+          backgroundColor: 'var(--feature-primary)',
+          border: 'none',
           borderRadius: '9999px',
           fontSize: '0.8125rem',
           fontWeight: 700,
           fontFamily: 'var(--font-sans)',
-          color: 'var(--feature-primary)',
+          color: 'var(--bg)',
           cursor: 'pointer',
-          boxShadow: '0 2px 6px rgba(9, 32, 50, 0.12)',
+          boxShadow: '0 2px 6px rgba(9, 32, 50, 0.25)',
           transition: 'all 0.15s ease',
           whiteSpace: 'nowrap'
         }}
         title="Translate / Change Language"
       >
-        <Globe size={15} color="var(--feature-primary)" />
+        <Globe size={15} color="var(--bg)" />
         <span>{activeLangObj.native}</span>
         <ChevronDown 
           size={13} 
-          color="var(--feature-primary)" 
+          color="var(--bg)" 
           style={{ 
             transform: isOpen ? 'rotate(180deg)' : 'none', 
             transition: 'transform 0.2s ease' 
@@ -218,10 +218,10 @@ export default function GoogleTranslate() {
           top: 'calc(100% + 8px)',
           right: 0,
           minWidth: '195px',
-          backgroundColor: '#ffffff',
-          border: '1.5px solid var(--border)',
+          backgroundColor: 'var(--feature-primary)',
+          border: 'none',
           borderRadius: '14px',
-          boxShadow: '0 12px 32px -4px rgba(9, 32, 50, 0.22), 0 2px 6px -1px rgba(9, 32, 50, 0.08)',
+          boxShadow: '0 12px 32px -4px rgba(9, 32, 50, 0.45)',
           padding: '0.35rem',
           zIndex: 1000,
           display: 'flex',
@@ -232,7 +232,7 @@ export default function GoogleTranslate() {
             padding: '0.45rem 0.75rem 0.25rem',
             fontSize: '0.68rem',
             fontWeight: 700,
-            color: 'var(--text-muted)',
+            color: 'var(--bg)',
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
             fontFamily: 'var(--font-sans)'
@@ -258,7 +258,7 @@ export default function GoogleTranslate() {
                   border: 'none',
                   borderRadius: '8px',
                   backgroundColor: isSelected ? 'var(--bg)' : 'transparent',
-                  color: isSelected ? '#000000' : 'var(--primary)',
+                  color: isSelected ? '#000000' : 'var(--bg)',
                   fontWeight: isSelected ? 800 : 500,
                   fontSize: '0.8125rem',
                   fontFamily: 'var(--font-sans)',
@@ -267,7 +267,7 @@ export default function GoogleTranslate() {
                   transition: 'all 0.12s ease'
                 }}
                 onMouseEnter={(e) => {
-                  if (!isSelected) e.currentTarget.style.backgroundColor = '#fcedcb';
+                  if (!isSelected) e.currentTarget.style.backgroundColor = 'var(--feature-secondary)';
                 }}
                 onMouseLeave={(e) => {
                   if (!isSelected) e.currentTarget.style.backgroundColor = 'transparent';
@@ -277,7 +277,7 @@ export default function GoogleTranslate() {
                   <span style={{ fontSize: '0.95rem' }}>{lang.flag}</span>
                   <div>
                     <div style={{ lineHeight: 1.2, fontWeight: 700 }}>{lang.native}</div>
-                    <div style={{ fontSize: '0.68rem', color: isSelected ? '#092032' : 'var(--text-muted)', lineHeight: 1.2 }}>{lang.label}</div>
+                    <div style={{ fontSize: '0.68rem', color: isSelected ? '#000000' : 'rgba(241, 165, 1, 0.7)', lineHeight: 1.2 }}>{lang.label}</div>
                   </div>
                 </div>
                 {isSelected && <Check size={14} color="#000000" />}

@@ -49,7 +49,7 @@ export default function CompanyDashboardPage() {
         <main style={{ flex: 1, padding: '2rem', maxWidth: '1200px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h1 className="title-with-line" style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
+              <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
                 {activeCompany?.businessName || 'Retailer Workspace'}
               </h1>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>
@@ -138,18 +138,19 @@ export default function CompanyDashboardPage() {
                 <div className="card">
                   <div className="card-header">
                     <h2 className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <TrendingUp size={18} color="var(--accent)" /> Recent Activity
+                      <TrendingUp size={18} color="var(--bg)" /> Recent Activity
                     </h2>
                   </div>
                   {recentEvents.length === 0 ? (
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>No recent events recorded.</p>
+                    <p style={{ color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.85rem' }}>No recent events recorded.</p>
                   ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxHeight: '280px', overflowY: 'auto' }}>
                       {recentEvents.map((evt, idx) => (
                         <div key={idx} style={{
                           padding: '0.65rem 0.85rem',
                           borderRadius: '6px',
-                          border: '1px solid var(--border)',
+                          backgroundColor: 'var(--feature-secondary)',
+                          border: 'none',
                           fontSize: '0.8125rem',
                           display: 'flex',
                           justifyContent: 'space-between',
@@ -159,9 +160,9 @@ export default function CompanyDashboardPage() {
                             <span className="badge badge-info" style={{ marginRight: '0.5rem' }}>
                               {evt.eventType.replace('_', ' ')}
                             </span>
-                            <span style={{ color: 'var(--text-muted)' }}>by {evt.actor}</span>
+                            <span style={{ color: 'rgba(241, 165, 1, 0.75)' }}>by {evt.actor}</span>
                           </div>
-                          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                          <span style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)' }}>
                             {new Date(evt.createdAt).toLocaleDateString()}
                           </span>
                         </div>

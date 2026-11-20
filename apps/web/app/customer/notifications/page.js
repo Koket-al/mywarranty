@@ -63,8 +63,8 @@ export default function CustomerNotificationsPage() {
               <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>Loading...</div>
             ) : notifications.length === 0 ? (
               <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-                <Bell size={36} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>No notifications right now.</p>
+                <Bell size={36} color="var(--bg)" style={{ margin: '0 auto 1rem' }} />
+                <p style={{ color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.875rem' }}>No notifications right now.</p>
               </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -72,16 +72,16 @@ export default function CustomerNotificationsPage() {
                   <div key={n._id} style={{
                     padding: '0.85rem 1rem',
                     borderRadius: '6px',
-                    border: '1px solid var(--border)',
-                    backgroundColor: n.readAt ? '#ffffff' : '#f0fdfa'
+                    border: 'none',
+                    backgroundColor: n.readAt ? 'var(--feature-secondary)' : 'var(--feature-primary)'
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.25rem' }}>
-                      <strong style={{ fontSize: '0.95rem', color: 'var(--primary)' }}>{n.title}</strong>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                      <strong style={{ fontSize: '0.95rem', color: 'var(--bg)' }}>{n.title}</strong>
+                      <span style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)' }}>
                         {new Date(n.createdAt).toLocaleDateString()}
                       </span>
                     </div>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text)', lineHeight: 1.5 }}>{n.message}</p>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--bg)', lineHeight: 1.5 }}>{n.message}</p>
                   </div>
                 ))}
               </div>

@@ -50,26 +50,25 @@ export default function HomePage() {
               alignItems: 'center', 
               gap: '0.55rem', 
               padding: '0.35rem 0.95rem',
-              backgroundColor: '#ffffff',
-              border: '1.5px solid var(--border)',
+              backgroundColor: 'var(--feature-primary)',
               borderRadius: '9999px',
-              boxShadow: '0 2px 6px rgba(9, 32, 50, 0.08)'
+              boxShadow: '0 2px 6px rgba(9, 32, 50, 0.2)'
             }}>
               <span style={{ 
                 fontFamily: 'var(--font-serif)', 
                 fontSize: '1.2rem', 
                 fontWeight: 800, 
-                color: 'var(--primary)',
+                color: 'var(--bg)',
                 letterSpacing: '-0.02em',
                 lineHeight: 1
               }}>
                 MW
               </span>
-              <span style={{ width: '1px', height: '13px', backgroundColor: 'var(--border)' }} />
+              <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--bg)' }} />
               <span style={{ 
                 fontSize: '0.72rem', 
                 fontWeight: 700, 
-                color: 'var(--feature-primary)', 
+                color: 'var(--bg)', 
                 letterSpacing: '0.08em', 
                 textTransform: 'uppercase',
                 fontFamily: 'var(--font-sans)',
@@ -199,19 +198,18 @@ export default function HomePage() {
                   gap: '0.5rem',
                   fontSize: '0.85rem',
                   fontWeight: 600,
-                  color: '#202223',
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
+                  color: 'var(--bg)',
+                  backgroundColor: 'var(--feature-primary)',
                   padding: '0.45rem 1.15rem',
                   borderRadius: '9999px',
                   textDecoration: 'none',
-                  boxShadow: '0 1px 3px rgba(32, 34, 35, 0.04)',
+                  boxShadow: '0 2px 4px rgba(9, 32, 50, 0.2)',
                   transition: 'all 0.15s ease'
                 }}
               >
-                <QrCode size={16} color="#64748b" />
+                <QrCode size={16} color="var(--bg)" />
                 <span>Verify Product Warranty by QR Code</span>
-                <ArrowRight size={14} color="#64748b" />
+                <ArrowRight size={14} color="var(--bg)" />
               </Link>
 
               {!user && (
@@ -219,8 +217,8 @@ export default function HomePage() {
                   href="/login" 
                   style={{
                     fontSize: '0.825rem',
-                    color: '#64748b',
-                    fontWeight: 600,
+                    color: 'var(--feature-primary)',
+                    fontWeight: 700,
                     textDecoration: 'none',
                     padding: '0.45rem 0.75rem'
                   }}
@@ -231,11 +229,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* ==========================================================================
-            HORIZONTAL DIVIDER LINE: Crisp Full-Width Boundary Between Sections
-            ========================================================================== */}
-        <div className="section-divider-h" />
 
         {/* ==========================================================================
             SECOND SECTION: 3-Step Process
@@ -291,7 +284,7 @@ export default function HomePage() {
 
             {/* Connecting Arrow 1 (Swooping curve) */}
             <div style={{ paddingTop: '2.5rem' }}>
-              <ProcessArrow variant="swoop" width={115} height={48} color="#202223" />
+              <ProcessArrow variant="swoop" width={115} height={48} color="#092032" />
             </div>
 
             {/* Step 2 */}
@@ -307,7 +300,7 @@ export default function HomePage() {
 
             {/* Connecting Arrow 2 (Arching curve) */}
             <div style={{ paddingTop: '2.5rem' }}>
-              <ProcessArrow variant="arch" width={115} height={48} color="#202223" />
+              <ProcessArrow variant="arch" width={115} height={48} color="#092032" />
             </div>
 
             {/* Step 3 */}
@@ -322,19 +315,12 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Subtle Hairline Divider and Trust Capsule Chips */}
-          <div style={{
-            width: '180px',
-            height: '1px',
-            backgroundColor: 'var(--border)',
-            margin: '3.5rem auto 1.5rem'
-          }} />
-
           <div style={{ 
             display: 'flex', 
             gap: '0.75rem', 
             justifyContent: 'center', 
-            flexWrap: 'wrap' 
+            flexWrap: 'wrap',
+            marginTop: '3.5rem'
           }}>
             <span style={{ 
               display: 'inline-flex', 
@@ -342,14 +328,14 @@ export default function HomePage() {
               gap: '0.4rem', 
               fontSize: '0.78rem', 
               fontWeight: 700, 
-              color: 'var(--feature-primary)',
-              backgroundColor: '#ffffff',
+              color: 'var(--bg)',
+              backgroundColor: 'var(--feature-primary)',
               padding: '0.35rem 1rem',
               borderRadius: '9999px',
-              border: '1.5px solid var(--border)',
-              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.08)'
+              border: 'none',
+              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.15)'
             }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--feature-primary)' }} />
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--bg)' }} />
               Immutable Policy Snapshots
             </span>
 
@@ -359,14 +345,14 @@ export default function HomePage() {
               gap: '0.4rem', 
               fontSize: '0.78rem', 
               fontWeight: 700, 
-              color: 'var(--feature-primary)',
-              backgroundColor: '#ffffff',
+              color: 'var(--bg)',
+              backgroundColor: 'var(--feature-primary)',
               padding: '0.35rem 1rem',
               borderRadius: '9999px',
-              border: '1.5px solid var(--border)',
-              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.08)'
+              border: 'none',
+              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.15)'
             }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--feature-primary)' }} />
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--bg)' }} />
               Zero Silent Retroactive Edits
             </span>
 
@@ -376,23 +362,18 @@ export default function HomePage() {
               gap: '0.4rem', 
               fontSize: '0.78rem', 
               fontWeight: 700, 
-              color: 'var(--feature-primary)',
-              backgroundColor: '#ffffff',
+              color: 'var(--bg)',
+              backgroundColor: 'var(--feature-primary)',
               padding: '0.35rem 1rem',
               borderRadius: '9999px',
-              border: '1.5px solid var(--border)',
-              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.08)'
+              border: 'none',
+              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.15)'
             }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--feature-primary)' }} />
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--bg)' }} />
               Verified Retailer Authority
             </span>
           </div>
         </section>
-
-        {/* ==========================================================================
-            HORIZONTAL DIVIDER LINE: Crisp Full-Width Boundary
-            ========================================================================== */}
-        <div className="section-divider-h" />
 
         {/* ==========================================================================
             THIRD SECTION: Core Principles Banner
@@ -446,17 +427,11 @@ export default function HomePage() {
         </section>
 
         {/* ==========================================================================
-            HORIZONTAL DIVIDER LINE Before Footer
-            ========================================================================== */}
-        <div className="section-divider-h" />
-
-        {/* ==========================================================================
             FOOTER: Complete Sitemap & Platform Directory
             ========================================================================== */}
         <footer style={{
           padding: '3.5rem 2rem 2.5rem',
-          backgroundColor: 'var(--bg)',
-          borderTop: '1px solid var(--border)'
+          backgroundColor: 'var(--bg)'
         }}>
           <div style={{
             maxWidth: '1000px',
@@ -536,7 +511,6 @@ export default function HomePage() {
             maxWidth: '1000px',
             margin: '0 auto',
             paddingTop: '1.5rem',
-            borderTop: '1px solid var(--border-subtle)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
