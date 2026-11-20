@@ -7,7 +7,7 @@
 [![Cryptographic-Integrity](https://img.shields.io/badge/Integrity-RSA--SHA256-blueviolet.svg)](https://en.wikipedia.org/wiki/Digital_signature)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **"Every product has a story. Make that story verifiable."**
+> **"Your warranty. Make that story verifiable."**
 >
 > *MW (My Warranty)* is a multi-tenant digital warranty management and customer support platform designed for independent electronics and technology retailers, distributors, and businesses. It eliminates fraudulent and paper warranties through cryptographic tamper-evidence, structured AI-assisted investigations, dynamic warranty form definitions, and human-in-the-loop decisions.
 

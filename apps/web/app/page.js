@@ -7,7 +7,6 @@ import { useAuth } from '../context/AuthContext';
 import {
   Store,
   ArrowRight,
-  QrCode,
   Building2,
   LogOut,
   ShieldCheck,
@@ -90,8 +89,8 @@ export default function HomePage() {
             maxWidth: '840px',
             margin: '0 auto 1.35rem'
           }}>
-            Every product has a story.<br />
-            Make that story verifiable.
+            Your warranty.<br />
+            Simple, secure, and easy to check.
           </h1>
 
           {/* Italic Serif Subtitle in Quotes */}
@@ -103,7 +102,7 @@ export default function HomePage() {
             letterSpacing: '-0.01em',
             marginBottom: '1.35rem'
           }}>
-            “Tamper-evident, verifiable, and protected forever.”
+            “Keep your warranty details in one place. Scan a QR code to check them anytime..”
           </p>
 
           {/* Balanced Centered Summary */}
@@ -188,45 +187,31 @@ export default function HomePage() {
               )}
             </div>
 
-            {/* Dedicated Warranty QR Verification Action */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.25rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <Link
-                href="/verify/manual"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.85rem',
-                  fontWeight: 600,
-                  color: 'var(--bg)',
-                  backgroundColor: 'var(--feature-primary)',
-                  padding: '0.45rem 1.15rem',
-                  borderRadius: '9999px',
-                  textDecoration: 'none',
-                  boxShadow: '0 2px 4px rgba(9, 32, 50, 0.2)',
-                  transition: 'all 0.15s ease'
-                }}
-              >
-                <QrCode size={16} color="var(--bg)" />
-                <span>Verify Product Warranty by QR Code</span>
-                <ArrowRight size={14} color="var(--bg)" />
-              </Link>
-
-              {!user && (
+            {/* Direct Sign In Button */}
+            {!user && (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '0.25rem' }}>
                 <Link
                   href="/login"
                   style={{
-                    fontSize: '0.825rem',
-                    color: 'var(--feature-primary)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.45rem',
+                    fontSize: '0.875rem',
                     fontWeight: 700,
+                    color: 'var(--bg)',
+                    backgroundColor: 'var(--feature-primary)',
+                    padding: '0.5rem 1.45rem',
+                    borderRadius: '9999px',
                     textDecoration: 'none',
-                    padding: '0.45rem 0.75rem'
+                    boxShadow: '0 2px 5px rgba(9, 32, 50, 0.2)',
+                    transition: 'all 0.15s ease'
                   }}
                 >
-                  Retailer Portal Sign In →
+                  <span>Sign In</span>
+                  <ArrowRight size={15} color="var(--bg)" />
                 </Link>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </section>
 
