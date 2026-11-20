@@ -6,41 +6,34 @@ import Navbar from '../components/Navbar';
 import CornerFlourish from '../components/CornerFlourish';
 import { ProcessStepBadge, ProcessArrow } from '../components/ProcessStepBadge';
 import { 
-  QrCode, 
-  Cpu, 
-  CheckCircle2, 
-  Lock, 
   Store, 
   ArrowRight, 
-  ShieldCheck, 
-  FileCheck2, 
-  HelpCircle,
-  Smartphone,
-  KeyRound
+  CheckCircle2 
 } from 'lucide-react';
 
 export default function HomePage() {
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#ffffff' }}>
       {/* Floating Island Navigation */}
       <Navbar />
 
-      <main style={{ flex: 1, padding: '0 1.25rem' }}>
+      {/* Main Architectural Column with Continuous Left & Right Vertical Lines */}
+      <main className="architectural-column" style={{ flex: 1, width: '100%' }}>
         {/* ==========================================================================
-            HERO SECTION: Framed Canvas Card with Ornate Corner Flourishes
+            HERO SECTION: Framed by Vertical Lines & Ornate Corner Flourishes
             ========================================================================== */}
-        <section className="framed-canvas">
-          {/* Ornate Architectural Corner Line Flourishes */}
-          <CornerFlourish position="top-left" size={88} opacity={0.28} />
-          <CornerFlourish position="top-right" size={88} opacity={0.28} />
-          <CornerFlourish position="bottom-left" size={88} opacity={0.28} />
-          <CornerFlourish position="bottom-right" size={88} opacity={0.28} />
+        <section className="architectural-section" style={{ padding: '4.75rem 2.5rem 4.5rem' }}>
+          {/* Ornate Architectural Corner Line Flourishes at Grid Intersections */}
+          <CornerFlourish position="top-left" size={88} color="#202223" opacity={0.28} />
+          <CornerFlourish position="top-right" size={88} color="#202223" opacity={0.28} />
+          <CornerFlourish position="bottom-left" size={88} color="#202223" opacity={0.28} />
+          <CornerFlourish position="bottom-right" size={88} color="#202223" opacity={0.28} />
 
           {/* Centered Black Brand Mark */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.75rem' }}>
             <div style={{
-              width: '52px',
-              height: '52px',
+              width: '56px',
+              height: '56px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
@@ -53,41 +46,29 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Centered Capsule Category Pill */}
-          <div className="hero-pill-badge">
-            <span style={{ 
-              width: '6px', 
-              height: '6px', 
-              borderRadius: '50%', 
-              backgroundColor: 'var(--primary)', 
-              display: 'inline-block' 
-            }} />
-            Digital Warranty & Claim Verification
-          </div>
-
           {/* Serif Main Headline */}
           <h1 style={{
-            fontSize: 'clamp(2.35rem, 5vw, 3.85rem)',
+            fontSize: 'clamp(2.4rem, 5.2vw, 4rem)',
             fontWeight: 800,
             color: 'var(--primary)',
             lineHeight: 1.15,
             fontFamily: 'var(--font-serif)',
             letterSpacing: '-0.025em',
-            maxWidth: '820px',
-            margin: '0 auto 1.25rem'
+            maxWidth: '840px',
+            margin: '0 auto 1.35rem'
           }}>
             Every product has a story.<br />
             Make that story verifiable.
           </h1>
 
-          {/* Italic Serif Subtitle in Quotes (from reference aesthetic) */}
+          {/* Italic Serif Subtitle in Quotes */}
           <p style={{
             fontSize: '1.25rem',
             fontStyle: 'italic',
             color: 'var(--accent)',
             fontFamily: 'var(--font-serif)',
             letterSpacing: '-0.01em',
-            marginBottom: '1.25rem'
+            marginBottom: '1.35rem'
           }}>
             “Tamper-evident, verifiable, and protected forever.”
           </p>
@@ -97,25 +78,24 @@ export default function HomePage() {
             fontSize: '1.05rem',
             color: 'var(--text-muted)',
             maxWidth: '660px',
-            margin: '0 auto 2.25rem',
+            margin: '0 auto 2.5rem',
             lineHeight: 1.65
           }}>
             MW (My Warranty) provides electronics and technology retailers with a trusted digital foundation to issue cryptographically signed warranties, instant QR lookup, and AI-assisted claims—without paperwork or dispute.
           </p>
 
-          {/* Primary Action Capsule Buttons (ANON Reference Composition) */}
+          {/* Primary Action Capsule Buttons (Circled in Blue) */}
           <div style={{ 
             display: 'flex', 
-            gap: '1rem', 
+            gap: '1.15rem', 
             justifyContent: 'center', 
             alignItems: 'center',
-            flexWrap: 'wrap', 
-            marginBottom: '1.25rem' 
+            flexWrap: 'wrap'
           }}>
             <Link 
               href="/register-company" 
               className="btn btn-primary btn-lg" 
-              style={{ padding: '0.75rem 1.85rem' }}
+              style={{ padding: '0.8rem 2rem' }}
             >
               <Store size={18} />
               <span>Register Your Retail Shop</span>
@@ -125,97 +105,22 @@ export default function HomePage() {
             <Link 
               href="/register" 
               className="btn btn-secondary btn-lg" 
-              style={{ padding: '0.75rem 1.85rem' }}
+              style={{ padding: '0.8rem 2rem' }}
             >
               <span>+ Create Customer Account</span>
             </Link>
           </div>
-
-          {/* Auxiliary Pill Button (matching (i) How It Works & FAQs) */}
-          <div style={{ marginBottom: '1.75rem' }}>
-            <Link 
-              href="/verify/manual" 
-              className="btn btn-secondary btn-sm"
-              style={{ 
-                color: 'var(--text-muted)',
-                fontSize: '0.825rem',
-                padding: '0.35rem 1.15rem'
-              }}
-            >
-              <QrCode size={14} />
-              <span>Instant QR Code Lookup</span>
-            </Link>
-          </div>
-
-          {/* Decorative Hairline Separator */}
-          <div style={{
-            width: '180px',
-            height: '1px',
-            backgroundColor: 'var(--border)',
-            margin: '0 auto 1.5rem'
-          }} />
-
-          {/* Trust Guarantees Chips (matching bottom capsule indicators in reference) */}
-          <div style={{ 
-            display: 'flex', 
-            gap: '0.65rem', 
-            justifyContent: 'center', 
-            flexWrap: 'wrap' 
-          }}>
-            <span style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.4rem', 
-              fontSize: '0.78rem', 
-              fontWeight: 600, 
-              color: 'var(--primary)',
-              backgroundColor: 'var(--accent-light)',
-              padding: '0.25rem 0.85rem',
-              borderRadius: '9999px',
-              border: '1px solid var(--border)'
-            }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
-              RSA-SHA256 Signed
-            </span>
-
-            <span style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.4rem', 
-              fontSize: '0.78rem', 
-              fontWeight: 600, 
-              color: 'var(--primary)',
-              backgroundColor: 'var(--accent-light)',
-              padding: '0.25rem 0.85rem',
-              borderRadius: '9999px',
-              border: '1px solid var(--border)'
-            }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
-              Instant Camera Scan
-            </span>
-
-            <span style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.4rem', 
-              fontSize: '0.78rem', 
-              fontWeight: 600, 
-              color: 'var(--primary)',
-              backgroundColor: 'var(--accent-light)',
-              padding: '0.25rem 0.85rem',
-              borderRadius: '9999px',
-              border: '1px solid var(--border)'
-            }}>
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--primary)' }} />
-              Zero Paperwork
-            </span>
-          </div>
         </section>
 
         {/* ==========================================================================
-            SECOND FRAMED SECTION: 3-Step Process (Matching User Reference Design on White)
+            HORIZONTAL DIVIDER LINE: Crisp Full-Width Boundary Between Sections
             ========================================================================== */}
-        <section id="features" className="framed-canvas" style={{ padding: '4.5rem 2.5rem 4rem' }}>
+        <div className="section-divider-h" />
+
+        {/* ==========================================================================
+            SECOND SECTION: 3-Step Process (Matching User Reference Design on White)
+            ========================================================================== */}
+        <section id="features" className="architectural-section" style={{ padding: '4.75rem 2.5rem 4rem' }}>
           {/* Ornate Architectural Corner Line Flourishes */}
           <CornerFlourish position="top-left" size={88} color="#202223" opacity={0.28} />
           <CornerFlourish position="top-right" size={88} color="#202223" opacity={0.28} />
@@ -368,9 +273,14 @@ export default function HomePage() {
         </section>
 
         {/* ==========================================================================
+            HORIZONTAL DIVIDER LINE: Crisp Full-Width Boundary
+            ========================================================================== */}
+        <div className="section-divider-h" />
+
+        {/* ==========================================================================
             THIRD SECTION: Core Principles Banner
             ========================================================================== */}
-        <section id="principles" className="framed-canvas" style={{ padding: '3.5rem 2.5rem 3rem' }}>
+        <section id="principles" className="architectural-section" style={{ padding: '3.75rem 2.5rem 3.5rem' }}>
           <CornerFlourish position="top-left" size={72} opacity={0.25} />
           <CornerFlourish position="top-right" size={72} opacity={0.25} />
           <CornerFlourish position="bottom-left" size={72} opacity={0.25} />
@@ -422,37 +332,39 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </main>
 
-      {/* ==========================================================================
-          FOOTER: Clean Floating Bar with Hairline Lines
-          ========================================================================== */}
-      <footer style={{
-        maxWidth: '1140px',
-        margin: '0 auto 2rem',
-        padding: '1.75rem 1.5rem',
-        textAlign: 'center',
-        fontSize: '0.84rem',
-        color: 'var(--text-muted)',
-        borderTop: '1px solid var(--border)',
-        width: '100%'
-      }}>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
-          gap: '1.5rem', 
-          flexWrap: 'wrap',
-          marginBottom: '1rem' 
+        {/* ==========================================================================
+            HORIZONTAL DIVIDER LINE Before Footer
+            ========================================================================== */}
+        <div className="section-divider-h" />
+
+        {/* ==========================================================================
+            FOOTER: Clean Floating Bar with Hairline Lines
+            ========================================================================== */}
+        <footer style={{
+          padding: '2rem 1.5rem',
+          textAlign: 'center',
+          fontSize: '0.84rem',
+          color: 'var(--text-muted)',
+          backgroundColor: '#ffffff'
         }}>
-          <Link href="/" style={{ color: 'var(--primary)', fontWeight: 600 }}>Home</Link>
-          <Link href="/verify/manual" style={{ color: 'var(--text-muted)' }}>Verify QR</Link>
-          <Link href="/login" style={{ color: 'var(--text-muted)' }}>Sign In</Link>
-          <Link href="/register" style={{ color: 'var(--text-muted)' }}>Customer Sign Up</Link>
-          <Link href="/register-company" style={{ color: 'var(--text-muted)' }}>Retailer Register</Link>
-        </div>
-        <p>© 2026 MW | My Warranty. All rights reserved. Designed for independent electronics and technology retailers.</p>
-      </footer>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            gap: '1.5rem', 
+            flexWrap: 'wrap',
+            marginBottom: '1rem' 
+          }}>
+            <Link href="/" style={{ color: 'var(--primary)', fontWeight: 600 }}>Home</Link>
+            <Link href="/verify/manual" style={{ color: 'var(--text-muted)' }}>Verify QR</Link>
+            <Link href="/login" style={{ color: 'var(--text-muted)' }}>Sign In</Link>
+            <Link href="/register" style={{ color: 'var(--text-muted)' }}>Customer Sign Up</Link>
+            <Link href="/register-company" style={{ color: 'var(--text-muted)' }}>Retailer Register</Link>
+          </div>
+          <p>© 2026 MW | My Warranty. All rights reserved. Designed for independent electronics and technology retailers.</p>
+        </footer>
+      </main>
     </div>
   );
 }

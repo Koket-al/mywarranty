@@ -8,9 +8,9 @@
   --accent-hover: #58554c;     /* Darker Taupe */
   --accent-light: #e1f3f3;     /* Frost Ice Cyan from lower band */
   
-  --bg: #f8fafb;               /* Crisp clean backdrop with subtle frost freshness */
-  --surface: #ffffff;          /* Pure White from middle band */
-  --border: #dbe2e3;          /* Architectural hairline border */
+  --bg: #ffffff;               /* Clean pure white background */
+  --surface: #ffffff;          /* Pure White */
+  --border: #d2dada;          /* Crisp architectural hairline line */
   --border-subtle: #edf2f2;    /* Fine grid guideline */
   
   --text: #202223;             /* Dark charcoal typography */
@@ -49,15 +49,10 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg);
+  background-color: #ffffff;
   color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  /* Architectural subtle horizontal & vertical grid lines decorating the UI */
-  background-image: 
-    linear-gradient(to right, rgba(32, 34, 35, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(32, 34, 35, 0.035) 1px, transparent 1px);
-  background-size: 40px 40px;
 }
 
 h1, h2, h3, h4, .font-serif, .brand-title {
@@ -282,6 +277,33 @@ a:hover {
 /* ==========================================================================
    Framed Canvas Card with Corner Flourishes (ANON Reference Aesthetic)
    ========================================================================== */
+/* ==========================================================================
+   Architectural Framed Column with Continuous Vertical & Horizontal Lines
+   ========================================================================== */
+.architectural-column {
+  max-width: 1140px;
+  margin: 0 auto;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  background-color: #ffffff;
+  position: relative;
+}
+
+.architectural-section {
+  position: relative;
+  padding: 5rem 2.5rem 4.5rem;
+  text-align: center;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.section-divider-h {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border);
+  margin: 0;
+}
+
 .framed-canvas {
   max-width: 1140px;
   margin: 0 auto 3.25rem;
@@ -353,6 +375,13 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .architectural-column {
+    border-left: none;
+    border-right: none;
+  }
+  .architectural-section {
+    padding: 3.5rem 1.25rem 2.75rem !important;
+  }
   .island-nav-wrapper {
     top: 8px;
     padding: 0 0.75rem;
