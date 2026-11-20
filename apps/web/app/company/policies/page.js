@@ -112,7 +112,7 @@ export default function CompanyPoliciesPage() {
               <ScrollText size={40} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
               <h3 style={{ fontSize: '1.1rem', color: 'var(--primary)', marginBottom: '0.5rem' }}>No policies configured</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
-                Every company on mw defines its own terms. Create a draft and publish it for issuance.
+                Every company on MW (My Warranty) defines its own terms. Create a draft and publish it for issuance.
               </p>
               <button onClick={() => setIsModalOpen(true)} className="btn btn-primary btn-sm">
                 Create First Policy

@@ -10,7 +10,7 @@ export default function CustomerAiAssistantPage() {
   const [messages, setMessages] = useState([
     {
       sender: 'ai',
-      text: "Hello! I am your mw Warranty Assistant. I can answer questions about your device's coverage, expiration dates, exclusions, or how to submit a service request. How can I help you today?"
+      text: "Hello! I am your MW (My Warranty) Assistant. I can answer questions about your device's coverage, expiration dates, exclusions, or how to submit a service request. How can I help you today?"
     }
   ]);
   const [input, setInput] = useState('');

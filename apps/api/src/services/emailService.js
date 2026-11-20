@@ -72,11 +72,11 @@ export async function sendEmail({ to, subject, html, text }) {
 export async function sendOtpEmail(email, otp, purpose = 'Verification') {
   devOtpStore.set(`${email}:${purpose}`, otp);
   
-  const subject = `Your mw Verification Code: ${otp}`;
-  const text = `Your mw verification code is ${otp}. It expires in 10 minutes. Do not share this code with anyone.`;
+  const subject = `Your MW (My Warranty) Verification Code: ${otp}`;
+  const text = `Your MW (My Warranty) verification code is ${otp}. It expires in 10 minutes. Do not share this code with anyone.`;
   const html = `
     <div style="font-family: sans-serif; max-width: 500px; margin: 0 auto; padding: 20px; border: 1px solid #dbe2e3; border-radius: 8px;">
-      <h2 style="color: #202223; margin-top: 0;">mw</h2>
+      <h2 style="color: #202223; margin-top: 0;">MW (My Warranty)</h2>
       <p style="color: #475569;">You requested a verification code for <strong>${purpose}</strong>.</p>
       <div style="background-color: #e1f3f3; padding: 15px; border-radius: 6px; text-align: center; font-size: 28px; font-weight: bold; letter-spacing: 5px; color: #202223; margin: 20px 0;">
         ${otp}

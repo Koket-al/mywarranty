@@ -34,20 +34,27 @@ export default function Navbar() {
             }}>
               <img 
                 src="/logo-black.png" 
-                alt="mw Logo" 
+                alt="MW Logo" 
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
               />
             </div>
-            <div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
               <span style={{ 
                 fontSize: '1.45rem', 
                 fontWeight: 800, 
                 color: 'var(--primary)', 
                 letterSpacing: '0.04em',
-                fontFamily: 'var(--font-serif)',
-                textTransform: 'lowercase'
+                fontFamily: 'var(--font-serif)'
               }}>
-                mw
+                MW
+              </span>
+              <span style={{ 
+                fontSize: '0.85rem', 
+                color: 'var(--text-muted)', 
+                fontWeight: 500, 
+                letterSpacing: '0.02em' 
+              }}>
+                | My Warranty
               </span>
             </div>
           </Link>

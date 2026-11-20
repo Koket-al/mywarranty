@@ -2,8 +2,8 @@ import './globals.css';
 import { AuthProvider } from '../context/AuthContext';
 
 export const metadata = {
-  title: 'mw — Digital Warranty Management Platform',
-  description: 'Digital warranty management platform for electronics and technology retailers'
+  title: 'MW (My Warranty) — Digital Warranty Management Platform',
+  description: 'MW (My Warranty) — Digital warranty management and customer support platform for electronics and technology retailers'
 };
 
 export default function RootLayout({ children }) {

@@ -1,4 +1,4 @@
-# mw — Digital Warranty Management & Customer Support Platform
+# MW (My Warranty) — Digital Warranty Management & Customer Support Platform
 
 [![Node.js](https://img.shields.io/badge/Node.js-v20+-green.svg)](https://nodejs.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
@@ -9,7 +9,7 @@
 
 > **"Every product has a story. Make that story verifiable."**
 >
-> *mw* is a multi-tenant digital warranty management and customer support platform designed for independent electronics and technology retailers, distributors, and businesses. It eliminates fraudulent and paper warranties through cryptographic tamper-evidence, structured AI-assisted investigations, dynamic warranty form definitions, and human-in-the-loop decisions.
+> *MW (My Warranty)* is a multi-tenant digital warranty management and customer support platform designed for independent electronics and technology retailers, distributors, and businesses. It eliminates fraudulent and paper warranties through cryptographic tamper-evidence, structured AI-assisted investigations, dynamic warranty form definitions, and human-in-the-loop decisions.
 
 ---
 

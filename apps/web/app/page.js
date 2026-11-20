@@ -63,7 +63,7 @@ export default function HomePage() {
           margin: '0 auto 2.5rem',
           lineHeight: 1.6
         }}>
-          mw empowers independent electronics and technology retailers to issue tamper-evident digital warranties with instant QR verification, immutable terms, and AI-assisted claims support.
+          MW (My Warranty) empowers independent electronics and technology retailers to issue tamper-evident digital warranties with instant QR verification, immutable terms, and AI-assisted claims support.
         </p>
 
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -214,7 +214,7 @@ export default function HomePage() {
         borderTop: '1px solid var(--border)'
       }}>
         <div className="deco-line-h-accent" style={{ maxWidth: '200px', margin: '0 auto 1.5rem', opacity: 0.6 }} />
-        <p>© 2026 mw. All rights reserved. Designed for independent electronics retailers.</p>
+        <p>© 2026 MW (My Warranty). All rights reserved. Designed for independent electronics retailers.</p>
       </footer>
     </div>
   );
