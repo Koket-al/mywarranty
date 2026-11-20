@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
-import { ShieldCheck, QrCode, Cpu, CheckCircle2, Lock, Store } from 'lucide-react';
+import { QrCode, Cpu, CheckCircle2, Lock, Store } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -39,22 +39,6 @@ export default function HomePage() {
           borderRight: '2px solid var(--accent)',
           opacity: 0.4
         }} />
-
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          padding: '0.4rem 1rem',
-          backgroundColor: 'var(--accent-light)',
-          color: 'var(--primary)',
-          borderRadius: '50px',
-          fontSize: '0.85rem',
-          fontWeight: 600,
-          marginBottom: '1.5rem',
-          border: '1px solid var(--border)'
-        }}>
-          <ShieldCheck size={16} color="var(--primary)" /> Ethiopia-First Digital Warranty Platform
-        </div>
 
         <h1 style={{
           fontSize: '3.6rem',
