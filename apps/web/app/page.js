@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import CornerFlourish from '../components/CornerFlourish';
+import { ProcessStepBadge, ProcessArrow } from '../components/ProcessStepBadge';
 import { 
   QrCode, 
   Cpu, 
@@ -212,22 +213,29 @@ export default function HomePage() {
         </section>
 
         {/* ==========================================================================
-            SECOND FRAMED SECTION: "How MW Protects Your Peace of Mind" (ANON Reference)
+            SECOND FRAMED SECTION: Dark 3-Step Process (Matching User Reference Image 2)
             ========================================================================== */}
-        <section id="features" className="framed-canvas" style={{ padding: '4.5rem 2.5rem 4rem' }}>
-          {/* Ornate Architectural Corner Line Flourishes */}
-          <CornerFlourish position="top-left" size={88} opacity={0.28} />
-          <CornerFlourish position="top-right" size={88} opacity={0.28} />
-          <CornerFlourish position="bottom-left" size={88} opacity={0.28} />
-          <CornerFlourish position="bottom-right" size={88} opacity={0.28} />
+        <section id="features" className="framed-canvas framed-canvas-dark" style={{ padding: '4.5rem 2.5rem 4rem' }}>
+          {/* Ornate Architectural Corner Line Flourishes (delicate white on dark card) */}
+          <CornerFlourish position="top-left" size={88} color="#ffffff" opacity={0.16} />
+          <CornerFlourish position="top-right" size={88} color="#ffffff" opacity={0.16} />
+          <CornerFlourish position="bottom-left" size={88} color="#ffffff" opacity={0.16} />
+          <CornerFlourish position="bottom-right" size={88} color="#ffffff" opacity={0.16} />
 
-          {/* Category Chip */}
-          <div className="hero-pill-badge">
+          {/* Category Chip (Dark Pill with White Text) */}
+          <div 
+            className="hero-pill-badge" 
+            style={{ 
+              backgroundColor: '#202223', 
+              color: '#ffffff', 
+              borderColor: 'rgba(255, 255, 255, 0.22)' 
+            }}
+          >
             <span style={{ 
               width: '6px', 
               height: '6px', 
               borderRadius: '50%', 
-              backgroundColor: 'var(--primary)', 
+              backgroundColor: '#ffffff', 
               display: 'inline-block' 
             }} />
             FAQ & Architecture
@@ -235,9 +243,9 @@ export default function HomePage() {
 
           {/* Section Headline */}
           <h2 style={{
-            fontSize: 'clamp(1.85rem, 3.8vw, 2.75rem)',
+            fontSize: 'clamp(1.95rem, 4vw, 2.9rem)',
             fontWeight: 800,
-            color: 'var(--primary)',
+            color: '#ffffff',
             lineHeight: 1.2,
             fontFamily: 'var(--font-serif)',
             letterSpacing: '-0.02em',
@@ -248,172 +256,121 @@ export default function HomePage() {
 
           <p style={{
             fontSize: '1.05rem',
-            color: 'var(--text-muted)',
-            maxWidth: '620px',
-            margin: '0 auto 3rem',
+            color: '#a1a1aa',
+            maxWidth: '640px',
+            margin: '0 auto 3.75rem',
             lineHeight: 1.6
           }}>
             Four honest answers about cryptographic trust, instant verification, and customer warranty protection.
           </p>
 
-          {/* Grid of 4 Architectural Feature Cards */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '1.5rem',
-            textAlign: 'left'
-          }}>
-            {/* Card 1 */}
-            <div style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid var(--border)',
-              borderRadius: '18px',
-              padding: '1.75rem 1.5rem',
-              position: 'relative',
-              boxShadow: 'var(--shadow-sm)',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-            }}>
-              <div style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '9999px',
-                backgroundColor: 'var(--accent-light)',
-                color: 'var(--primary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1.25rem',
-                border: '1px solid var(--border)'
-              }}>
-                <Smartphone size={20} />
-              </div>
-              <h3 style={{
-                fontSize: '1.15rem',
-                fontWeight: 700,
-                color: 'var(--primary)',
-                fontFamily: 'var(--font-serif)',
-                marginBottom: '0.65rem'
-              }}>
+          {/* The 3-Step Process Flow (Exact Composition from User Reference Image 2) */}
+          <div className="process-flow-container">
+            {/* Step 1 */}
+            <div className="process-step-col">
+              <ProcessStepBadge number={1} size={115} />
+              <h3 className="process-step-title">
                 Instant QR Verification
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6 }}>
-                Customers scan a unique QR code directly with any smartphone camera. No app download or account creation required for instant authenticity and expiry checks.
+              <p className="process-step-desc">
+                Customers scan a unique QR code directly with any smartphone camera. No app download or account creation required for instant authenticity checks.
               </p>
             </div>
 
-            {/* Card 2 */}
-            <div style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid var(--border)',
-              borderRadius: '18px',
-              padding: '1.75rem 1.5rem',
-              position: 'relative',
-              boxShadow: 'var(--shadow-sm)',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-            }}>
-              <div style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '9999px',
-                backgroundColor: 'var(--accent-light)',
-                color: 'var(--primary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1.25rem',
-                border: '1px solid var(--border)'
-              }}>
-                <KeyRound size={20} />
-              </div>
-              <h3 style={{
-                fontSize: '1.15rem',
-                fontWeight: 700,
-                color: 'var(--primary)',
-                fontFamily: 'var(--font-serif)',
-                marginBottom: '0.65rem'
-              }}>
+            {/* Connecting Arrow 1 (Swooping curve) */}
+            <div style={{ paddingTop: '2.5rem' }}>
+              <ProcessArrow variant="swoop" width={115} height={48} />
+            </div>
+
+            {/* Step 2 */}
+            <div className="process-step-col">
+              <ProcessStepBadge number={2} size={115} />
+              <h3 className="process-step-title">
                 Cryptographic Integrity
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6 }}>
+              <p className="process-step-desc">
                 Each issued warranty snapshot is sealed with an asymmetric digital signature (RSA-SHA256). Any silent modification to policy terms or dates is instantly detected.
               </p>
             </div>
 
-            {/* Card 3 */}
-            <div style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid var(--border)',
-              borderRadius: '18px',
-              padding: '1.75rem 1.5rem',
-              position: 'relative',
-              boxShadow: 'var(--shadow-sm)',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-            }}>
-              <div style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '9999px',
-                backgroundColor: 'var(--accent-light)',
-                color: 'var(--primary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1.25rem',
-                border: '1px solid var(--border)'
-              }}>
-                <Cpu size={20} />
-              </div>
-              <h3 style={{
-                fontSize: '1.15rem',
-                fontWeight: 700,
-                color: 'var(--primary)',
-                fontFamily: 'var(--font-serif)',
-                marginBottom: '0.65rem'
-              }}>
-                AI Triage, Human Decision
-              </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6 }}>
-                Our Gemini AI Assistant reviews customer claims and diagnostic photos against the exact frozen policy snapshot. A verified retailer staff member always makes the final claim decision.
-              </p>
+            {/* Connecting Arrow 2 (Arching curve) */}
+            <div style={{ paddingTop: '2.5rem' }}>
+              <ProcessArrow variant="arch" width={115} height={48} />
             </div>
 
-            {/* Card 4 */}
-            <div style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid var(--border)',
-              borderRadius: '18px',
-              padding: '1.75rem 1.5rem',
-              position: 'relative',
-              boxShadow: 'var(--shadow-sm)',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-            }}>
-              <div style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '9999px',
-                backgroundColor: 'var(--accent-light)',
-                color: 'var(--primary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1.25rem',
-                border: '1px solid var(--border)'
-              }}>
-                <FileCheck2 size={20} />
-              </div>
-              <h3 style={{
-                fontSize: '1.15rem',
-                fontWeight: 700,
-                color: 'var(--primary)',
-                fontFamily: 'var(--font-serif)',
-                marginBottom: '0.65rem'
-              }}>
-                Immutable Policy Snapshots
+            {/* Step 3 */}
+            <div className="process-step-col">
+              <ProcessStepBadge number={3} size={115} />
+              <h3 className="process-step-title">
+                AI Triage & Human Decision
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6 }}>
-                The terms in effect at the exact moment of sale remain locked forever. Neither party can unilaterally alter coverage terms after purchase.
+              <p className="process-step-desc">
+                Our Gemini AI Assistant reviews customer claims and diagnostic photos against the exact frozen policy snapshot. A verified retailer staff member makes the final claim decision.
               </p>
             </div>
+          </div>
+
+          {/* Subtle Hairline Divider and Trust Capsule Chips */}
+          <div style={{
+            width: '180px',
+            height: '1px',
+            backgroundColor: 'rgba(255, 255, 255, 0.15)',
+            margin: '3.5rem auto 1.5rem'
+          }} />
+
+          <div style={{ 
+            display: 'flex', 
+            gap: '0.75rem', 
+            justifyContent: 'center', 
+            flexWrap: 'wrap' 
+          }}>
+            <span style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '0.4rem', 
+              fontSize: '0.78rem', 
+              fontWeight: 500, 
+              color: '#e2e8f0',
+              backgroundColor: 'rgba(255, 255, 255, 0.06)',
+              padding: '0.3rem 0.95rem',
+              borderRadius: '9999px',
+              border: '1px solid rgba(255, 255, 255, 0.12)'
+            }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff' }} />
+              Immutable Policy Snapshots
+            </span>
+
+            <span style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '0.4rem', 
+              fontSize: '0.78rem', 
+              fontWeight: 500, 
+              color: '#e2e8f0',
+              backgroundColor: 'rgba(255, 255, 255, 0.06)',
+              padding: '0.3rem 0.95rem',
+              borderRadius: '9999px',
+              border: '1px solid rgba(255, 255, 255, 0.12)'
+            }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff' }} />
+              Zero Silent Retroactive Edits
+            </span>
+
+            <span style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '0.4rem', 
+              fontSize: '0.78rem', 
+              fontWeight: 500, 
+              color: '#e2e8f0',
+              backgroundColor: 'rgba(255, 255, 255, 0.06)',
+              padding: '0.3rem 0.95rem',
+              borderRadius: '9999px',
+              border: '1px solid rgba(255, 255, 255, 0.12)'
+            }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff' }} />
+              Verified Retailer Authority
+            </span>
           </div>
         </section>
 
