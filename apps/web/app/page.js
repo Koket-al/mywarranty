@@ -8,7 +8,6 @@ import { useAuth } from '../context/AuthContext';
 import { 
   Store, 
   ArrowRight, 
-  CheckCircle2,
   QrCode,
   Building2,
   LogOut,
@@ -314,116 +313,6 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-
-          <div style={{ 
-            display: 'flex', 
-            gap: '0.75rem', 
-            justifyContent: 'center', 
-            flexWrap: 'wrap',
-            marginTop: '3.5rem'
-          }}>
-            <span style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.4rem', 
-              fontSize: '0.78rem', 
-              fontWeight: 700, 
-              color: 'var(--bg)',
-              backgroundColor: 'var(--feature-primary)',
-              padding: '0.35rem 1rem',
-              borderRadius: '9999px',
-              border: 'none',
-              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.15)'
-            }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--bg)' }} />
-              Immutable Policy Snapshots
-            </span>
-
-            <span style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.4rem', 
-              fontSize: '0.78rem', 
-              fontWeight: 700, 
-              color: 'var(--bg)',
-              backgroundColor: 'var(--feature-primary)',
-              padding: '0.35rem 1rem',
-              borderRadius: '9999px',
-              border: 'none',
-              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.15)'
-            }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--bg)' }} />
-              Zero Silent Retroactive Edits
-            </span>
-
-            <span style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.4rem', 
-              fontSize: '0.78rem', 
-              fontWeight: 700, 
-              color: 'var(--bg)',
-              backgroundColor: 'var(--feature-primary)',
-              padding: '0.35rem 1rem',
-              borderRadius: '9999px',
-              border: 'none',
-              boxShadow: '0 2px 4px rgba(9, 32, 50, 0.15)'
-            }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--bg)' }} />
-              Verified Retailer Authority
-            </span>
-          </div>
-        </section>
-
-        {/* ==========================================================================
-            THIRD SECTION: Core Principles Banner
-            ========================================================================== */}
-        <section id="principles" className="architectural-section" style={{ padding: '3.75rem 2.5rem 3.5rem' }}>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h2 style={{
-              fontSize: '1.85rem',
-              fontWeight: 800,
-              color: 'var(--primary)',
-              fontFamily: 'var(--font-serif)',
-              marginBottom: '1rem',
-              letterSpacing: '-0.02em'
-            }}>
-              Built on Core Principles
-            </h2>
-
-            <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '2rem' }}>
-              We believe trust cannot be fabricated through marketing claims—it must be verifiable by design.
-            </p>
-
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2rem',
-              flexWrap: 'wrap',
-              textAlign: 'left'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                <CheckCircle2 size={19} color="var(--primary)" />
-                <span style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--primary)' }}>
-                  No universal policy imposed
-                </span>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                <CheckCircle2 size={19} color="var(--primary)" />
-                <span style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--primary)' }}>
-                  No silent retroactive edits
-                </span>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                <CheckCircle2 size={19} color="var(--primary)" />
-                <span style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--primary)' }}>
-                  Seller-registered authentic records
-                </span>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* ==========================================================================
@@ -482,8 +371,8 @@ export default function HomePage() {
               <Link href="/#features" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
                 Cryptographic Capabilities
               </Link>
-              <Link href="/#principles" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
-                Core Principles
+              <Link href="/#features" style={{ fontSize: '0.825rem', color: 'var(--primary)', textDecoration: 'none' }}>
+                Digital Signatures & Integrity
               </Link>
             </div>
 
