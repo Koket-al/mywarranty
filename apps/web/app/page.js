@@ -3,15 +3,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
-import { ProcessStepBadge, ProcessArrow } from '../components/ProcessStepBadge';
 import { useAuth } from '../context/AuthContext';
-import { 
-  Store, 
-  ArrowRight, 
+import {
+  Store,
+  ArrowRight,
   QrCode,
   Building2,
   LogOut,
-  ShieldCheck
+  ShieldCheck,
+  Database,
+  Zap
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -37,26 +38,26 @@ export default function HomePage() {
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <img 
-                src="/logo-black.png" 
-                alt="MW Logo" 
-                style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+              <img
+                src="/logo-black.png"
+                alt="MW Logo"
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             </div>
 
-            <div style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.55rem', 
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.55rem',
               padding: '0.35rem 0.95rem',
               backgroundColor: 'var(--feature-primary)',
               borderRadius: '9999px',
               boxShadow: '0 2px 6px rgba(9, 32, 50, 0.2)'
             }}>
-              <span style={{ 
-                fontFamily: 'var(--font-serif)', 
-                fontSize: '1.2rem', 
-                fontWeight: 800, 
+              <span style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: '1.2rem',
+                fontWeight: 800,
                 color: 'var(--bg)',
                 letterSpacing: '-0.02em',
                 lineHeight: 1
@@ -64,11 +65,11 @@ export default function HomePage() {
                 MW
               </span>
               <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--bg)' }} />
-              <span style={{ 
-                fontSize: '0.72rem', 
-                fontWeight: 700, 
-                color: 'var(--bg)', 
-                letterSpacing: '0.08em', 
+              <span style={{
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                color: 'var(--bg)',
+                letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 fontFamily: 'var(--font-sans)',
                 lineHeight: 1
@@ -113,30 +114,30 @@ export default function HomePage() {
             margin: '0 auto 2.5rem',
             lineHeight: 1.65
           }}>
-            MW (My Warranty) provides electronics and technology retailers with a trusted digital foundation to issue cryptographically signed warranties, instant QR lookup, and AI-assisted claims—without paperwork or dispute.
+            MW (My Warranty) helps electronics shops create digital warranties. Customers scan a QR code to check their warranty. AI helps shop staff review claims. Less paperwork and fewer problems.
           </p>
 
           {/* Primary Action Capsule Buttons */}
-          <div style={{ 
-            display: 'flex', 
+          <div style={{
+            display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             gap: '1rem',
             justifyContent: 'center'
           }}>
             <div style={{
-              display: 'flex', 
-              gap: '1rem', 
-              justifyContent: 'center', 
+              display: 'flex',
+              gap: '1rem',
+              justifyContent: 'center',
               alignItems: 'center',
               flexWrap: 'wrap'
             }}>
               {user ? (
                 <>
                   {isCompanyStaff ? (
-                    <Link 
-                      href="/company/dashboard" 
-                      className="btn btn-primary btn-pill btn-lg" 
+                    <Link
+                      href="/company/dashboard"
+                      className="btn btn-primary btn-pill btn-lg"
                       style={{ padding: '0.8rem 2rem' }}
                     >
                       <Building2 size={18} />
@@ -144,9 +145,9 @@ export default function HomePage() {
                       <ArrowRight size={16} />
                     </Link>
                   ) : (
-                    <Link 
-                      href="/customer/dashboard" 
-                      className="btn btn-primary btn-pill btn-lg" 
+                    <Link
+                      href="/customer/dashboard"
+                      className="btn btn-primary btn-pill btn-lg"
                       style={{ padding: '0.8rem 2rem' }}
                     >
                       <ShieldCheck size={18} />
@@ -155,9 +156,9 @@ export default function HomePage() {
                     </Link>
                   )}
 
-                  <button 
-                    onClick={logout} 
-                    className="btn btn-secondary btn-pill btn-lg" 
+                  <button
+                    onClick={logout}
+                    className="btn btn-secondary btn-pill btn-lg"
                     style={{ padding: '0.8rem 1.75rem' }}
                   >
                     <LogOut size={16} />
@@ -166,9 +167,9 @@ export default function HomePage() {
                 </>
               ) : (
                 <>
-                  <Link 
-                    href="/register-company" 
-                    className="btn btn-primary btn-pill btn-lg" 
+                  <Link
+                    href="/register-company"
+                    className="btn btn-primary btn-pill btn-lg"
                     style={{ padding: '0.8rem 2rem' }}
                   >
                     <Store size={18} />
@@ -176,9 +177,9 @@ export default function HomePage() {
                     <ArrowRight size={16} />
                   </Link>
 
-                  <Link 
-                    href="/register" 
-                    className="btn btn-secondary btn-pill btn-lg" 
+                  <Link
+                    href="/register"
+                    className="btn btn-secondary btn-pill btn-lg"
                     style={{ padding: '0.8rem 2rem' }}
                   >
                     <span>+ Create Customer Account</span>
@@ -189,8 +190,8 @@ export default function HomePage() {
 
             {/* Dedicated Warranty QR Verification Action */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.25rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <Link 
-                href="/verify/manual" 
+              <Link
+                href="/verify/manual"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -212,8 +213,8 @@ export default function HomePage() {
               </Link>
 
               {!user && (
-                <Link 
-                  href="/login" 
+                <Link
+                  href="/login"
                   style={{
                     fontSize: '0.825rem',
                     color: 'var(--feature-primary)',
@@ -230,86 +231,134 @@ export default function HomePage() {
         </section>
 
         {/* ==========================================================================
-            SECOND SECTION: 3-Step Process
+            SECOND SECTION: Your Trusted Warranty Companion
             ========================================================================== */}
-        <section id="features" className="architectural-section" style={{ padding: '4.75rem 2.5rem 4rem' }}>
-          {/* Category Chip */}
-          <div className="hero-pill-badge">
-            <span style={{ 
-              width: '6px', 
-              height: '6px', 
-              borderRadius: '50%', 
-              backgroundColor: 'var(--primary)', 
-              display: 'inline-block' 
-            }} />
-            FAQ & Architecture
-          </div>
-
-          {/* Section Headline */}
+        <section id="features" className="architectural-section" style={{ padding: '4.5rem 2rem 5rem' }}>
+          {/* Main Title matching reference format */}
           <h2 style={{
-            fontSize: 'clamp(1.95rem, 4vw, 2.9rem)',
+            fontSize: 'clamp(2rem, 4.5vw, 2.9rem)',
             fontWeight: 800,
             color: 'var(--primary)',
             lineHeight: 1.2,
-            fontFamily: 'var(--font-serif)',
+            fontFamily: 'var(--font-sans)',
             letterSpacing: '-0.02em',
-            marginBottom: '0.85rem'
+            marginBottom: '3.75rem',
+            textAlign: 'center'
           }}>
-            How MW Protects Your Peace of Mind
+            Your <span style={{ color: 'var(--feature-primary)' }}>Trusted</span> Warranty Companion
           </h2>
 
-          <p style={{
-            fontSize: '1.05rem',
-            color: 'var(--text-muted)',
-            maxWidth: '640px',
-            margin: '0 auto 3.75rem',
-            lineHeight: 1.6
+          {/* 3-Column Feature Grid matching reference format */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '2.5rem',
+            maxWidth: '1040px',
+            margin: '0 auto',
+            textAlign: 'center'
           }}>
-            Four honest answers about cryptographic trust, instant verification, and customer warranty protection.
-          </p>
-
-          {/* The 3-Step Process Flow (Exact Composition from User Reference Image) */}
-          <div className="process-flow-container">
-            {/* Step 1 */}
-            <div className="process-step-col">
-              <ProcessStepBadge number={1} size={115} theme="light" />
-              <h3 className="process-step-title">
-                Instant QR Verification
+            {/* Column 1: Instant Verification */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{
+                width: '68px',
+                height: '68px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--feature-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.35rem',
+                boxShadow: '0 4px 12px rgba(9, 32, 50, 0.15)'
+              }}>
+                <ShieldCheck size={30} color="var(--bg)" strokeWidth={2.2} />
+              </div>
+              <h3 style={{
+                fontSize: '1.25rem',
+                fontWeight: 800,
+                color: 'var(--primary)',
+                fontFamily: 'var(--font-sans)',
+                marginBottom: '0.5rem',
+                letterSpacing: '-0.01em'
+              }}>
+                Instant Verification
               </h3>
-              <p className="process-step-desc">
-                Customers scan a unique QR code directly with any smartphone camera. No app download or account creation required for instant authenticity checks.
+              <p style={{
+                fontSize: '0.95rem',
+                color: 'var(--text-muted)',
+                lineHeight: 1.55,
+                maxWidth: '260px'
+              }}>
+                Check warranty details quickly and easily.
               </p>
             </div>
 
-            {/* Connecting Arrow 1 (Swooping curve) */}
-            <div style={{ paddingTop: '2.5rem' }}>
-              <ProcessArrow variant="swoop" width={115} height={48} color="#092032" />
-            </div>
-
-            {/* Step 2 */}
-            <div className="process-step-col">
-              <ProcessStepBadge number={2} size={115} theme="light" />
-              <h3 className="process-step-title">
-                Cryptographic Integrity
+            {/* Column 2: Trusted Information */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{
+                width: '68px',
+                height: '68px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--feature-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.35rem',
+                boxShadow: '0 4px 12px rgba(9, 32, 50, 0.15)'
+              }}>
+                <Database size={28} color="var(--bg)" strokeWidth={2.2} />
+              </div>
+              <h3 style={{
+                fontSize: '1.25rem',
+                fontWeight: 800,
+                color: 'var(--primary)',
+                fontFamily: 'var(--font-sans)',
+                marginBottom: '0.5rem',
+                letterSpacing: '-0.01em'
+              }}>
+                Trusted Information
               </h3>
-              <p className="process-step-desc">
-                Each issued warranty snapshot is sealed with an asymmetric digital signature (RSA-SHA256). Any silent modification to policy terms or dates is instantly detected.
+              <p style={{
+                fontSize: '0.95rem',
+                color: 'var(--text-muted)',
+                lineHeight: 1.55,
+                maxWidth: '260px'
+              }}>
+                Get accurate and reliable data.
               </p>
             </div>
 
-            {/* Connecting Arrow 2 (Arching curve) */}
-            <div style={{ paddingTop: '2.5rem' }}>
-              <ProcessArrow variant="arch" width={115} height={48} color="#092032" />
-            </div>
-
-            {/* Step 3 */}
-            <div className="process-step-col">
-              <ProcessStepBadge number={3} size={115} theme="light" />
-              <h3 className="process-step-title">
-                AI Triage & Human Decision
+            {/* Column 3: A Better Experience */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{
+                width: '68px',
+                height: '68px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--feature-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.35rem',
+                boxShadow: '0 4px 12px rgba(9, 32, 50, 0.15)'
+              }}>
+                <Zap size={28} color="var(--bg)" strokeWidth={2.2} />
+              </div>
+              <h3 style={{
+                fontSize: '1.25rem',
+                fontWeight: 800,
+                color: 'var(--primary)',
+                fontFamily: 'var(--font-sans)',
+                marginBottom: '0.5rem',
+                letterSpacing: '-0.01em'
+              }}>
+                A Better Experience
               </h3>
-              <p className="process-step-desc">
-                Our Gemini AI Assistant reviews customer claims and diagnostic photos against the exact frozen policy snapshot. A verified retailer staff member makes the final claim decision.
+              <p style={{
+                fontSize: '0.95rem',
+                color: 'var(--text-muted)',
+                lineHeight: 1.55,
+                maxWidth: '260px'
+              }}>
+                Enjoy a smoother and simpler service.
               </p>
             </div>
           </div>
