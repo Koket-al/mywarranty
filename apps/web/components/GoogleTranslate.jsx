@@ -155,14 +155,16 @@ export default function GoogleTranslate() {
       <div style={{
         display: 'inline-flex',
         alignItems: 'center',
-        backgroundColor: 'var(--accent-light)',
-        border: '1px solid var(--border)',
-        borderRadius: '20px',
-        padding: '2px',
+        backgroundColor: '#f8fafc',
+        border: '1px solid #e2e8f0',
+        borderRadius: '9999px',
+        padding: '2px 3px',
         fontSize: '0.78rem',
-        fontWeight: 600
+        fontWeight: 600,
+        fontFamily: 'var(--font-sans)',
+        whiteSpace: 'nowrap'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '0 5px', color: 'var(--primary)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', padding: '0 5px', color: '#64748b' }}>
           <Globe size={13} />
         </div>
 
@@ -170,15 +172,16 @@ export default function GoogleTranslate() {
           type="button"
           onClick={() => changeLanguage('en')}
           style={{
-            border: 'none',
+            border: currentLang === 'en' ? '1px solid #e2e8f0' : '1px solid transparent',
             background: currentLang === 'en' ? '#ffffff' : 'transparent',
-            color: currentLang === 'en' ? 'var(--primary)' : 'var(--text-muted)',
-            borderRadius: '16px',
-            padding: '3px 7px',
+            color: currentLang === 'en' ? '#202223' : '#64748b',
+            borderRadius: '9999px',
+            padding: '3px 8px',
             cursor: 'pointer',
             fontSize: '0.78rem',
+            fontFamily: 'var(--font-sans)',
             fontWeight: currentLang === 'en' ? 700 : 500,
-            boxShadow: currentLang === 'en' ? '0 1px 2px rgba(32, 34, 35, 0.12)' : 'none',
+            boxShadow: currentLang === 'en' ? '0 1px 2px rgba(32, 34, 35, 0.08)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="Switch to English"
@@ -190,15 +193,16 @@ export default function GoogleTranslate() {
           type="button"
           onClick={() => changeLanguage('am')}
           style={{
-            border: 'none',
+            border: currentLang === 'am' ? '1px solid #e2e8f0' : '1px solid transparent',
             background: currentLang === 'am' ? '#ffffff' : 'transparent',
-            color: currentLang === 'am' ? 'var(--primary)' : 'var(--text-muted)',
-            borderRadius: '16px',
+            color: currentLang === 'am' ? '#202223' : '#64748b',
+            borderRadius: '9999px',
             padding: '3px 8px',
             cursor: 'pointer',
             fontSize: '0.78rem',
+            fontFamily: 'var(--font-sans)',
             fontWeight: currentLang === 'am' ? 700 : 500,
-            boxShadow: currentLang === 'am' ? '0 1px 2px rgba(32, 34, 35, 0.12)' : 'none',
+            boxShadow: currentLang === 'am' ? '0 1px 2px rgba(32, 34, 35, 0.08)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="ወደ አማርኛ ቀይር (Switch to Amharic)"
@@ -210,15 +214,16 @@ export default function GoogleTranslate() {
           type="button"
           onClick={() => changeLanguage('om')}
           style={{
-            border: 'none',
+            border: currentLang === 'om' ? '1px solid #e2e8f0' : '1px solid transparent',
             background: currentLang === 'om' ? '#ffffff' : 'transparent',
-            color: currentLang === 'om' ? 'var(--primary)' : 'var(--text-muted)',
-            borderRadius: '16px',
+            color: currentLang === 'om' ? '#202223' : '#64748b',
+            borderRadius: '9999px',
             padding: '3px 8px',
             cursor: 'pointer',
             fontSize: '0.78rem',
+            fontFamily: 'var(--font-sans)',
             fontWeight: currentLang === 'om' ? 700 : 500,
-            boxShadow: currentLang === 'om' ? '0 1px 2px rgba(32, 34, 35, 0.12)' : 'none',
+            boxShadow: currentLang === 'om' ? '0 1px 2px rgba(32, 34, 35, 0.08)' : 'none',
             transition: 'all 0.15s ease'
           }}
           title="Gara Afaan Oromootti jijjiiri (Switch to Afaan Oromoo)"
