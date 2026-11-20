@@ -1,5 +1,13 @@
 import mongoose from 'mongoose';
+import dns from 'dns';
 import { env } from './env.js';
+
+// Ensure reliable DNS resolution for MongoDB Atlas SRV records (prevents querySrv timeouts on ISP DNS)
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1']);
+} catch (dnsErr) {
+  // fallback to system default DNS if setServers is restricted
+}
 
 let isConnected = false;
 let memServer = null;
@@ -8,7 +16,7 @@ export async function connectDB() {
   if (isConnected) return;
 
   const mongoOptions = {
-    serverSelectionTimeoutMS: 3000
+    serverSelectionTimeoutMS: 8000
   };
 
   try {

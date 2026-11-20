@@ -1,9 +1,13 @@
 import dotenv from 'dotenv';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import crypto from 'node:crypto';
 
-// Load .env from root or current dir
-dotenv.config({ path: path.resolve(process.cwd(), '../../.env') });
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Load .env reliably from apps/api/.env, workspace root, or cwd
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+dotenv.config({ path: path.resolve(__dirname, '../../../../.env') });
 dotenv.config();
 
 // Ensure development RSA keypair exists if not provided
