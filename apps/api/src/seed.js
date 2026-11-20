@@ -18,7 +18,7 @@ import { ROLES, WARRANTY_STATUS, TICKET_STATUS, generateWarrantyNumber, computeR
 import { signWarrantyRecord } from './services/signatureService.js';
 
 export async function seedDatabase(isQuiet = false) {
-  if (!isQuiet) console.log('--> Seeding Ewnet database with realistic demo records...');
+  if (!isQuiet) console.log('--> Seeding MW database with realistic demo records...');
   await connectDB();
 
   // Clean existing records

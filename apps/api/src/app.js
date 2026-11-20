@@ -60,7 +60,7 @@ app.use('/api/support/evidence-file', express.static(path.resolve(process.cwd(),
 app.get(['/health', '/api/health'], (req, res) => {
   res.status(200).json({
     status: 'ok',
-    service: 'ewnet-api',
+    service: 'mw-api',
     time: new Date().toISOString()
   });
 });

@@ -4,7 +4,7 @@ import { Session, User, CompanyMember } from '../models/index.js';
 export async function authenticate(req, res, next) {
   try {
     // Check cookie or Bearer header
-    const token = req.cookies?.ewnet_session || req.headers?.authorization?.replace(/^Bearer\s+/i, '');
+    const token = req.cookies?.mw_session || req.cookies?.ewnet_session || req.headers?.authorization?.replace(/^Bearer\s+/i, '');
 
     if (!token) {
       return res.status(401).json({ success: false, error: 'Authentication required. Please log in.' });
@@ -61,7 +61,7 @@ export async function authenticate(req, res, next) {
  */
 export async function optionalAuth(req, res, next) {
   try {
-    const token = req.cookies?.ewnet_session || req.headers?.authorization?.replace(/^Bearer\s+/i, '');
+    const token = req.cookies?.mw_session || req.cookies?.ewnet_session || req.headers?.authorization?.replace(/^Bearer\s+/i, '');
     if (!token) return next();
 
     const tokenHash = crypto.createHash('sha256').update(token).digest('hex');

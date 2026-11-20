@@ -421,7 +421,7 @@ export default function IssueWarrantyPage() {
                     gap: '0.5rem'
                   }}>
                     <ShieldCheck size={18} style={{ flexShrink: 0 }} />
-                    <span>Upon confirmation, Ewnet will generate an asymmetric digital signature (RSA-SHA256) and an unguessable QR token. Policy terms are immutably snapshotted.</span>
+                    <span>Upon confirmation, mw will generate an asymmetric digital signature (RSA-SHA256) and an unguessable QR token. Policy terms are immutably snapshotted.</span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>

@@ -246,6 +246,12 @@ router.post('/login', async (req, res, next) => {
     });
 
     // Set secure cookie
+    res.cookie('mw_session', rawToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      expires: expiresAt
+    });
     res.cookie('ewnet_session', rawToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -284,6 +290,7 @@ router.post('/logout', authenticate, async (req, res, next) => {
     if (req.session) {
       await Session.findByIdAndDelete(req.session._id);
     }
+    res.clearCookie('mw_session');
     res.clearCookie('ewnet_session');
     res.status(200).json({ success: true, message: 'Logged out successfully' });
   } catch (err) {

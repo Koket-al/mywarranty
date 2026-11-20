@@ -196,7 +196,7 @@ export async function suggestPolicyClauses({ category = 'electronics', durationM
       {
         clauseId: 'proc-claim',
         title: 'Service Request Procedure',
-        text: 'Customer must present or submit the digital warranty QR code, invoice reference, and detailed photographic evidence of the defect through Ewnet portal.',
+        text: 'Customer must present or submit the digital warranty QR code, invoice reference, and detailed photographic evidence of the defect through MW portal.',
         type: 'procedure'
       }
     ]

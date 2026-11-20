@@ -2,8 +2,8 @@ import './globals.css';
 import { AuthProvider } from '../context/AuthContext';
 
 export const metadata = {
-  title: 'Ewnet (እውነት) — Digital Warranty Management Platform',
-  description: 'Ethiopia-first digital warranty platform for electronics and technology retailers'
+  title: 'mw — Digital Warranty Management Platform',
+  description: 'Digital warranty management platform for electronics and technology retailers'
 };
 
 export default function RootLayout({ children }) {

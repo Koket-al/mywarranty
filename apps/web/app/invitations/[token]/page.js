@@ -108,7 +108,7 @@ export default function AcceptInvitationPage() {
                   Join {invitation.company?.businessName}
                 </h1>
                 <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
-                  You have been invited to join the staff on Ewnet
+                  You have been invited to join the staff on mw
                 </p>
               </div>
 

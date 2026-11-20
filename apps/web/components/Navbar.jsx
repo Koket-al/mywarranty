@@ -26,31 +26,28 @@ export default function Navbar() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', textDecoration: 'none' }}>
             <div style={{
-              backgroundColor: 'var(--primary)',
-              color: '#ffffff',
-              width: '34px',
-              height: '34px',
-              borderRadius: '6px',
+              width: '38px',
+              height: '38px',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 2px 4px rgba(32, 34, 35, 0.15)',
-              border: '1px solid #141516'
+              justifyContent: 'center'
             }}>
-              <ShieldCheck size={20} color="var(--accent-light)" />
+              <img 
+                src="/logo-black.png" 
+                alt="mw Logo" 
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+              />
             </div>
             <div>
               <span style={{ 
-                fontSize: '1.4rem', 
+                fontSize: '1.45rem', 
                 fontWeight: 800, 
                 color: 'var(--primary)', 
                 letterSpacing: '0.04em',
-                fontFamily: 'var(--font-serif)'
+                fontFamily: 'var(--font-serif)',
+                textTransform: 'lowercase'
               }}>
-                EWNET
-              </span>
-              <span style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginLeft: '6px', fontWeight: 500 }}>
-                | እውነት
+                mw
               </span>
             </div>
           </Link>
