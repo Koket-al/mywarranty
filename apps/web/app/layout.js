@@ -6,6 +6,12 @@ export const metadata = {
   description: 'MW (My Warranty) — Digital warranty management and customer support platform for electronics and technology retailers'
 };
 
+export const viewport = {
+  themeColor: '#f1a501',
+  width: 'device-width',
+  initialScale: 1
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
