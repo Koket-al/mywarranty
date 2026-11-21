@@ -125,15 +125,15 @@ export default function CompanyWarrantyDetailPage() {
           </div>
 
           {/* Cryptographic Integrity Panel */}
-          <div className="card" style={{ marginBottom: '1.5rem', backgroundColor: integrity?.isValid ? 'var(--accent-light)' : '#fef2f2', border: `1px solid ${integrity?.isValid ? 'var(--border)' : '#fecaca'}` }}>
+          <div className="card" style={{ marginBottom: '1.5rem', backgroundColor: integrity?.isValid ? 'var(--surface-alt)' : 'var(--feature-secondary)', border: 'none', color: 'var(--bg)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              {integrity?.isValid ? <ShieldCheck size={26} color="var(--primary)" /> : <ShieldAlert size={26} color="var(--danger)" />}
+              {integrity?.isValid ? <ShieldCheck size={26} color="var(--bg)" /> : <ShieldAlert size={26} color="var(--bg)" />}
               <div>
-                <strong style={{ fontSize: '1rem', color: integrity?.isValid ? 'var(--primary)' : '#991b1b' }}>
+                <strong style={{ fontSize: '1rem', color: 'var(--bg)' }}>
                   {integrity?.isValid ? 'Tamper-Evident Record Verified' : 'Cryptographic Mismatch Detected!'}
                 </strong>
-                <div style={{ fontSize: '0.8125rem', color: integrity?.isValid ? 'var(--primary-light)' : '#b91c1c' }}>
-                  SHA-256 Hash: <code style={{ fontSize: '0.75rem' }}>{integrity?.recomputedHash}</code> • Key ID: {warranty.recordIntegrity?.keyId}
+                <div style={{ fontSize: '0.8125rem', color: 'rgba(241, 165, 1, 0.75)' }}>
+                  SHA-256 Hash: <code style={{ fontSize: '0.75rem', color: 'var(--bg)' }}>{integrity?.recomputedHash}</code> • Key ID: {warranty.recordIntegrity?.keyId}
                 </div>
               </div>
             </div>
@@ -148,33 +148,33 @@ export default function CompanyWarrantyDetailPage() {
                     <img src={warranty.product.imageUrl} alt={warranty.product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 ) : (
-                  <Smartphone size={20} color="var(--accent)" />
+                  <Smartphone size={20} color="var(--bg)" />
                 )}
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Product & Serial</div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 600 }}>{warranty.product?.brand} {warranty.product?.name}</div>
-                  <div style={{ fontSize: '0.85rem' }}>Model: {warranty.product?.model}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Serial: {warranty.product?.serialNumber || 'N/A'}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)', textTransform: 'uppercase' }}>Product & Serial</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--bg)' }}>{warranty.product?.brand} {warranty.product?.name}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--bg)' }}>Model: {warranty.product?.model}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(241, 165, 1, 0.75)' }}>Serial: {warranty.product?.serialNumber || 'N/A'}</div>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <User size={20} color="var(--accent)" />
+                <User size={20} color="var(--bg)" />
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Customer Details</div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 600 }}>{warranty.customerSnapshot?.fullName}</div>
-                  <div style={{ fontSize: '0.85rem' }}>{warranty.customerSnapshot?.email}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Phone: {warranty.customerSnapshot?.phone || 'N/A'}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)', textTransform: 'uppercase' }}>Customer Details</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--bg)' }}>{warranty.customerSnapshot?.fullName}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--bg)' }}>{warranty.customerSnapshot?.email}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(241, 165, 1, 0.75)' }}>Phone: {warranty.customerSnapshot?.phone || 'N/A'}</div>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <Calendar size={20} color="var(--accent)" />
+                <Calendar size={20} color="var(--bg)" />
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Dates & Term</div>
-                  <div style={{ fontSize: '0.85rem' }}>Purchased: {new Date(warranty.purchase?.purchaseDate).toLocaleDateString()}</div>
-                  <div style={{ fontSize: '0.85rem' }}>Valid From: {new Date(warranty.warranty?.startDate).toLocaleDateString()}</div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--accent)' }}>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)', textTransform: 'uppercase' }}>Dates & Term</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--bg)' }}>Purchased: {new Date(warranty.purchase?.purchaseDate).toLocaleDateString()}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--bg)' }}>Valid From: {new Date(warranty.warranty?.startDate).toLocaleDateString()}</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--bg)' }}>
                     Expires: {new Date(warranty.warranty?.expiryDate).toLocaleDateString()}
                   </div>
                 </div>
@@ -191,12 +191,12 @@ export default function CompanyWarrantyDetailPage() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {(warranty.policySnapshot?.clauses || []).map((c, idx) => (
-                <div key={idx} style={{ padding: '0.75rem', backgroundColor: 'var(--bg)', borderRadius: '6px', fontSize: '0.875rem' }}>
+                <div key={idx} style={{ padding: '0.75rem', backgroundColor: 'var(--surface-alt)', borderRadius: '6px', fontSize: '0.875rem', color: 'var(--bg)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
-                    <strong>{c.title}</strong>
+                    <strong style={{ color: 'var(--bg)' }}>{c.title}</strong>
                     <span className="badge badge-info">{c.type}</span>
                   </div>
-                  <p style={{ color: 'var(--text)', lineHeight: 1.5 }}>{c.text}</p>
+                  <p style={{ color: 'var(--bg)', opacity: 0.9, lineHeight: 1.5 }}>{c.text}</p>
                 </div>
               ))}
             </div>
