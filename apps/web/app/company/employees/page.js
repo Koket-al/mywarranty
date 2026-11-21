@@ -191,7 +191,7 @@ export default function CompanyEmployeesPage() {
             </div>
 
             {invitations.length === 0 ? (
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>No pending invitations.</p>
+              <p style={{ color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.875rem' }}>No pending invitations.</p>
             ) : (
               <div className="table-container">
                 <table className="table">
@@ -267,7 +267,7 @@ export default function CompanyEmployeesPage() {
                     <button type="button" onClick={() => setIsModalOpen(false)} className="btn btn-secondary">
                       Cancel
                     </button>
-                    <button type="submit" className="btn btn-primary" disabled={submitting}>
+                    <button type="submit" className="btn btn-gold" disabled={submitting}>
                       {submitting ? 'Sending Invite...' : 'Send Invitation'}
                     </button>
                   </div>
