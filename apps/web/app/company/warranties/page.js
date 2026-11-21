@@ -69,7 +69,7 @@ export default function CompanyWarrantiesListPage() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
-                <Search size={18} color="var(--text-muted)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)' }} />
+                <Search size={18} color="var(--bg)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', opacity: 0.85 }} />
               </div>
               <button type="submit" className="btn btn-secondary">
                 Search
@@ -81,7 +81,7 @@ export default function CompanyWarrantiesListPage() {
             <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading records...</div>
           ) : warranties.length === 0 ? (
             <div className="card" style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-              <p style={{ color: 'var(--text-muted)' }}>No warranties match the search criteria.</p>
+              <p style={{ color: 'rgba(241, 165, 1, 0.75)' }}>No warranties match the search criteria.</p>
             </div>
           ) : (
             <div className="table-container">
@@ -106,7 +106,7 @@ export default function CompanyWarrantiesListPage() {
                         <td>{w.product?.brand} {w.product?.name}</td>
                         <td>
                           <div>{w.customerSnapshot?.fullName}</div>
-                          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{w.customerSnapshot?.email}</div>
+                          <div style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)' }}>{w.customerSnapshot?.email}</div>
                         </td>
                         <td>{w.product?.serialNumber || 'N/A'}</td>
                         <td>{new Date(w.warranty?.expiryDate).toLocaleDateString()}</td>
