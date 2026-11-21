@@ -203,7 +203,7 @@ export default function CustomerTicketDetailPage() {
             </div>
 
             {evidence.length === 0 ? (
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+              <p style={{ color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.85rem' }}>
                 No diagnostic photos or receipts attached yet. Upload photos showing device fault and serial number to expedite claims assessment.
               </p>
             ) : (
@@ -211,18 +211,19 @@ export default function CustomerTicketDetailPage() {
                 {evidence.map((ev, idx) => (
                   <div key={idx} style={{
                     padding: '0.65rem 0.85rem',
-                    border: '1px solid var(--border)',
+                    border: 'none',
                     borderRadius: '6px',
                     fontSize: '0.8125rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    backgroundColor: 'var(--bg)'
+                    backgroundColor: 'var(--surface-alt)',
+                    color: 'var(--bg)'
                   }}>
                     <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '140px' }}>
                       {ev.originalFilename}
                     </span>
-                    <a href={ev.url} target="_blank" rel="noreferrer" style={{ fontSize: '0.75rem', fontWeight: 600 }}>
+                    <a href={ev.url} target="_blank" rel="noreferrer" style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--bg)' }}>
                       View
                     </a>
                   </div>
