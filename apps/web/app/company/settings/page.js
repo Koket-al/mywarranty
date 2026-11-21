@@ -89,7 +89,7 @@ export default function CompanySettingsPage() {
           {success && <div className="alert alert-success">{success}</div>}
 
           {loading ? (
-            <div className="card" style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
+            <div className="card" style={{ textAlign: 'center', padding: '3rem', color: 'rgba(241, 165, 1, 0.75)' }}>
               Loading settings...
             </div>
           ) : (
@@ -165,7 +165,7 @@ export default function CompanySettingsPage() {
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem' }}>
-                  <button type="submit" className="btn btn-primary" disabled={saving}>
+                  <button type="submit" className="btn btn-gold" disabled={saving}>
                     {saving ? 'Saving...' : 'Save Changes'}
                   </button>
                 </div>
