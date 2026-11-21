@@ -156,7 +156,7 @@ export default function IssueWarrantyPage() {
           {error && <div className="alert alert-error">{error}</div>}
 
           {loadingInitial ? (
-            <div className="card" style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
+            <div className="card" style={{ textAlign: 'center', padding: '3rem', color: 'rgba(241, 165, 1, 0.75)' }}>
               Loading products and policies...
             </div>
           ) : (
