@@ -65,7 +65,7 @@ ewnet/
 │   │   │   ├── routes/        # Modular Express REST route handlers
 │   │   │   ├── services/      # Email, S3/local storage, RSA signing, PDF, audit
 │   │   │   ├── app.js         # Express app initialization
-│   │   │   ├── server.js      # HTTP listener & gracefull shutdown
+│   │   │   ├── server.js      # HTTP listener & graceful shutdown
 │   │   │   └── seed.js        # Comprehensive multi-role demo seeder
 │   │   └── test/              # Vitest + Supertest integration test suites
 │   └── web/                   # Next.js 14 App Router full-featured frontend
@@ -81,6 +81,14 @@ ewnet/
 ├── package.json               # Root monorepo workspace configuration
 └── .env.example               # Complete environment variable template
 ```
+
+### 🎨 Design System & Accessibility
+The frontend follows a modern, zero-white, borderless card design system:
+- **Amber Saffron Gold (`#f1a501`)**: Warm background and interactive highlights.
+- **Deep Midnight Navy (`#092032`)**: High-contrast card surfaces.
+- **Solid Black (`#000000`)**: Sharp typography and primary button text.
+- **Slate Blue (`#344756`)**: Secondary surfaces and input container accents.
+- **Zero White & Borderless**: Minimalist, clean visual hierarchy without visual clutter or dividing lines.
 
 ---
 
