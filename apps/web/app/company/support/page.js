@@ -66,9 +66,9 @@ export default function CompanySupportListPage() {
             <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading tickets...</div>
           ) : filtered.length === 0 ? (
             <div className="card" style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-              <LifeBuoy size={40} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
-              <h3 style={{ fontSize: '1.1rem', color: 'var(--primary)', marginBottom: '0.5rem' }}>No support cases</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+              <LifeBuoy size={40} color="var(--bg)" style={{ margin: '0 auto 1rem' }} />
+              <h3 style={{ fontSize: '1.1rem', color: 'var(--bg)', marginBottom: '0.5rem' }}>No support cases</h3>
+              <p style={{ color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.875rem' }}>
                 When customers submit warranty claims or questions, they will appear here.
               </p>
             </div>
