@@ -163,7 +163,7 @@ export default function CompanyCaseReviewPage() {
               className="btn btn-secondary"
               disabled={investigating}
             >
-              <Bot size={18} color="#9333ea" />
+              <Bot size={18} color="var(--bg)" />
               {investigating ? 'Running AI Investigation...' : 'Run AI Investigation'}
             </button>
           </div>
@@ -173,19 +173,19 @@ export default function CompanyCaseReviewPage() {
 
           {/* AI Investigation Report Box */}
           {aiReport && (
-            <div className="card" style={{ marginBottom: '2rem', border: '2px solid #e9d5ff', backgroundColor: '#faf5ff' }}>
-              <div className="card-header" style={{ borderColor: '#e9d5ff' }}>
+            <div className="card" style={{ marginBottom: '2rem', border: 'none', backgroundColor: 'var(--surface-alt)', color: 'var(--bg)' }}>
+              <div className="card-header" style={{ borderBottom: 'none' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Bot size={22} color="#9333ea" />
-                  <h2 className="card-title" style={{ color: '#581c87' }}>Structured AI Investigation Report</h2>
+                  <Bot size={22} color="var(--bg)" />
+                  <h2 className="card-title" style={{ color: 'var(--bg)' }}>Structured AI Investigation Report</h2>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span style={{ fontSize: '0.75rem', color: '#6b21a8' }}>Recommendation:</span>
+                  <span style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)' }}>Recommendation:</span>
                   <StatusBadge status={aiReport.recommendation} />
                 </div>
               </div>
 
-              <div style={{ fontSize: '0.875rem', color: '#3b0764', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div style={{ fontSize: '0.875rem', color: 'var(--bg)', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div>
                   <strong>Summary: </strong>{aiReport.summary}
                 </div>
@@ -347,7 +347,7 @@ export default function CompanyCaseReviewPage() {
 
             {/* Right: Human Claim Decision Form */}
             <div>
-              <div className="card" style={{ border: '2px solid var(--primary)' }}>
+              <div className="card" style={{ border: 'none' }}>
                 <div className="card-header">
                   <h2 className="card-title">Human Warranty Decision</h2>
                   <span className="badge badge-info">Authorized Decision Maker</span>
