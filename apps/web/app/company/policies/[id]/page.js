@@ -186,11 +186,11 @@ export default function PolicyDetailPage() {
 
           {/* Active Draft Editor (if un-published draft exists) */}
           {draftVersion ? (
-            <div className="card" style={{ marginBottom: '2rem', border: '2px solid var(--accent)' }}>
+            <div className="card" style={{ marginBottom: '2rem', border: 'none' }}>
               <div className="card-header">
                 <div>
                   <h2 className="card-title">Editing Draft: Version {draftVersion.versionNumber}</h2>
-                  <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
+                  <p style={{ fontSize: '0.8125rem', color: 'rgba(241, 165, 1, 0.75)' }}>
                     Make adjustments below. Publishing will lock this version as immutable.
                   </p>
                 </div>
@@ -198,7 +198,7 @@ export default function PolicyDetailPage() {
                   <button onClick={handleSaveDraft} className="btn btn-secondary btn-sm">
                     Save Draft
                   </button>
-                  <button onClick={() => handlePublish(draftVersion._id)} className="btn btn-primary btn-sm" disabled={publishing}>
+                  <button onClick={() => handlePublish(draftVersion._id)} className="btn btn-gold btn-sm" disabled={publishing}>
                     {publishing ? 'Publishing...' : 'Publish Version'}
                   </button>
                 </div>
