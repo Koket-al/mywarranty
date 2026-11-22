@@ -18,7 +18,7 @@ export default function StatusBadge({ status }) {
   label = String(status || '').replace(/_/g, ' ');
 
   return (
-    <span className={`badge ${badgeClass}`}>
+    <span className={`badge ${badgeClass}`} role="status" aria-label={`Status: ${label}`}>
       {label}
     </span>
   );
