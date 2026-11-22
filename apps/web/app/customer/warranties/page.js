@@ -67,7 +67,7 @@ export default function CustomerWarrantiesPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <Search size={18} color="var(--text-muted)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)' }} />
+              <Search size={18} color="var(--bg)" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', opacity: 0.85 }} />
             </div>
           </div>
 
@@ -75,7 +75,7 @@ export default function CustomerWarrantiesPage() {
             <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading warranties...</div>
           ) : filtered.length === 0 ? (
             <div className="card" style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-              <p style={{ color: 'var(--text-muted)' }}>No warranties match your query.</p>
+              <p style={{ color: 'rgba(241, 165, 1, 0.75)' }}>No warranties match your query.</p>
             </div>
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
@@ -85,36 +85,37 @@ export default function CustomerWarrantiesPage() {
                   <div key={w._id} className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                        <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.5px' }}>
+                        <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: 'var(--bg)', letterSpacing: '0.5px' }}>
                           {w.warrantyNumber}
                         </span>
                         <StatusBadge status={isExpired ? 'EXPIRED' : w.recordStatus} />
                       </div>
 
-                      <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--primary)', marginBottom: '0.25rem' }}>
+                      <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--bg)', marginBottom: '0.25rem' }}>
                         {w.product?.brand} {w.product?.name}
                       </h3>
-                      <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-                        Retailer: <strong>{w.companySnapshot?.businessName}</strong>
+                      <div style={{ fontSize: '0.85rem', color: 'rgba(241, 165, 1, 0.75)', marginBottom: '1rem' }}>
+                        Retailer: <strong style={{ color: 'var(--bg)' }}>{w.companySnapshot?.businessName}</strong>
                       </div>
 
                       <div style={{
-                        backgroundColor: 'var(--bg)',
+                        backgroundColor: 'var(--surface-alt)',
                         borderRadius: '6px',
                         padding: '0.75rem',
                         fontSize: '0.8125rem',
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '0.35rem',
-                        marginBottom: '1.25rem'
+                        marginBottom: '1.25rem',
+                        color: 'var(--bg)'
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <span style={{ color: 'var(--text-muted)' }}>Valid From:</span>
+                          <span style={{ color: 'rgba(241, 165, 1, 0.75)' }}>Valid From:</span>
                           <span>{new Date(w.warranty?.startDate).toLocaleDateString()}</span>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <span style={{ color: 'var(--text-muted)' }}>Expires:</span>
-                          <strong style={{ color: isExpired ? 'var(--danger)' : 'var(--accent)' }}>
+                          <span style={{ color: 'rgba(241, 165, 1, 0.75)' }}>Expires:</span>
+                          <strong style={{ color: isExpired ? 'var(--bg)' : 'var(--bg)' }}>
                             {new Date(w.warranty?.expiryDate).toLocaleDateString()}
                           </strong>
                         </div>

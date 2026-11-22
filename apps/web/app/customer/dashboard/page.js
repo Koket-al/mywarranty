@@ -77,7 +77,7 @@ export default function CustomerDashboardPage() {
             </div>
 
             {loading ? (
-              <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>Loading records...</div>
+              <div style={{ textAlign: 'center', padding: '2rem', color: 'rgba(241, 165, 1, 0.75)' }}>Loading records...</div>
             ) : warranties.length === 0 ? (
               <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
                 <QrCode size={40} color="var(--bg)" style={{ margin: '0 auto 1rem' }} />
@@ -85,7 +85,7 @@ export default function CustomerDashboardPage() {
                 <p style={{ color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
                   Have a receipt with a QR code or warranty ID? Add it to your account in seconds.
                 </p>
-                <Link href="/customer/claim-warranty" className="btn btn-accent btn-sm">
+                <Link href="/customer/claim-warranty" className="btn btn-gold btn-sm">
                   Claim Your Warranty
                 </Link>
               </div>
