@@ -23,10 +23,22 @@ async function bootstrap() {
       console.log('[MW API] Auto-seed complete. Demo credentials are ready!');
     }
 
-    app.listen(env.PORT, () => {
+    const server = app.listen(env.PORT, () => {
       console.log(`[MW API] Server running on http://localhost:${env.PORT}`);
       console.log(`[MW API] Health check available at http://localhost:${env.PORT}/health`);
     });
+
+    const shutdown = async () => {
+      console.log('\n[MW API] Gracefully shutting down server...');
+      server.close(async () => {
+        await mongoose.connection.close(false);
+        console.log('[MW API] Database connection closed. Exiting process.');
+        process.exit(0);
+      });
+    };
+
+    process.on('SIGTERM', shutdown);
+    process.on('SIGINT', shutdown);
   } catch (err) {
     console.error('[MW API] Failed to start server:', err);
     process.exit(1);
