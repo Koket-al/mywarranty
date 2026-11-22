@@ -60,7 +60,7 @@ export default function CustomerNotificationsPage() {
 
           <div className="card">
             {loading ? (
-              <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>Loading...</div>
+              <div style={{ textAlign: 'center', padding: '2rem', color: 'rgba(241, 165, 1, 0.75)' }}>Loading notifications...</div>
             ) : notifications.length === 0 ? (
               <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
                 <Bell size={36} color="var(--bg)" style={{ margin: '0 auto 1rem' }} />
