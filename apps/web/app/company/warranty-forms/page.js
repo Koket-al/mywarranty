@@ -118,12 +118,12 @@ export default function WarrantyFormBuilderPage() {
             <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading form schemas...</div>
           ) : forms.length === 0 ? (
             <div className="card" style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-              <Sliders size={40} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
-              <h3 style={{ fontSize: '1.1rem', color: 'var(--primary)', marginBottom: '0.5rem' }}>No custom form schemas configured</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
+              <Sliders size={40} color="var(--bg)" style={{ margin: '0 auto 1rem' }} />
+              <h3 style={{ fontSize: '1.1rem', color: 'var(--bg)', marginBottom: '0.5rem' }}>No custom form schemas configured</h3>
+              <p style={{ color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
                 Warranties currently use default standard fields. Create a custom form to track branch, color, or condition.
               </p>
-              <button onClick={() => setIsModalOpen(true)} className="btn btn-primary btn-sm">
+              <button onClick={() => setIsModalOpen(true)} className="btn btn-gold btn-sm">
                 Create First Custom Form
               </button>
             </div>
