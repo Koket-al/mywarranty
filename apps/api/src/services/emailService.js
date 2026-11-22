@@ -92,18 +92,18 @@ export async function sendOtpEmail(email, otp, purpose = 'Verification') {
  * Sends an employee invitation email
  */
 export async function sendInvitationEmail({ to, businessName, role, invitationLink }) {
-  const subject = `You're invited to join ${businessName} on Ewnet`;
-  const text = `You have been invited to join ${businessName} on Ewnet as a ${role}. Click this link to accept your invitation: ${invitationLink}`;
+  const subject = `You're invited to join ${businessName} on MW (My Warranty)`;
+  const text = `You have been invited to join ${businessName} on MW (My Warranty) as a ${role}. Click this link to accept your invitation: ${invitationLink}`;
   const html = `
     <div style="font-family: sans-serif; max-width: 500px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
-      <h2 style="color: #0f2744; margin-top: 0;">Ewnet Employee Invitation</h2>
+      <h2 style="color: #092032; margin-top: 0;">MW (My Warranty) Staff Invitation</h2>
       <p style="color: #475569;">You have been invited to join <strong>${businessName}</strong> as a <strong>${role}</strong>.</p>
       <div style="margin: 25px 0; text-align: center;">
-        <a href="${invitationLink}" style="background-color: #0d9488; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">
+        <a href="${invitationLink}" style="background-color: #092032; color: #f1a501; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">
           Accept Invitation
         </a>
       </div>
-      <p style="color: #64748b; font-size: 13px;">Or copy and paste this link in your browser:<br/><a href="${invitationLink}" style="color: #0d9488;">${invitationLink}</a></p>
+      <p style="color: #64748b; font-size: 13px;">Or copy and paste this link in your browser:<br/><a href="${invitationLink}" style="color: #092032;">${invitationLink}</a></p>
     </div>
   `;
 
