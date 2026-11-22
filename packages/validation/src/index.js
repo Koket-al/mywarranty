@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Shared request validation schemas using Zod.
+ * Enforces strict typing and data sanitation across API endpoints and client forms.
+ */
 import { z } from 'zod';
 
 export const customerRegisterSchema = z.object({
