@@ -48,5 +48,6 @@ export async function disconnectDB() {
     await memServer.stop();
   }
   isConnected = false;
+  console.log('[Database] Disconnected from MongoDB cleanly.');
 }
 
