@@ -100,29 +100,29 @@ export default function CustomerWarrantyDetailPage() {
           <div className="card" style={{ marginBottom: '2rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
               <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <Smartphone size={20} color="var(--accent)" />
+                <Smartphone size={20} color="var(--bg)" />
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Product Details</div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>{warranty.product?.brand} {warranty.product?.name}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Serial: {warranty.product?.serialNumber || 'N/A'}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)', textTransform: 'uppercase' }}>Product Details</div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--bg)' }}>{warranty.product?.brand} {warranty.product?.name}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'rgba(241, 165, 1, 0.75)' }}>Serial: {warranty.product?.serialNumber || 'N/A'}</div>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <Calendar size={20} color="var(--accent)" />
+                <Calendar size={20} color="var(--bg)" />
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Purchase & Duration</div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>Purchased {new Date(warranty.purchase?.purchaseDate).toLocaleDateString()}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Duration: {warranty.warranty?.duration} {warranty.warranty?.durationUnit}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)', textTransform: 'uppercase' }}>Purchase & Duration</div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--bg)' }}>Purchased {new Date(warranty.purchase?.purchaseDate).toLocaleDateString()}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'rgba(241, 165, 1, 0.75)' }}>Duration: {warranty.warranty?.duration} {warranty.warranty?.durationUnit}</div>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <Building2 size={20} color="var(--accent)" />
+                <Building2 size={20} color="var(--bg)" />
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Issuing Retailer</div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>{warranty.companySnapshot?.businessName}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{warranty.companySnapshot?.contactEmail}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(241, 165, 1, 0.75)', textTransform: 'uppercase' }}>Issuing Retailer</div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--bg)' }}>{warranty.companySnapshot?.businessName}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'rgba(241, 165, 1, 0.75)' }}>{warranty.companySnapshot?.contactEmail}</div>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function CustomerWarrantyDetailPage() {
             <div className="card-header">
               <div>
                 <h2 className="card-title">Issued Policy Terms: {warranty.policySnapshot?.name}</h2>
-                <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
+                <p style={{ fontSize: '0.8125rem', color: 'rgba(241, 165, 1, 0.75)' }}>
                   Exact terms snapshotted at time of issuance. These terms are immutable.
                 </p>
               </div>
@@ -145,11 +145,12 @@ export default function CustomerWarrantyDetailPage() {
                 <div key={idx} style={{
                   padding: '1rem',
                   borderRadius: '6px',
-                  backgroundColor: c.type === 'coverage' ? 'var(--accent-light)' : c.type === 'exclusion' ? '#fef2f2' : 'var(--bg)',
-                  border: `1px solid ${c.type === 'coverage' ? 'var(--border)' : c.type === 'exclusion' ? '#fecaca' : 'var(--border)'}`
+                  backgroundColor: 'var(--surface-alt)',
+                  border: 'none',
+                  color: 'var(--bg)'
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
-                    <strong style={{ fontSize: '0.95rem', color: 'var(--primary)' }}>{c.title}</strong>
+                    <strong style={{ fontSize: '0.95rem', color: 'var(--bg)' }}>{c.title}</strong>
                     <span className={`badge ${c.type === 'coverage' ? 'badge-success' : c.type === 'exclusion' ? 'badge-danger' : 'badge-info'}`}>
                       {c.type}
                     </span>
