@@ -6,7 +6,7 @@ import GoogleTranslate from './GoogleTranslate';
 export default function Navbar() {
   return (
     <div className="island-nav-wrapper">
-      <header style={{
+      <header aria-label="Main Navigation" style={{
         maxWidth: '1140px',
         margin: '0 auto',
         display: 'flex',
