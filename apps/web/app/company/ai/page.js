@@ -50,8 +50,8 @@ export default function CompanyAiAssistantPage() {
                 width: '32px',
                 height: '32px',
                 borderRadius: '6px',
-                backgroundColor: '#f3e8ff',
-                color: '#9333ea',
+                backgroundColor: 'var(--feature-primary)',
+                color: 'var(--bg)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
@@ -97,7 +97,7 @@ export default function CompanyAiAssistantPage() {
                 </select>
               </div>
 
-              <button type="submit" className="btn btn-primary" disabled={loading} style={{ height: '38px' }}>
+              <button type="submit" className="btn btn-gold" disabled={loading} style={{ height: '38px' }}>
                 <Sparkles size={16} /> {loading ? 'Drafting...' : 'Generate Clauses'}
               </button>
             </form>
@@ -108,11 +108,11 @@ export default function CompanyAiAssistantPage() {
               <div className="card-header">
                 <div>
                   <h2 className="card-title">Recommended Policy Terms ({category})</h2>
-                  <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
+                  <p style={{ fontSize: '0.8125rem', color: 'rgba(241, 165, 1, 0.75)' }}>
                     Copy any clause or insert directly into your policy drafts
                   </p>
                 </div>
-                <Link href="/company/policies" className="btn btn-accent btn-sm">
+                <Link href="/company/policies" className="btn btn-gold btn-sm">
                   Go to Policy Editor
                 </Link>
               </div>
