@@ -57,8 +57,8 @@ export default function CustomerAiAssistantPage() {
               width: '44px',
               height: '44px',
               borderRadius: '50%',
-              backgroundColor: '#f3e8ff',
-              color: '#9333ea',
+              backgroundColor: 'var(--feature-primary)',
+              color: 'var(--bg)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -111,13 +111,13 @@ export default function CustomerAiAssistantPage() {
               ))}
 
               {loading && (
-                <div style={{ alignSelf: 'flex-start', color: 'var(--text-muted)', fontSize: '0.85rem', fontStyle: 'italic', paddingLeft: '2.5rem' }}>
+                <div style={{ alignSelf: 'flex-start', color: 'rgba(241, 165, 1, 0.75)', fontSize: '0.85rem', fontStyle: 'italic', paddingLeft: '2.5rem' }}>
                   Consulting your registered policy clauses...
                 </div>
               )}
             </div>
 
-            <form onSubmit={handleSend} style={{ display: 'flex', gap: '0.5rem', paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
+            <form onSubmit={handleSend} style={{ display: 'flex', gap: '0.5rem', paddingTop: '1rem', borderTop: 'none' }}>
               <input
                 type="text"
                 className="form-control"
@@ -126,7 +126,7 @@ export default function CustomerAiAssistantPage() {
                 onChange={(e) => setInput(e.target.value)}
                 disabled={loading}
               />
-              <button type="submit" className="btn btn-primary" disabled={loading || !input.trim()}>
+              <button type="submit" className="btn btn-gold" disabled={loading || !input.trim()}>
                 <Send size={16} />
               </button>
             </form>
