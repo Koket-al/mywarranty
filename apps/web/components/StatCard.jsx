@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function StatCard({ title, value, subtext, icon: Icon, color = 'var(--bg)' }) {
   return (
-    <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', padding: '1.25rem' }}>
+    <div className="card" aria-label={`${title}: ${value}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', padding: '1.25rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'rgba(241, 165, 1, 0.75)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
           {title}
