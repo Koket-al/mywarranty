@@ -126,7 +126,7 @@ export default function AdminDashboardPage() {
 
         {/* Tab Content */}
         {loading ? (
-          <div className="card" style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
+          <div className="card" style={{ textAlign: 'center', padding: '3rem', color: 'rgba(241, 165, 1, 0.75)' }}>
             Loading platform records...
           </div>
         ) : activeTab === 'companies' ? (
