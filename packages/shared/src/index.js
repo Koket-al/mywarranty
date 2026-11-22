@@ -145,6 +145,9 @@ export const CLAIM_DECISION = {
 
 /**
  * Deterministically sorts object keys for reproducible hashing
+ * @param {*} obj - Target payload to serialize
+ * @param {WeakSet} [seen] - Set of circular reference markers
+ * @returns {string} Canonical JSON string
  */
 export function canonicalStringify(obj, seen = new WeakSet()) {
   if (obj === null || typeof obj !== 'object') {
