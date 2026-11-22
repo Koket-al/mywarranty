@@ -50,7 +50,7 @@ export default function Sidebar({ mode = 'company' }) {
   const links = mode === 'company' ? companyLinks : customerLinks;
 
   return (
-    <aside style={{
+    <aside aria-label="Sidebar Navigation" style={{
       width: '240px',
       backgroundColor: 'var(--surface)',
       borderRight: 'none',
