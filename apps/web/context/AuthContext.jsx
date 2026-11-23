@@ -5,6 +5,9 @@ import { apiRequest } from '../services/api';
 
 const AuthContext = createContext(null);
 
+/**
+ * Provides global authentication and tenant session state to the application.
+ */
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [activeCompany, setActiveCompany] = useState(null);
