@@ -21,9 +21,9 @@ export async function generateWarrantyPdf(warranty, qrTokenString) {
       const qrBuffer = Buffer.from(qrDataUrl.split(',')[1], 'base64');
 
       // Header Banner
-      doc.rect(40, 40, 515, 60).fill('#202223');
-      doc.fillColor('#ffffff').fontSize(22).font('Helvetica-Bold').text('MW — My Warranty', 55, 53);
-      doc.fontSize(10).font('Helvetica').text('Official Digital Warranty Certificate', 55, 82);
+      doc.rect(40, 40, 515, 60).fill('#092032');
+      doc.fillColor('#f1a501').fontSize(22).font('Helvetica-Bold').text('MW — My Warranty', 55, 53);
+      doc.fillColor('#f1a501').fontSize(10).font('Helvetica').text('Official Digital Warranty Certificate', 55, 82);
 
       // Issuing Company Info
       doc.fillColor('#0f2744').fontSize(14).font('Helvetica-Bold').text(warranty.companySnapshot?.businessName || 'Authorized Retailer', 40, 120);
