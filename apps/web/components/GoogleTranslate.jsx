@@ -179,6 +179,8 @@ export default function GoogleTranslate() {
       {/* Styled Translation Trigger Mark */}
       <button
         type="button"
+        aria-expanded={isOpen}
+        aria-label="Language selector"
         onClick={() => setIsOpen(!isOpen)}
         style={{
           display: 'inline-flex',
