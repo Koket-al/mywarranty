@@ -97,7 +97,7 @@ export default function QRScannerModal({ isOpen, onClose, onScan }) {
       <div className="modal-content">
         <div className="modal-header">
           <h3 className="modal-title">Scan Warranty QR Code</h3>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}>
+          <button onClick={onClose} aria-label="Close modal" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--bg)' }}>
             <X size={20} />
           </button>
         </div>
@@ -120,7 +120,7 @@ export default function QRScannerModal({ isOpen, onClose, onScan }) {
                 transform: 'translate(-50%, -50%)',
                 width: '180px',
                 height: '180px',
-                border: '2px dashed var(--accent)',
+                border: '2px dashed var(--bg)',
                 borderRadius: '12px'
               }} />
             </div>
@@ -151,7 +151,7 @@ export default function QRScannerModal({ isOpen, onClose, onScan }) {
               <button type="button" onClick={() => setUseCamera(true)} className="btn btn-secondary">
                 <Camera size={16} /> Try Camera Again
               </button>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-gold">
                 Look Up Warranty
               </button>
             </div>
