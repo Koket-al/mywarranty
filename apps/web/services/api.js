@@ -1,5 +1,12 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
+/**
+ * Core client fetch wrapper for interacting with the MW REST API.
+ * Automatically handles JSON parsing, PDF blob streaming, and session cookie inclusion.
+ * @param {string} endpoint - API route path or absolute URL
+ * @param {RequestInit} [options] - Standard Fetch options
+ * @returns {Promise<any>}
+ */
 export async function apiRequest(endpoint, options = {}) {
   const url = endpoint.startsWith('http') ? endpoint : `${BASE_URL}${endpoint}`;
   
