@@ -1,6 +1,6 @@
-# Ewnet (እውነት) — Full Deployment Guide
+# MW (My Warranty) — Full Production Deployment Guide
 
-This document provides step-by-step instructions for deploying the Ewnet Digital Warranty Platform across production environments.
+This document provides step-by-step instructions for deploying the MW (My Warranty) Digital Warranty Platform across production environments.
 
 ---
 
