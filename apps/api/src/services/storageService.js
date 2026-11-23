@@ -9,7 +9,12 @@ if (!fs.existsSync(UPLOAD_DIR)) {
 }
 
 /**
- * Saves uploaded evidence buffer
+ * Saves uploaded evidence buffer to persistent storage
+ * @param {Object} options
+ * @param {Buffer} options.buffer - Raw binary data
+ * @param {string} options.originalFilename - Uploaded file name
+ * @param {string} options.mimeType - Content MIME type
+ * @returns {Promise<{storageKey: string, url: string, originalFilename: string, mimeType: string, size: number}>}
  */
 export async function saveFile({ buffer, originalFilename, mimeType }) {
   const extension = path.extname(originalFilename) || '.bin';
