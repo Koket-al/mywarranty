@@ -1,6 +1,13 @@
 import crypto from 'node:crypto';
 import { Session, User, CompanyMember } from '../models/index.js';
 
+/**
+ * Authenticates request via HTTP-only cookie or Bearer authorization header.
+ * Resolves active session, user identity, and tenant company context.
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ */
 export async function authenticate(req, res, next) {
   try {
     // Check cookie or Bearer header
