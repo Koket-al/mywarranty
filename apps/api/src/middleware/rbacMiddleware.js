@@ -2,6 +2,8 @@ import { hasPermission } from '@ewnet/shared';
 
 /**
  * Enforces specific company permission (e.g. warranties:create, claims:decide)
+ * @param {string} permission - Granular action permission identifier from @ewnet/shared
+ * @returns {import('express').RequestHandler}
  */
 export function requirePermission(permission) {
   return (req, res, next) => {
