@@ -2,7 +2,9 @@ import { canonicalStringify, computeRecordHash, signPayload, verifySignature } f
 import { env } from '../config/env.js';
 
 /**
- * Creates canonical payload for warranty issuance and signs it
+ * Creates canonical payload for warranty issuance and cryptographically signs it using RSA-SHA256
+ * @param {Object} warrantyData - Input warranty parameters
+ * @returns {{algorithm: string, recordHash: string, signature: string, keyId: string, canonicalString: string}}
  */
 export function signWarrantyRecord(warrantyData) {
   const canonicalPayload = {
